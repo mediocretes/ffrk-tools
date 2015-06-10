@@ -2,12 +2,25 @@
 
 <head>
 	<title>FF Record Keeper - Inventory Optimiser</title>
+	<link rel=stylesheet type="text/css" href="css/style.css" />
 	<script src="/bower_components/angular/angular.min.js"></script>
 	<script src="/js/app.js"></script>
 </head>
 
 <body ng-controller="AppController as app">
-	Welcome {{app.name}}
+	<input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)" ng-model="app.typingName" />
+	<div class="suggested">
+		SUGGESTED:
+		<div ng-repeat="item in app.suggested" ng-class="{selected: $index == app.selected}">
+			{{item.name}}
+		</div>
+	</div>
+	<div>
+		INVENTORY:
+		<div ng-repeat="item in app.inventory track by $index">
+			{{item.name}}
+		</div>
+	</div>
 </body>
 
 </html>

@@ -1,45 +1,14 @@
-var app = angular.module('ffrk-io', ['ngSanitize']);
+var app = angular.module('ffrk-io', ['ngSanitize', 'pascalprecht.translate']);
 
-app.controller('AppController', ['$http', '$scope', '$sce', AppController]);
+app.config(function ($translateProvider) {
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'locale/',
+        suffix: '.json'
+    });
+    $translateProvider.preferredLanguage('en');
+});
 
-function AppController($http, $scope, $sce) {
-    var self = this;
-
-    this.$scope = $scope;
-    this.$sce = $sce;
-
-    this.loaded = false;
-
-    this.items = [];
-
-    this.inventory = [];
-
-    this.suggested = [];
-
-    this.selected = 0;
-
-    this.typingName = '';
-
-    $http.get('/csv/RS.1.Star.csv').
-        success(function (data) {
-            self.csvParse(data);
-            self.loaded = true;
-        }).
-        error(function (data, status, headers, config) {
-            // todo handle error loading
-        });
-
-}
-
-AppController.prototype.csvParse = function (csvData) {
-    var lines = csvData.split("\n");
-    lines.shift();
-    lines.shift();
-    for (var i in lines) {
-        var item = new Item(lines[i]);
-        this.items.push(item);
-    }
-};
+app.controller('AppController', ['$http', '$scope', '$sce', '$translate', AppController]);
 
 function eventCancel(e) {
     if (!e)
@@ -51,6 +20,104 @@ function eventCancel(e) {
     if (window.event) e.returnValue = false;
     if (e.cancel != null) e.cancel = true;
 }
+
+function AppController($http, $scope, $sce, $translate) {
+    var self = this;
+
+    this.$http = $http;
+    this.$scope = $scope;
+    this.$sce = $sce;
+    this.$translate = $translate;
+
+    this.nbLoaded = 0;
+    this.loaded = false;
+
+    this.csvData = [];
+
+    // String[]
+    // csv lines
+    this.items = [];
+    
+    // String[]
+    this.itemNames = [];
+
+    // String[]
+    this.suggested = [];
+
+    // Item[]
+    this.inventory = [];
+
+    this.translatedNames = {};
+
+    this.selected = 0;
+
+    this.typingName = '';
+
+    this.lang = this.$translate.preferredLanguage();
+    this.locales = {};
+
+    this.completed = 2;
+    this.$http.get('/csv/RS.1.Star.csv').
+        success(function (data) {
+            self.csvData.push(data);
+            self.complete();
+        }).
+        error(function (data, status, headers, config) {
+            // todo handle error loading
+        });
+
+    this.refreshLocales();
+
+}
+
+AppController.prototype.refreshLocales = function() {
+    var self = this;
+
+    this.locale = {};
+
+    if (this.lang == 'en') {
+        this.locales = {};
+        this.complete();
+        return;
+    }
+
+    this.$http.get('/locale/items-' + this.lang + '.json').
+        success(function (data) {
+            self.locales = data;
+            self.complete();
+        }).
+        error(function (data, status, headers, config) {
+            // todo handle error loading
+        });
+}
+
+AppController.prototype.complete = function() {
+    this.nbLoaded++;
+    if (this.nbLoaded >= this.completed) {
+        this.loaded = true;
+        for (var i in this.csvData) {
+            this.csvParse(this.csvData[i]);
+        }
+    }
+};
+
+AppController.prototype.csvParse = function (csvData) {
+    var lines = csvData.split("\n");
+    lines.shift();
+    lines.shift();
+    this.items = [];
+    this.itemNames = [];
+    for (var i in lines) {
+        var infos = lines[i].split(',');
+
+        var name = infos.shift();
+        var translatedName = this.locales[name] ? this.locales[name]: name;
+        infos.unshift(translatedName);
+
+        this.items.push(infos.join(','));
+        this.itemNames.push(translatedName);
+    }
+};
 
 AppController.prototype.findSuggestions = function (ev) {
     if (ev.keyCode == 38) // top
@@ -85,7 +152,7 @@ AppController.prototype.findSuggestions = function (ev) {
             eventCancel(ev);
         }
 
-        this.inventory.push(_.clone(this.suggested[this.selected]));
+        this.inventory.push(new Item(this, this.suggested[this.selected].name));
 
         eventCancel(ev);
     }
@@ -97,16 +164,11 @@ AppController.prototype.findSuggestions = function (ev) {
         // find the 5 first matches
         var i = 0;
         var nbr = 0;
-        while (i < this.items.length && nbr < 5) {
-            var item = this.items[i];
+        while (i < this.itemNames.length && nbr < 5) {
+            var name = this.itemNames[i];
             var regex = this.buildRegex();
-            if (item.name.match(regex)) {
-                var it = _.clone(item);
-                it.selectedName = it.name.replace(regex, function(x) {
-                    return '<b>' + x + '</b>';
-                });
-                it.selectedName = this.$sce.trustAsHtml(it.selectedName);
-                this.suggested.push(it);
+            if (name.match(regex)) {
+                this.suggested.push(new Suggest(this, name, regex));
                 nbr++;
             }
             i++;
@@ -124,44 +186,34 @@ AppController.prototype.buildRegex = function() {
 
 AppController.prototype.optimize = function() {
 
+    var organized = {};
     for (var i in this.inventory) {
-        console.log('to be continued..');
+        var item = this.inventory[i];
+        if (organized[item.type]) {
+            if (organized[item.type][item.origin]) {
+                var other = organized[item.type][item.origin];
+                if (item.betterThan(other)) {
+                    other.toRemove = true;
+                    organized[item.type][item.origin] = item;
+                } else {
+                    item.toRemove = true;
+                }
+            } else {
+                organized[item.type][item.origin] = item;
+            }
+        } else {
+            organized[item.type] = [];
+            organized[item.type][item.origin] = item;
+        }
     }
 
 };
 
-function Item(itemData) {
-    var d = itemData.split(",");
-    this.name = d[0];
-    this.origin = d[1];
-    this.rarity = d[2];
-    this.type = d[3];
-    this.baseStats = {
-        atk: d[4],
-        mag: d[5],
-        acc: d[6],
-        def: d[7],
-        res: d[8],
-        eva: d[9],
-        mnd: d[10]
-    };
-    this.maxedStats = {
-        atk: d[11],
-        mag: d[12],
-        acc: d[13],
-        def: d[14],
-        res: d[15],
-        eva: d[16],
-        mnd: d[17]
-    };
-    this.synergizeStats = {
-        atk: d[18],
-        mag: d[19],
-        acc: d[20],
-        def: d[21],
-        res: d[22],
-        eva: d[23],
-        mnd: d[24]
-    };
+AppController.prototype.changeLang = function(lang) {
 
-}
+    this.lang = lang;
+    this.$translate.use(lang);
+    this.completed = 1;
+    this.refreshLocales();
+
+};

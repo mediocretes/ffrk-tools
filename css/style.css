@@ -2,6 +2,10 @@
     background-color: #ccc;
 }
 
+.toRemove {	
+    background-color: #cff;
+}
+
 .section {
 	display: inline-block;
 	width: 200px;

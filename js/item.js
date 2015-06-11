@@ -1,13 +1,13 @@
 function Item(app, name) {
     var infos = _.find(app.items, function(x) {
-        return x.indexOf(name) == 0;
+        return x.indexOf(name.original) == 0;
     });
 
-    if (!infos) throw new Exception('No item found!');
+    if (!infos) throw new Error('No item found!');
 
     var d = infos.split(',');
 
-    this.name = d[0];
+    this.name = name;
     this.origin = d[1];
     this.rarity = d[2];
     this.type = d[3];

@@ -6,6 +6,7 @@ app.config(function ($translateProvider) {
         suffix: '.json'
     });
     $translateProvider.preferredLanguage('en');
+    //$translateProvider.useSanitizeValueStrategy('ffrk-io');
 });
 
 app.controller('AppController', ['$http', '$scope', '$sce', '$translate', AppController]);
@@ -37,7 +38,7 @@ function AppController($http, $scope, $sce, $translate) {
     // String[]
     // csv lines
     this.items = [];
-    
+
     // String[]
     this.itemNames = [];
 
@@ -66,11 +67,12 @@ function AppController($http, $scope, $sce, $translate) {
             // todo handle error loading
         });
 
+    this.afterRefreshLocales = null;
     this.refreshLocales();
 
 }
 
-AppController.prototype.refreshLocales = function() {
+AppController.prototype.refreshLocales = function () {
     var self = this;
 
     this.locale = {};
@@ -89,9 +91,9 @@ AppController.prototype.refreshLocales = function() {
         error(function (data, status, headers, config) {
             // todo handle error loading
         });
-}
+};
 
-AppController.prototype.complete = function() {
+AppController.prototype.complete = function () {
     this.nbLoaded++;
     if (this.nbLoaded >= this.completed) {
         this.loaded = true;
@@ -110,13 +112,14 @@ AppController.prototype.csvParse = function (csvData) {
     for (var i in lines) {
         var infos = lines[i].split(',');
 
-        var name = infos.shift();
-        var translatedName = this.locales[name] ? this.locales[name]: name;
-        infos.unshift(translatedName);
+        var name = infos[0];
+        var translatedName = this.locales[name] ? this.locales[name] : name;
 
-        this.items.push(infos.join(','));
-        this.itemNames.push(translatedName);
+        this.items.push(lines[i]);
+        this.itemNames.push(new Name(this, name, translatedName));
     }
+
+    if (this.afterRefreshLocales) this.afterRefreshLocales();
 };
 
 AppController.prototype.findSuggestions = function (ev) {
@@ -167,8 +170,8 @@ AppController.prototype.findSuggestions = function (ev) {
         while (i < this.itemNames.length && nbr < 5) {
             var name = this.itemNames[i];
             var regex = this.buildRegex();
-            if (name.match(regex)) {
-                this.suggested.push(new Suggest(this, name, regex));
+            if (name.translated.match(regex)) {
+                this.suggested.push(new Suggest(this, name));
                 nbr++;
             }
             i++;
@@ -176,7 +179,7 @@ AppController.prototype.findSuggestions = function (ev) {
     }
 };
 
-AppController.prototype.buildRegex = function() {
+AppController.prototype.buildRegex = function () {
     var regex;
     regex = this.typingName.split('');
     regex = regex.join('.*');
@@ -184,7 +187,7 @@ AppController.prototype.buildRegex = function() {
     return regex;
 };
 
-AppController.prototype.optimize = function() {
+AppController.prototype.optimize = function () {
 
     var organized = {};
     for (var i in this.inventory) {
@@ -209,11 +212,25 @@ AppController.prototype.optimize = function() {
 
 };
 
-AppController.prototype.changeLang = function(lang) {
+AppController.prototype.changeLang = function (lang) {
 
     this.lang = lang;
     this.$translate.use(lang);
     this.completed = 1;
+    this.afterRefreshLocales =
+        function () {
+            // change suggests names
+            for (var i in this.suggested) {
+                var suggest = this.suggested[i];
+                suggest.name.refreshTranslated();
+            }
+
+            // change inventory names
+            for (var i in this.inventory) {
+                var item = this.inventory[i];
+                item.name.refreshTranslated();
+            }
+        };
     this.refreshLocales();
 
 };

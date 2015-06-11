@@ -25,18 +25,87 @@
 			{{suggest.name.formatted()}}
 		</div>
 	</div>
-	<div class="section inventory">
-		{{'Inventory'|translate}}: ({{app.inventory.length}})
-		<div ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
-			{{item.name.translated}}
-		</div>
-	</div>
 	<div class="section optimize">
 		<button ng-click="app.optimize()">OPTIMIZE</button>
 	</div>
 	<div class="section language">
 		<button ng-click="app.changeLang('en')">ENGLISH</button>
 		<button ng-click="app.changeLang('fr')">FRENCH</button>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th colspan="7">base</th>
+				<th colspan="7">max</th>
+				<th colspan="7">synergy</th>
+			</tr>
+			<tr>
+				<th>name</th>
+				<th>origin</th>
+				<th>rarity</th>
+				<th>type</th>
+
+				<th>atk</th>
+				<th>mag</th>
+				<th>acc</th>
+				<th>def</th>
+				<th>res</th>
+				<th>eva</th>
+				<th>mnd</th>
+
+				<th>atk</th>
+				<th>mag</th>
+				<th>acc</th>
+				<th>def</th>
+				<th>res</th>
+				<th>eva</th>
+				<th>mnd</th>
+
+				<th>atk</th>
+				<th>mag</th>
+				<th>acc</th>
+				<th>def</th>
+				<th>res</th>
+				<th>eva</th>
+				<th>mnd</th>
+			</tr>
+			<tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
+				<td>{{item.name.translated}}</td>
+				<td>{{item.origin}}</td>
+				<td>{{item.rarity}}</td>
+				<td>{{item.type}}</td>
+
+				<td>{{item.base.atk}}</td>
+				<td>{{item.base.mag}}</td>
+				<td>{{item.base.acc}}</td>
+				<td>{{item.base.def}}</td>
+				<td>{{item.base.ref}}</td>
+				<td>{{item.base.eva}}</td>
+				<td>{{item.base.mnd}}</td>
+
+				<td>{{item.max.atk}}</td>
+				<td>{{item.max.mag}}</td>
+				<td>{{item.max.acc}}</td>
+				<td>{{item.max.def}}</td>
+				<td>{{item.max.ref}}</td>
+				<td>{{item.max.eva}}</td>
+				<td>{{item.max.mnd}}</td>
+
+				<td>{{item.synergy.atk}}</td>
+				<td>{{item.synergy.mag}}</td>
+				<td>{{item.synergy.acc}}</td>
+				<td>{{item.synergy.def}}</td>
+				<td>{{item.synergy.ref}}</td>
+				<td>{{item.synergy.eva}}</td>
+				<td>{{item.synergy.mnd}}</td>
+
+				<td><span ng-click="app.removeItem(item)">[r]</span></td>
+			</tr>
+		</table>
 	</div>
 </body>
 

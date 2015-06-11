@@ -40,8 +40,8 @@
                     item = new Item();
                     item.name = line[3];
                     item.type = line[5].replace('Type: ', '');
-                    item.rarity = line[6];
-                    item.index = line[7];
+                    item.rarity = parseInt(line[6]);
+                    item.index = parseInt(line[7]);
                     item.url = line[8];
 
                     if (item.type != 'Accessory') {
@@ -97,6 +97,9 @@
             default:
                 throw new Error('Wrong stat!');
         }
+
+        start = parseInt(start);
+        end = parseInt(end);
 
         this.base[ref] = start;
         this.max[ref] = end;

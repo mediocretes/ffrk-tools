@@ -11,12 +11,13 @@ function Item(app, name) {
     var str = name.translated;
     var origins = re.exec(str);
 
+    this.index = _.uniqueId();
     this.name = name;
     this.origin = origins[1];
     this.rarity = d[3];
     this.type = d[2];
     this.toRemove = false;
-    this.baseStats = {
+    this.base = {
         atk: d[5],
         mag: d[6],
         acc: d[7],
@@ -25,7 +26,7 @@ function Item(app, name) {
         eva: d[10],
         mnd: d[11]
     };
-    this.maxedStats = {
+    this.max = {
         atk: d[12],
         mag: d[13],
         acc: d[14],
@@ -34,7 +35,7 @@ function Item(app, name) {
         eva: d[17],
         mnd: d[18]
     };
-    this.synergizeStats = {
+    this.synergy = {
         atk: d[19],
         mag: d[20],
         acc: d[21],

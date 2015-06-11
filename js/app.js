@@ -212,6 +212,10 @@ AppController.prototype.optimize = function () {
 
 };
 
+AppController.prototype.removeItem = function (item) {
+    _.remove(this.inventory, item);
+};
+
 AppController.prototype.changeLang = function (lang) {
 
     this.lang = lang;

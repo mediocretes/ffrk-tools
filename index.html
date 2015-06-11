@@ -39,9 +39,9 @@
 				<th></th>
 				<th></th>
 				<th></th>
-				<th colspan="7">base</th>
-				<th colspan="7">max</th>
-				<th colspan="7">synergy</th>
+				<th colspan="7" class="stat_base">base</th>
+				<th colspan="7" class="stat_max">max</th>
+				<th colspan="7" class="stat_synergy">synergy</th>
 			</tr>
 			<tr>
 				<th>name</th>
@@ -49,29 +49,29 @@
 				<th>rarity</th>
 				<th>type</th>
 
-				<th>atk</th>
-				<th>mag</th>
-				<th>acc</th>
-				<th>def</th>
-				<th>res</th>
-				<th>eva</th>
-				<th>mnd</th>
+				<th class="stat_base">atk</th>
+				<th class="stat_base">mag</th>
+				<th class="stat_base">acc</th>
+				<th class="stat_base">def</th>
+				<th class="stat_base">res</th>
+				<th class="stat_base">eva</th>
+				<th class="stat_base">mnd</th>
 
-				<th>atk</th>
-				<th>mag</th>
-				<th>acc</th>
-				<th>def</th>
-				<th>res</th>
-				<th>eva</th>
-				<th>mnd</th>
+				<th class="stat_max">atk</th>
+				<th class="stat_max">mag</th>
+				<th class="stat_max">acc</th>
+				<th class="stat_max">def</th>
+				<th class="stat_max">res</th>
+				<th class="stat_max">eva</th>
+				<th class="stat_max">mnd</th>
 
-				<th>atk</th>
-				<th>mag</th>
-				<th>acc</th>
-				<th>def</th>
-				<th>res</th>
-				<th>eva</th>
-				<th>mnd</th>
+				<th class="stat_synergy">atk</th>
+				<th class="stat_synergy">mag</th>
+				<th class="stat_synergy">acc</th>
+				<th class="stat_synergy">def</th>
+				<th class="stat_synergy">res</th>
+				<th class="stat_synergy">eva</th>
+				<th class="stat_synergy">mnd</th>
 			</tr>
 			<tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
 				<td>{{item.name.translated}}</td>
@@ -79,29 +79,29 @@
 				<td>{{item.rarity}}</td>
 				<td>{{item.type}}</td>
 
-				<td>{{item.base.atk}}</td>
-				<td>{{item.base.mag}}</td>
-				<td>{{item.base.acc}}</td>
-				<td>{{item.base.def}}</td>
-				<td>{{item.base.ref}}</td>
-				<td>{{item.base.eva}}</td>
-				<td>{{item.base.mnd}}</td>
+				<td class="stat_base">{{item.base.atk}}</td>
+				<td class="stat_base">{{item.base.mag}}</td>
+				<td class="stat_base">{{item.base.acc}}</td>
+				<td class="stat_base">{{item.base.def}}</td>
+				<td class="stat_base">{{item.base.ref}}</td>
+				<td class="stat_base">{{item.base.eva}}</td>
+				<td class="stat_base">{{item.base.mnd}}</td>
 
-				<td>{{item.max.atk}}</td>
-				<td>{{item.max.mag}}</td>
-				<td>{{item.max.acc}}</td>
-				<td>{{item.max.def}}</td>
-				<td>{{item.max.ref}}</td>
-				<td>{{item.max.eva}}</td>
-				<td>{{item.max.mnd}}</td>
+				<td class="stat_max">{{item.max.atk}}</td>
+				<td class="stat_max">{{item.max.mag}}</td>
+				<td class="stat_max">{{item.max.acc}}</td>
+				<td class="stat_max">{{item.max.def}}</td>
+				<td class="stat_max">{{item.max.ref}}</td>
+				<td class="stat_max">{{item.max.eva}}</td>
+				<td class="stat_max">{{item.max.mnd}}</td>
 
-				<td>{{item.synergy.atk}}</td>
-				<td>{{item.synergy.mag}}</td>
-				<td>{{item.synergy.acc}}</td>
-				<td>{{item.synergy.def}}</td>
-				<td>{{item.synergy.ref}}</td>
-				<td>{{item.synergy.eva}}</td>
-				<td>{{item.synergy.mnd}}</td>
+				<td class="stat_synergy">{{item.synergy.atk}}</td>
+				<td class="stat_synergy">{{item.synergy.mag}}</td>
+				<td class="stat_synergy">{{item.synergy.acc}}</td>
+				<td class="stat_synergy">{{item.synergy.def}}</td>
+				<td class="stat_synergy">{{item.synergy.ref}}</td>
+				<td class="stat_synergy">{{item.synergy.eva}}</td>
+				<td class="stat_synergy">{{item.synergy.mnd}}</td>
 
 				<td><span ng-click="app.removeItem(item)">[r]</span></td>
 			</tr>

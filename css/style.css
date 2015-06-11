@@ -2,12 +2,30 @@
     background-color: #ccc;
 }
 
-.toRemove {	
+.toRemove {
     background-color: #cff;
 }
 
 .section {
-	display: inline-block;
-	width: 200px;
-	vertical-align: top;
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.stat_base {
+    background-color: #fee;
+}
+
+.stat_max {
+    background-color: #efe;
+}
+
+.stat_synergy {
+    background-color: #eef;
 }

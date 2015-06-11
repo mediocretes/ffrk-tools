@@ -4,22 +4,29 @@
 	<title>FF Record Keeper - Inventory Optimiser</title>
 	<link rel=stylesheet type="text/css" href="css/style.css" />
 	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="/bower_components/lodash/lodash.min.js"></script>
 	<script src="/js/app.js"></script>
 </head>
 
 <body ng-controller="AppController as app">
-	<input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)" ng-model="app.typingName" />
-	<div class="suggested">
+	<div class="section search">
+		<input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)" ng-model="app.typingName" />
+	</div>	
+	<div class="section suggested">
 		SUGGESTED:
-		<div ng-repeat="item in app.suggested" ng-class="{selected: $index == app.selected}">
-			{{item.name}}
+		<div ng-repeat="item in app.suggested" ng-bind-html="item.selectedName" ng-class="{selected: $index == app.selected}">
+			
 		</div>
 	</div>
-	<div>
-		INVENTORY:
+	<div class="section inventory">
+		INVENTORY ({{app.inventory.length}})
 		<div ng-repeat="item in app.inventory track by $index">
 			{{item.name}}
 		</div>
+	</div>
+	<div class="section optimize">
+		<button ng-click="app.optimize()">OPTIMIZE</button>
 	</div>
 </body>
 

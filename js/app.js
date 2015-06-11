@@ -1,11 +1,12 @@
-var app = angular.module('ffrk-io', []);
+var app = angular.module('ffrk-io', ['ngSanitize']);
 
-app.controller('AppController', ['$http', '$scope', AppController]);
+app.controller('AppController', ['$http', '$scope', '$sce', AppController]);
 
-function AppController($http, $scope) {
+function AppController($http, $scope, $sce) {
     var self = this;
 
     this.$scope = $scope;
+    this.$sce = $sce;
 
     this.loaded = false;
 
@@ -84,7 +85,7 @@ AppController.prototype.findSuggestions = function (ev) {
             eventCancel(ev);
         }
 
-        this.inventory.push(this.suggested[this.selected]);
+        this.inventory.push(_.clone(this.suggested[this.selected]));
 
         eventCancel(ev);
     }
@@ -98,13 +99,35 @@ AppController.prototype.findSuggestions = function (ev) {
         var nbr = 0;
         while (i < this.items.length && nbr < 5) {
             var item = this.items[i];
-            if (item.name.toLowerCase().indexOf(this.typingName) != -1) {
-                this.suggested.push(item);
+            var regex = this.buildRegex();
+            if (item.name.match(regex)) {
+                var it = _.clone(item);
+                it.selectedName = it.name.replace(regex, function(x) {
+                    return '<b>' + x + '</b>';
+                });
+                it.selectedName = this.$sce.trustAsHtml(it.selectedName);
+                this.suggested.push(it);
                 nbr++;
             }
             i++;
         }
     }
+};
+
+AppController.prototype.buildRegex = function() {
+    var regex;
+    regex = this.typingName.split('');
+    regex = regex.join('.*');
+    regex = new RegExp(regex, 'i');
+    return regex;
+};
+
+AppController.prototype.optimize = function() {
+
+    for (var i in this.inventory) {
+        console.log('to be continued..');
+    }
+
 };
 
 function Item(itemData) {
@@ -142,11 +165,3 @@ function Item(itemData) {
     };
 
 }
-
-Item.prototype.select = function () {
-    this.selected = true;
-};
-
-Item.prototype.unselect = function () {
-    this.selected = false;
-};

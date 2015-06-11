@@ -1,3 +1,9 @@
 .selected {
-    font-weight: bold;
+    background-color: #ccc;
+}
+
+.section {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
 }

@@ -58,7 +58,7 @@ function AppController($http, $scope, $sce, $translate) {
     this.locales = {};
 
     this.completed = 2;
-    this.$http.get('/csv/RS.1.Star.csv').
+    this.$http.get('/csv/en.csv').
         success(function (data) {
             self.csvData.push(data);
             self.complete();
@@ -112,7 +112,7 @@ AppController.prototype.csvParse = function (csvData) {
     for (var i in lines) {
         var infos = lines[i].split(',');
 
-        var name = infos[0];
+        var name = infos[1];
         var translatedName = this.locales[name] ? this.locales[name] : name;
 
         this.items.push(lines[i]);

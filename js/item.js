@@ -1,43 +1,47 @@
 function Item(app, name) {
     var infos = _.find(app.items, function(x) {
-        return x.indexOf(name.original) == 0;
+        return x.indexOf(name.original) > -1;
     });
 
     if (!infos) throw new Error('No item found!');
 
     var d = infos.split(',');
 
+    var re = /\((.*)\)/;
+    var str = name.translated;
+    var origins = re.exec(str);
+
     this.name = name;
-    this.origin = d[1];
-    this.rarity = d[2];
-    this.type = d[3];
+    this.origin = origins[1];
+    this.rarity = d[3];
+    this.type = d[2];
     this.toRemove = false;
     this.baseStats = {
-        atk: d[4],
-        mag: d[5],
-        acc: d[6],
-        def: d[7],
-        res: d[8],
-        eva: d[9],
-        mnd: d[10]
+        atk: d[5],
+        mag: d[6],
+        acc: d[7],
+        def: d[8],
+        res: d[9],
+        eva: d[10],
+        mnd: d[11]
     };
     this.maxedStats = {
-        atk: d[11],
-        mag: d[12],
-        acc: d[13],
-        def: d[14],
-        res: d[15],
-        eva: d[16],
-        mnd: d[17]
+        atk: d[12],
+        mag: d[13],
+        acc: d[14],
+        def: d[15],
+        res: d[16],
+        eva: d[17],
+        mnd: d[18]
     };
     this.synergizeStats = {
-        atk: d[18],
-        mag: d[19],
-        acc: d[20],
-        def: d[21],
-        res: d[22],
-        eva: d[23],
-        mnd: d[24]
+        atk: d[19],
+        mag: d[20],
+        acc: d[21],
+        def: d[22],
+        res: d[23],
+        eva: d[24],
+        mnd: d[25]
     };
 
 }

@@ -18,6 +18,7 @@
     "lodash": "~3.9.3",
     "angular-sanitize": "~1.4.0",
     "angular-translate": "~2.7.2",
-    "angular-translate-loader-static-files": "~2.7.2"
+    "angular-translate-loader-static-files": "~2.7.2",
+    "jquery": "~2.1.4"
   }
 }

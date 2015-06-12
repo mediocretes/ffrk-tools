@@ -1,116 +1,104 @@
 <html ng-app="ffrk-io">
 
 <head>
-	<title>FF Record Keeper - Inventory Optimiser</title>
-	<link rel=stylesheet type="text/css" href="css/style.css" />
-	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
-	<script src="/bower_components/angular/angular.min.js"></script>
-	<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-	<script src="/bower_components/angular-translate/angular-translate.min.js"></script>
-	<script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
-	<script src="/bower_components/lodash/lodash.min.js"></script>
-	<script src="/js/name.js"></script>
-	<script src="/js/suggest.js"></script>
-	<script src="/js/item.js"></script>
-	<script src="/js/app.js"></script>
+    <title>FF Record Keeper - Inventory Optimiser</title>
+    <link rel=stylesheet type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="/bower_components/lodash/lodash.min.js"></script>
+    <script src="/js/name.js"></script>
+    <script src="/js/suggest.js"></script>
+    <script src="/js/item.js"></script>
+    <script src="/js/app.js"></script>
 </head>
 
 <body ng-controller="AppController as app">
-	<div class="menu">
-		<div ng-hide="app.loaded">{{'Loading'|translate}}</div>
-		<div class="section search">
-			<input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)" ng-model="app.typingName" />
-		</div>	
-		<div class="section suggested">
-			<div ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}">
-				{{suggest.name.formatted()}}
-			</div>
-		</div>
-		<div class="section optimize">
-			<div class="title">{{'Actions'|translate}}</div>
-			<a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a>
-		</div>
-		<div class="section language">
-			<div class="title">{{'Languages'|translate}}</div>
-			<a href="" ng-click="app.changeLang('en')" ng-class="{selected: app.lang == 'en'}">{{'English'|translate}}</a><br />
-			<a href="" ng-click="app.changeLang('fr')" ng-class="{selected: app.lang == 'fr'}">{{'French'|translate}}</a>
-		</div>
-	</div>
-	<div class="main">
-		<table>
-			<tr>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th colspan="7" class="stat_base">base</th>
-				<th colspan="7" class="stat_max">max</th>
-				<th colspan="7" class="stat_synergy">synergy</th>
-			</tr>
-			<tr>
-				<th>name</th>
-				<th>origin</th>
-				<th>rarity</th>
-				<th>type</th>
+<div class="menu">
+    <div ng-hide="app.loaded">{{'Loading'|translate}}</div>
+    <div class="section search">
+        <input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)"
+               ng-model="app.typingName"/>
+    </div>
+    <div class="section suggested">
+        <div ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}">
+            {{suggest.name.formatted()}}
+        </div>
+    </div>
+    <div class="section optimize">
+        <div class="title">{{'Actions'|translate}}</div>
+        <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a>
+    </div>
+    <div class="section language">
+        <div class="title">{{'Languages'|translate}}</div>
+        <a href="" ng-click="app.changeLang('en')"
+           ng-class="{selected: app.lang == 'en'}">{{'English'|translate}}</a><br/>
+        <a href="" ng-click="app.changeLang('fr')" ng-class="{selected: app.lang == 'fr'}">{{'French'|translate}}</a>
+    </div>
+</div>
+<div class="main">
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th colspan="7" class="stat_base">current</th>
+            <th colspan="7" class="stat_synergy">synergy</th>
+        </tr>
+        <tr>
+            <th>name</th>
+            <th>origin</th>
+            <th>rarity</th>
+            <th>type</th>
+            <th>level</th>
 
-				<th class="stat_base">atk</th>
-				<th class="stat_base">mag</th>
-				<th class="stat_base">acc</th>
-				<th class="stat_base">def</th>
-				<th class="stat_base">res</th>
-				<th class="stat_base">eva</th>
-				<th class="stat_base">mnd</th>
+            <th class="stat_base">atk</th>
+            <th class="stat_base">mag</th>
+            <th class="stat_base">acc</th>
+            <th class="stat_base">def</th>
+            <th class="stat_base">res</th>
+            <th class="stat_base">eva</th>
+            <th class="stat_base">mnd</th>
 
-				<th class="stat_max">atk</th>
-				<th class="stat_max">mag</th>
-				<th class="stat_max">acc</th>
-				<th class="stat_max">def</th>
-				<th class="stat_max">res</th>
-				<th class="stat_max">eva</th>
-				<th class="stat_max">mnd</th>
+            <th class="stat_synergy">atk</th>
+            <th class="stat_synergy">mag</th>
+            <th class="stat_synergy">acc</th>
+            <th class="stat_synergy">def</th>
+            <th class="stat_synergy">res</th>
+            <th class="stat_synergy">eva</th>
+            <th class="stat_synergy">mnd</th>
+        </tr>
+        <tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
+            <td>{{item.name.translated}}</td>
+            <td>{{item.origin}}</td>
+            <td>{{item.rarity}}</td>
+            <td>{{item.type}}</td>
+            <td><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
 
-				<th class="stat_synergy">atk</th>
-				<th class="stat_synergy">mag</th>
-				<th class="stat_synergy">acc</th>
-				<th class="stat_synergy">def</th>
-				<th class="stat_synergy">res</th>
-				<th class="stat_synergy">eva</th>
-				<th class="stat_synergy">mnd</th>
-			</tr>
-			<tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
-				<td>{{item.name.translated}}</td>
-				<td>{{item.origin}}</td>
-				<td>{{item.rarity}}</td>
-				<td>{{item.type}}</td>
+            <td class="stat_base">{{item.curr('atk')}}</td>
+            <td class="stat_base">{{item.curr('mag')}}</td>
+            <td class="stat_base">{{item.curr('acc')}}</td>
+            <td class="stat_base">{{item.curr('def')}}</td>
+            <td class="stat_base">{{item.curr('res')}}</td>
+            <td class="stat_base">{{item.curr('eva')}}</td>
+            <td class="stat_base">{{item.curr('mnd')}}</td>
 
-				<td class="stat_base">{{item.base.atk}}</td>
-				<td class="stat_base">{{item.base.mag}}</td>
-				<td class="stat_base">{{item.base.acc}}</td>
-				<td class="stat_base">{{item.base.def}}</td>
-				<td class="stat_base">{{item.base.ref}}</td>
-				<td class="stat_base">{{item.base.eva}}</td>
-				<td class="stat_base">{{item.base.mnd}}</td>
+            <td class="stat_synergy">{{item.syn('atk')}}</td>
+            <td class="stat_synergy">{{item.syn('mag')}}</td>
+            <td class="stat_synergy">{{item.syn('acc')}}</td>
+            <td class="stat_synergy">{{item.syn('def')}}</td>
+            <td class="stat_synergy">{{item.syn('res')}}</td>
+            <td class="stat_synergy">{{item.syn('eva')}}</td>
+            <td class="stat_synergy">{{item.syn('mnd')}}</td>
 
-				<td class="stat_max">{{item.max.atk}}</td>
-				<td class="stat_max">{{item.max.mag}}</td>
-				<td class="stat_max">{{item.max.acc}}</td>
-				<td class="stat_max">{{item.max.def}}</td>
-				<td class="stat_max">{{item.max.ref}}</td>
-				<td class="stat_max">{{item.max.eva}}</td>
-				<td class="stat_max">{{item.max.mnd}}</td>
-
-				<td class="stat_synergy">{{item.synergy.atk}}</td>
-				<td class="stat_synergy">{{item.synergy.mag}}</td>
-				<td class="stat_synergy">{{item.synergy.acc}}</td>
-				<td class="stat_synergy">{{item.synergy.def}}</td>
-				<td class="stat_synergy">{{item.synergy.ref}}</td>
-				<td class="stat_synergy">{{item.synergy.eva}}</td>
-				<td class="stat_synergy">{{item.synergy.mnd}}</td>
-
-				<td><a href="" ng-click="app.removeItem(item)"><i class="fa fa-times"></i></a></td>
-			</tr>
-		</table>
-	</div>
+            <td><a href="" ng-click="app.removeItem(item)"><i class="fa fa-times"></i></a></td>
+        </tr>
+    </table>
+</div>
 </body>
 
 </html>

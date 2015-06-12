@@ -67,7 +67,7 @@ function AppController($http, $scope, $sce, $translate) {
             // todo handle error loading
         });
 
-    this.afterRefreshLocales = function() {
+    this.afterRefreshLocales = function () {
         self.loadInventory();
     };
     this.refreshLocales();
@@ -248,35 +248,41 @@ AppController.prototype.changeLang = function (lang) {
 
 };
 
-AppController.prototype.loadInventory = function() {
+AppController.prototype.loadInventory = function () {
 
     if (!localStorage.inventory) {
         return;
     }
 
-    var inventory = localStorage.inventory.split(',');
+    var items = JSON.parse(localStorage.inventory);
 
     this.inventory = [];
-    for (var i in inventory) {
-        var n = inventory[i];
+    for (var i in items) {
+        var item = items[i];
+        var n = item.n;
         var translatedName = this.locales[n] ? this.locales[n] : n;
-        var name = new Name(this, inventory[i], translatedName);
-        this.inventory.push(new Item(this, name));
+        var name = new Name(this, n, translatedName);
+        var final = new Item(this, name);
+        final.level = item.l;
+        this.inventory.push(final);
     }
 };
 
-AppController.prototype.saveInventory = function() {
+AppController.prototype.saveInventory = function () {
 
     var items = [];
     for (var i in this.inventory) {
-        items.push(this.inventory[i].name.original);
+        var item = this.inventory[i];
+        items.push({n: item.name.original, l: item.level});
     }
 
-    localStorage.inventory = items.join(',');
+    console.log(items);
+
+    localStorage.inventory = JSON.stringify(items);
     console.log(localStorage.inventory);
 };
 
-AppController.prototype.loadLang = function() {
+AppController.prototype.loadLang = function () {
     if (localStorage.lang) {
         this.lang = localStorage.lang;
     } else {
@@ -285,6 +291,6 @@ AppController.prototype.loadLang = function() {
     this.$translate.use(this.lang);
 };
 
-AppController.prototype.saveLang = function() {
+AppController.prototype.saveLang = function () {
     localStorage.lang = this.lang;
 };

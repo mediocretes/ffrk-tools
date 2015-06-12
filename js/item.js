@@ -1,5 +1,5 @@
 function Item(app, name) {
-    var infos = _.find(app.items, function(x) {
+    var infos = _.find(app.items, function (x) {
         return x.indexOf(name.original) > -1;
     });
 
@@ -15,6 +15,7 @@ function Item(app, name) {
     this.name = name;
     this.origin = origins[1];
     this.rarity = d[3];
+    this.level = (this.rarity - 1) * 5;
     this.type = d[2];
     this.toRemove = false;
     this.base = {
@@ -47,10 +48,41 @@ function Item(app, name) {
 
 }
 
-Item.prototype.betterThan = function(other) {
+Item.prototype.betterThan = function (other) {
     var diff = 0;
     for (var i in this.synergizeStats) {
-        diff += (this.synergizeStats[i] - other.synergizeStats[i]); 
+        diff += (this.synergizeStats[i] - other.synergizeStats[i]);
     }
     return (diff > 0);
+};
+
+Item.prototype.curr = function (stat) {
+    var start = (this.base[stat] == '') ? 0 : parseInt(this.base[stat]);
+    var max = (this.max[stat] == '') ? 0 : parseInt(this.max[stat]);
+    var level = parseInt(this.level);
+    var maxLevel = (parseInt(this.rarity) + 1) * 5;
+
+    if (max == '') {
+        return '';
+    } else {
+        return start + Math.ceil((max - start) * ((level - 1) / (maxLevel - 1)));
+    }
+};
+
+Item.prototype.syn = function (stat) {
+    var start = (this.base[stat] == '') ? 0 : parseInt(this.base[stat]);
+    var max = (this.max[stat] == '') ? 0 : parseInt(this.max[stat]);
+    var level = parseInt(this.level);
+    var maxLevel = (parseInt(this.rarity) + 1) * 5;
+
+    var bonusLevel = (Math.floor(this.level / 5) + 1) * 10;
+    if (this.level < 5) {
+        bonusLevel += 5;
+    }
+
+    if (max == '') {
+        return '';
+    } else {
+        return start + Math.ceil((max - start) * ((level - 1 + bonusLevel) / (maxLevel - 1)));
+    }
 };

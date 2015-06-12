@@ -107,8 +107,6 @@ AppController.prototype.complete = function () {
 
 AppController.prototype.csvParse = function (csvData) {
     var lines = csvData.split("\n");
-    lines.shift();
-    lines.shift();
     this.items = [];
     this.itemNames = [];
     for (var i in lines) {

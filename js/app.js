@@ -199,6 +199,10 @@ AppController.prototype.optimize = function () {
     var organized = {};
     for (var i in this.inventory) {
         var item = this.inventory[i];
+        if (item.type == 'Accessory') {
+            continue;
+        }
+        item.toRemove = false;
         if (organized[item.type]) {
             if (organized[item.type][item.origin]) {
                 var other = organized[item.type][item.origin];

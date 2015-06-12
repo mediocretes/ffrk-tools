@@ -2,5 +2,15 @@
 	"Actions": "Actions",
 	"Languages": "Langues",
 	"English": "Anglais",
-	"French": "Français"
+	"French": "Français",
+	"Optimize": "Optimiser",
+	"Reset": "Réinitialiser",
+	"Add item": "Ajouter un équipement ici",
+	"current": "Actuel",
+	"synergy": "Synergie",
+	"name": "nom",
+	"origin": "monde",
+	"rarity": "rareté",
+	"type": "type",
+	"level": "niveau"
 }

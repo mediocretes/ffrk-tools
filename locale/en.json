@@ -1,6 +1,15 @@
 {
-	"Actions": "Actions",
-	"Languages": "Languages",
-	"English": "English",
-	"French": "French"
+    "Actions": "Actions",
+    "Languages": "Languages",
+    "English": "English",
+    "Optimize": "Optimize",
+    "Reset": "Reset",
+    "Add item": "Add an item here",
+    "current": "Current",
+    "synergy": "Synergy",
+    "name": "name",
+    "origin": "realm",
+    "rarity": "rarity",
+    "type": "type",
+    "level": "level"
 }

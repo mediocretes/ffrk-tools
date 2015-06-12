@@ -226,15 +226,20 @@ AppController.prototype.optimize = function () {
 };
 
 AppController.prototype.reset = function () {
-    localStorage.clear();
-    this.inventory = [];
-    this.suggested = [];
+    if (confirm('Are you sure?')) {
+        localStorage.clear();
+        this.inventory = [];
+        this.suggested = [];
+    }
     return false;
 };
 
 AppController.prototype.removeItem = function (item) {
-    _.remove(this.inventory, item);
-    this.saveInventory();
+    if (confirm('Are you sure?')) {
+        _.remove(this.inventory, item);
+        this.saveInventory();
+    }
+    return false;
 };
 
 AppController.prototype.changeLang = function (lang) {

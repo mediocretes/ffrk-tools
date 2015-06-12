@@ -19,7 +19,7 @@
 <div class="menu">
     <div ng-hide="app.loaded">{{'Loading'|translate}}</div>
     <div class="section search">
-        <input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)"
+        <input type="text" placeholder="{{'Add item'|translate}}" ng-keyup="app.findSuggestions($event)"
                ng-model="app.typingName"/>
     </div>
     <div class="section suggested">
@@ -47,15 +47,15 @@
             <th></th>
             <th></th>
             <th></th>
-            <th colspan="7" class="stat_base">current</th>
-            <th colspan="7" class="stat_synergy">synergy</th>
+            <th colspan="7" class="stat_base">{{'current'|translate}}</th>
+            <th colspan="7" class="stat_synergy">{{'synergy'|translate}}</th>
         </tr>
         <tr>
-            <th>name</th>
-            <th>origin</th>
-            <th>rarity</th>
-            <th>type</th>
-            <th>level</th>
+            <th>{{'name'|translate}}</th>
+            <th>{{'origin'|translate}}</th>
+            <th>{{'rarity'|translate}}</th>
+            <th>{{'type'|translate}}</th>
+            <th>{{'level'|translate}}</th>
 
             <th class="stat_base">atk</th>
             <th class="stat_base">mag</th>

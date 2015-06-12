@@ -29,7 +29,8 @@
     </div>
     <div class="section optimize">
         <div class="title">{{'Actions'|translate}}</div>
-        <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a>
+        <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a><br />
+        <a href="" ng-click="app.reset()">{{'Reset'|translate}}</a>
     </div>
     <div class="section language">
         <div class="title">{{'Languages'|translate}}</div>
@@ -77,7 +78,7 @@
             <td>{{item.origin}}</td>
             <td>{{item.rarity}}</td>
             <td>{{item.type}}</td>
-            <td><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
+            <td class="level"><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
 
             <td class="stat_base">{{item.curr('atk')}}</td>
             <td class="stat_base">{{item.curr('mag')}}</td>

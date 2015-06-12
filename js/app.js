@@ -217,6 +217,13 @@ AppController.prototype.optimize = function () {
 
 };
 
+AppController.prototype.reset = function () {
+    localStorage.clear();
+    this.inventory = [];
+    this.suggested = [];
+    return false;
+};
+
 AppController.prototype.removeItem = function (item) {
     _.remove(this.inventory, item);
     this.saveInventory();

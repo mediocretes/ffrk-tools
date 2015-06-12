@@ -23,9 +23,9 @@
                ng-model="app.typingName"/>
     </div>
     <div class="section suggested">
-        <div ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}">
+        <a href="" ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}" ng-click="app.chooseSuggest(suggest)">
             {{suggest.name.formatted()}}
-        </div>
+        </a>
     </div>
     <div class="section optimize">
         <div class="title">{{'Actions'|translate}}</div>

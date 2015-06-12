@@ -182,6 +182,12 @@ AppController.prototype.findSuggestions = function (ev) {
     }
 };
 
+AppController.prototype.chooseSuggest = function (suggest) {
+    this.inventory.push(new Item(this, suggest.name));
+    this.saveInventory();
+    return false;
+};
+
 AppController.prototype.buildRegex = function () {
     var regex;
     regex = this.typingName.split('');

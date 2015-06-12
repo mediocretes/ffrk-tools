@@ -23,12 +23,16 @@ body {
 }
 
 .suggested {
-    height: 200px;
+    height: 220px;
     font-size: 12px;
 }
 
 .suggested .selected {
     background-color: #ccc;
+}
+
+.suggested a {
+    display: block;
 }
 
 .toRemove {

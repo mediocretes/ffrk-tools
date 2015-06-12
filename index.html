@@ -3,6 +3,7 @@
 <head>
 	<title>FF Record Keeper - Inventory Optimiser</title>
 	<link rel=stylesheet type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
 	<script src="/bower_components/angular/angular.min.js"></script>
 	<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 	<script src="/bower_components/angular-translate/angular-translate.min.js"></script>
@@ -15,24 +16,27 @@
 </head>
 
 <body ng-controller="AppController as app">
-	<div ng-hide="app.loaded">{{'Loading'|translate}}</div>
-	<div class="section search">
-		<input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)" ng-model="app.typingName" />
-	</div>	
-	<div class="section suggested">
-		{{'Suggestions'|translate}}:
-		<div ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}">
-			{{suggest.name.formatted()}}
+	<div class="menu">
+		<div ng-hide="app.loaded">{{'Loading'|translate}}</div>
+		<div class="section search">
+			<input type="text" placeholder="Add an item here" ng-keyup="app.findSuggestions($event)" ng-model="app.typingName" />
+		</div>	
+		<div class="section suggested">
+			<div ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}">
+				{{suggest.name.formatted()}}
+			</div>
+		</div>
+		<div class="section optimize">
+			<div class="title">{{'Actions'|translate}}</div>
+			<a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a>
+		</div>
+		<div class="section language">
+			<div class="title">{{'Languages'|translate}}</div>
+			<a href="" ng-click="app.changeLang('en')" ng-class="{selected: app.lang == 'en'}">{{'English'|translate}}</a><br />
+			<a href="" ng-click="app.changeLang('fr')" ng-class="{selected: app.lang == 'fr'}">{{'French'|translate}}</a>
 		</div>
 	</div>
-	<div class="section optimize">
-		<button ng-click="app.optimize()">OPTIMIZE</button>
-	</div>
-	<div class="section language">
-		<button ng-click="app.changeLang('en')">ENGLISH</button>
-		<button ng-click="app.changeLang('fr')">FRENCH</button>
-	</div>
-	<div>
+	<div class="main">
 		<table>
 			<tr>
 				<th></th>
@@ -103,7 +107,7 @@
 				<td class="stat_synergy">{{item.synergy.eva}}</td>
 				<td class="stat_synergy">{{item.synergy.mnd}}</td>
 
-				<td><span ng-click="app.removeItem(item)">[r]</span></td>
+				<td><a href="" ng-click="app.removeItem(item)"><i class="fa fa-times"></i></a></td>
 			</tr>
 		</table>
 	</div>

@@ -1,4 +1,33 @@
-.selected {
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Dosis", sans-serif;
+}
+
+.menu {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    text-align: right;
+    border-right: 1px solid #999;
+    padding-top: 10px;
+}
+
+.main {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    padding-top: 10px;
+}
+
+.suggested {
+    height: 200px;
+    font-size: 12px;
+}
+
+.suggested .selected {
     background-color: #ccc;
 }
 
@@ -10,6 +39,27 @@
     display: inline-block;
     width: 200px;
     vertical-align: top;
+}
+
+.title {
+    border-top: 1px solid #999;
+    margin-top: 50px;
+    color: #999;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.selected {
+    font-weight: bold;
 }
 
 table {
@@ -28,4 +78,25 @@ table {
 
 .stat_synergy {
     background-color: #eef;
+}
+
+input {
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    margin-right: -1px;
+    outline: 0;
+    width: 100%;
+    font-family: "Dosis", sans-serif;
+    padding: 5px;
+    text-align: right;
+}
+
+input:focus {
+    border-color: #000;
+}
+
+.fa:hover {
+    transition: all 0.1s;
+    transform: rotate(90deg);
 }

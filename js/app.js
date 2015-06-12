@@ -54,7 +54,7 @@ function AppController($http, $scope, $sce, $translate) {
 
     this.typingName = '';
 
-    this.lang = this.$translate.preferredLanguage();
+    this.loadLang();
     this.locales = {};
 
     this.completed = 2;
@@ -67,7 +67,9 @@ function AppController($http, $scope, $sce, $translate) {
             // todo handle error loading
         });
 
-    this.afterRefreshLocales = null;
+    this.afterRefreshLocales = function() {
+        self.loadInventory();
+    };
     this.refreshLocales();
 
 }
@@ -156,6 +158,7 @@ AppController.prototype.findSuggestions = function (ev) {
         }
 
         this.inventory.push(new Item(this, this.suggested[this.selected].name));
+        this.saveInventory();
 
         eventCancel(ev);
     }
@@ -164,10 +167,10 @@ AppController.prototype.findSuggestions = function (ev) {
         this.suggested = [];
     } else {
         this.suggested = [];
-        // find the 5 first matches
+        // find the 15 first matches
         var i = 0;
         var nbr = 0;
-        while (i < this.itemNames.length && nbr < 5) {
+        while (i < this.itemNames.length && nbr < 15) {
             var name = this.itemNames[i];
             var regex = this.buildRegex();
             if (name.translated.match(regex)) {
@@ -210,10 +213,13 @@ AppController.prototype.optimize = function () {
         }
     }
 
+    return false;
+
 };
 
 AppController.prototype.removeItem = function (item) {
     _.remove(this.inventory, item);
+    this.saveInventory();
 };
 
 AppController.prototype.changeLang = function (lang) {
@@ -236,5 +242,49 @@ AppController.prototype.changeLang = function (lang) {
             }
         };
     this.refreshLocales();
+    this.saveLang();
 
+    return false;
+
+};
+
+AppController.prototype.loadInventory = function() {
+
+    if (!localStorage.inventory) {
+        return;
+    }
+
+    var inventory = localStorage.inventory.split(',');
+
+    this.inventory = [];
+    for (var i in inventory) {
+        var n = inventory[i];
+        var translatedName = this.locales[n] ? this.locales[n] : n;
+        var name = new Name(this, inventory[i], translatedName);
+        this.inventory.push(new Item(this, name));
+    }
+};
+
+AppController.prototype.saveInventory = function() {
+
+    var items = [];
+    for (var i in this.inventory) {
+        items.push(this.inventory[i].name.original);
+    }
+
+    localStorage.inventory = items.join(',');
+    console.log(localStorage.inventory);
+};
+
+AppController.prototype.loadLang = function() {
+    if (localStorage.lang) {
+        this.lang = localStorage.lang;
+    } else {
+        this.lang = this.$translate.preferredLanguage();
+    }
+    this.$translate.use(this.lang);
+};
+
+AppController.prototype.saveLang = function() {
+    localStorage.lang = this.lang;
 };

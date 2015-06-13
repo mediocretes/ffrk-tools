@@ -4,7 +4,8 @@ function Name(app, name, translatedName) {
     this.translated = translatedName;
 }
 
-Name.prototype.formatted = function (regex) {
+Name.prototype.formatted = function () {
+    var regex = this.app.buildRegex();
     var res = this.translated.replace(regex, function (x) {
         return '<b>' + x + '</b>';
     });

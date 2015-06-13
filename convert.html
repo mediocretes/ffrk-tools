@@ -40,9 +40,8 @@
                     item = new Item();
                     item.name = line[3];
                     item.type = line[5].replace('Type: ', '');
-                    item.rarity = parseInt(line[6]);
-                    item.index = parseInt(line[7]);
-                    item.url = line[8];
+                    item.rarity = parseInt(line[7]);
+                    item.url = line[9];
 
                     if (item.type != 'Accessory') {
                         item.addStat(line[0], line[1], line[2]);
@@ -109,7 +108,6 @@
     Item.prototype.export = function () {
         var tab = [];
 
-        tab.push(this.index);
         tab.push(this.name);
         tab.push(this.type);
         tab.push(this.rarity);

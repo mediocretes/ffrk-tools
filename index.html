@@ -23,9 +23,8 @@
                ng-model="app.typingName"/>
     </div>
     <div class="section suggested">
-        <a href="" ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}"
+        <a href="" ng-repeat="suggest in app.suggested" ng-bind-html="suggest.name.formatted()" ng-class="{selected: $index == app.selected}"
            ng-click="app.chooseSuggest(suggest)">
-            {{suggest.name.formatted()}}
         </a>
     </div>
     <div class="section optimize">
@@ -157,7 +156,7 @@
             </th>
         </tr>
         <tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
-            <td>{{item.name.translated}}</td>
+            <td><a href="{{item.url}}" target="_blank">{{item.name.translated}}</a></td>
             <td>{{item.origin}}</td>
             <td>{{item.rarity}}</td>
             <td>{{item.type}}</td>

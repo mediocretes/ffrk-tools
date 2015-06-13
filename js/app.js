@@ -118,7 +118,7 @@ AppController.prototype.csvParse = function (csvData) {
     for (var i in lines) {
         var infos = lines[i].split(',');
 
-        var name = infos[1];
+        var name = infos[0];
         var translatedName = this.locales[name] ? this.locales[name] : name;
 
         this.items.push(lines[i]);
@@ -161,7 +161,7 @@ AppController.prototype.findSuggestions = function (ev) {
             eventCancel(ev);
         }
 
-        this.addItem(new Item(this, this.suggested[this.selected].name))
+        this.addItem(new Item(this, this.suggested[this.selected].name));
 
         eventCancel(ev);
     }

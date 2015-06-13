@@ -101,11 +101,33 @@ input:focus {
     border-color: #000;
 }
 
-.fa:hover {
+.remove .fa:hover {
     transition: all 0.1s;
     transform: rotate(90deg);
 }
 
 .level {
     width: 52px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    background-color: rgba(22,22,22,0.5);
+}
+.box {
+    position: relative;
+    margin: 0 auto;
+    top: 25%;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }

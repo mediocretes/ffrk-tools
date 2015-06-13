@@ -56,6 +56,10 @@ function AppController($http, $scope, $sce, $translate) {
 
     this.orders = [];
 
+    this.box = null;
+    this.importArea = '';
+    this.exportArea = '';
+
     this.loadLang();
     this.locales = {};
 
@@ -225,13 +229,29 @@ AppController.prototype.optimize = function () {
 
 };
 
+AppController.prototype.showBox = function (name) {
+    this.box = name;
+    if (name == 'import') {
+        this.importArea = '';
+    }
+    return false;
+};
+
+AppController.prototype.closeBox = function () {
+    this.box = null;
+    return false;
+};
+
 AppController.prototype.import = function () {
-    console.log('Not implemented yet!');
+    this.loadInventory(this.importArea);
+    this.saveInventory();
+    this.closeBox();
     return false;
 };
 
 AppController.prototype.export = function () {
-    console.log(localStorage.inventory);
+    this.showBox('export');
+    this.exportArea = localStorage.inventory;
     return false;
 };
 
@@ -269,14 +289,11 @@ AppController.prototype.changeOrder = function (field) {
     else if (!order) {
         this.orders.push({field: field, asc: true});
     }
-    console.log(this.orders);
     this.saveOrder();
     this.refreshOrder();
 };
 
 AppController.prototype.refreshOrder = function (field) {
-    //var fields = _.pluck(this.orders, 'field');
-
     var fields = [];
     for (var i in this.orders) {
         var order = this.orders[i];
@@ -351,13 +368,15 @@ AppController.prototype.changeLang = function (lang) {
 
 };
 
-AppController.prototype.loadInventory = function () {
+AppController.prototype.loadInventory = function (data) {
 
-    if (!localStorage.inventory) {
+    data = data ? data : localStorage.inventory;
+
+    if (!data && !localStorage.inventory) {
         return;
     }
 
-    var items = JSON.parse(localStorage.inventory);
+    var items = JSON.parse(data);
 
     this.inventory = [];
     for (var i in items) {

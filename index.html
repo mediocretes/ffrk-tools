@@ -31,8 +31,8 @@
     <div class="section optimize">
         <div class="title">{{'Actions'|translate}}</div>
         <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a><br/>
-        <a href="" ng-click="app.import()">{{'Import'|translate}} (beta)</a><br/>
-        <a href="" ng-click="app.export()">{{'Export'|translate}} (beta)</a><br/>
+        <a href="" ng-click="app.showBox('import')">{{'Import'|translate}}</a><br/>
+        <a href="" ng-click="app.export()">{{'Export'|translate}}</a><br/>
         <a href="" ng-click="app.reset()">{{'Reset'|translate}}</a>
     </div>
     <div class="section language">
@@ -179,10 +179,25 @@
             <td class="stat_synergy">{{item.syn('eva')}}</td>
             <td class="stat_synergy">{{item.syn('mnd')}}</td>
 
-            <td><a href="" ng-click="app.removeItem(item)"><i class="fa fa-times"></i></a></td>
+            <td class="remove"><a href="" ng-click="app.removeItem(item)"><i class="fa fa-times"></i></a></td>
         </tr>
     </table>
 </div>
+
+<div class="wrapper" ng-hide="app.box == null">
+    <div class="box" ng-show="app.box == 'import'">
+        Import: <br />
+        <textarea ng-model="app.importArea"></textarea><br />
+        <button ng-click="app.import()">Import</button>
+        <div class="close" ng-click="app.closeBox()">X</div>
+    </div>
+    <div class="box" ng-show="app.box == 'export'">
+        Export: <br />
+        <textarea>{{app.exportArea}}</textarea>
+        <div class="close" ng-click="app.closeBox()">X</div>
+    </div>
+</div>
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 function Item(app, name) {
     var infos = _.find(app.items, function (x) {
-        return x.indexOf(name.original) > -1;
+        return x.indexOf(name.original) === 0;
     });
 
     if (!infos) throw new Error('No item found!');

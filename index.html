@@ -23,13 +23,16 @@
                ng-model="app.typingName"/>
     </div>
     <div class="section suggested">
-        <a href="" ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}" ng-click="app.chooseSuggest(suggest)">
+        <a href="" ng-repeat="suggest in app.suggested" ng-class="{selected: $index == app.selected}"
+           ng-click="app.chooseSuggest(suggest)">
             {{suggest.name.formatted()}}
         </a>
     </div>
     <div class="section optimize">
         <div class="title">{{'Actions'|translate}}</div>
-        <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a><br />
+        <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a><br/>
+        <a href="" ng-click="app.import()">{{'Import'|translate}} (beta)</a><br/>
+        <a href="" ng-click="app.export()">{{'Export'|translate}} (beta)</a><br/>
         <a href="" ng-click="app.reset()">{{'Reset'|translate}}</a>
     </div>
     <div class="section language">
@@ -51,27 +54,107 @@
             <th colspan="7" class="stat_synergy">{{'synergy'|translate}}</th>
         </tr>
         <tr>
-            <th>{{'name'|translate}}</th>
-            <th>{{'origin'|translate}}</th>
-            <th>{{'rarity'|translate}}</th>
-            <th>{{'type'|translate}}</th>
-            <th>{{'level'|translate}}</th>
+            <th><a href="" ng-click="app.changeOrder('name')">{{'name'|translate}}</a></th>
+            <th><a href="" ng-click="app.changeOrder('origin')">{{'origin'|translate}}</a></th>
+            <th><a href="" ng-click="app.changeOrder('rarity')">{{'rarity'|translate}}</a></th>
+            <th><a href="" ng-click="app.changeOrder('type')">{{'type'|translate}}</a></th>
+            <th><a href="" ng-click="app.changeOrder('level')">{{'level'|translate}}</a></th>
 
-            <th class="stat_base">atk</th>
-            <th class="stat_base">mag</th>
-            <th class="stat_base">acc</th>
-            <th class="stat_base">def</th>
-            <th class="stat_base">res</th>
-            <th class="stat_base">eva</th>
-            <th class="stat_base">mnd</th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:atk')">atk</a></th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:mag')">mag</a></th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:acc')">acc</a></th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:def')">def</a></th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:res')">res</a></th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:eva')">eva</a></th>
+            <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:mnd')">mnd</a></th>
 
-            <th class="stat_synergy">atk</th>
-            <th class="stat_synergy">mag</th>
-            <th class="stat_synergy">acc</th>
-            <th class="stat_synergy">def</th>
-            <th class="stat_synergy">res</th>
-            <th class="stat_synergy">eva</th>
-            <th class="stat_synergy">mnd</th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:atk')">atk</a></th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:mag')">mag</a></th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:acc')">acc</a></th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:def')">def</a></th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:res')">res</a></th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:eva')">eva</a></th>
+            <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:mnd')">mnd</a></th>
+        </tr>
+        <tr>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('name', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('name', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('origin', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('origin', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('rarity', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('rarity', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('type', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('type', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('level', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('level', false)"></span>
+            </th>
+
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:atk', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:atk', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:mag', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:mag', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:acc', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:acc', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:def', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:def', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:res', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:res', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:eva', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:eva', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('curr:mnd', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('curr:mnd', false)"></span>
+            </th>
+
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:atk', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:atk', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:mag', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:mag', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:acc', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:acc', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:def', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:def', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:res', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:res', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:eva', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:eva', false)"></span>
+            </th>
+            <th>
+                <span class="fa fa-caret-down" ng-show="app.isOrder('syn:mnd', true)"></span>
+                <span class="fa fa-caret-up" ng-show="app.isOrder('syn:mnd', false)"></span>
+            </th>
         </tr>
         <tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
             <td>{{item.name.translated}}</td>

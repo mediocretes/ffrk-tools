@@ -54,6 +54,8 @@ function AppController($http, $scope, $sce, $translate) {
 
     this.typingName = '';
 
+    this.orders = [];
+
     this.loadLang();
     this.locales = {};
 
@@ -155,8 +157,7 @@ AppController.prototype.findSuggestions = function (ev) {
             eventCancel(ev);
         }
 
-        this.inventory.push(new Item(this, this.suggested[this.selected].name));
-        this.saveInventory();
+        this.addItem(new Item(this, this.suggested[this.selected].name))
 
         eventCancel(ev);
     }
@@ -181,8 +182,7 @@ AppController.prototype.findSuggestions = function (ev) {
 };
 
 AppController.prototype.chooseSuggest = function (suggest) {
-    this.inventory.push(new Item(this, suggest.name));
-    this.saveInventory();
+    this.addItem(new Item(this, suggest.name));
     return false;
 };
 
@@ -225,6 +225,16 @@ AppController.prototype.optimize = function () {
 
 };
 
+AppController.prototype.import = function () {
+    console.log('Not implemented yet!');
+    return false;
+};
+
+AppController.prototype.export = function () {
+    console.log(localStorage.inventory);
+    return false;
+};
+
 AppController.prototype.reset = function () {
     if (confirm('Are you sure?')) {
         localStorage.clear();
@@ -234,12 +244,85 @@ AppController.prototype.reset = function () {
     return false;
 };
 
+AppController.prototype.addItem = function (item) {
+    this.inventory.push(item);
+    this.refreshOrder();
+    this.saveInventory();
+};
+
 AppController.prototype.removeItem = function (item) {
     if (confirm('Are you sure?')) {
         _.remove(this.inventory, item);
         this.saveInventory();
     }
     return false;
+};
+
+AppController.prototype.changeOrder = function (field) {
+    var order = _.find(this.orders, {field: field});
+    if (order && order.asc) {
+        order.asc = false;
+    }
+    else if (order && !order.asc) {
+        _.remove(this.orders, order);
+    }
+    else if (!order) {
+        this.orders.push({field: field, asc: true});
+    }
+    console.log(this.orders);
+    this.saveOrder();
+    this.refreshOrder();
+};
+
+AppController.prototype.refreshOrder = function (field) {
+    //var fields = _.pluck(this.orders, 'field');
+
+    var fields = [];
+    for (var i in this.orders) {
+        var order = this.orders[i];
+        fields.push((function (order) {
+            return function (item) {
+                var customField;
+                var parts = order.field.split(':');
+                if (parts.length == 1) {
+                    if (order.field == 'name') {
+                        customField = item.name.translated;
+                    } else {
+                        customField = item[order.field];
+                    }
+                } else {
+                    customField = item[parts[0]](parts[1]);
+                }
+                return customField;
+            }
+        })(order));
+    }
+
+    var ascs = _.pluck(this.orders, 'asc');
+
+    if (fields.length > 0) {
+        this.inventory = _.sortByOrder(this.inventory, fields, ascs);
+    } else {
+        this.inventory = _.sortBy(this.inventory, function (x) {
+            return x.name.translated;
+        });
+    }
+};
+
+AppController.prototype.loadOrder = function () {
+    if (localStorage.orders) {
+        this.orders = JSON.parse(localStorage.orders);
+        this.refreshOrder();
+    }
+};
+
+AppController.prototype.saveOrder = function () {
+    localStorage.orders = JSON.stringify(this.orders);
+};
+
+AppController.prototype.isOrder = function (field, asc) {
+    var order = _.find(this.orders, {field: field});
+    return (order) ? (order.asc == asc) : false;
 };
 
 AppController.prototype.changeLang = function (lang) {
@@ -286,6 +369,7 @@ AppController.prototype.loadInventory = function () {
         final.level = item.l;
         this.inventory.push(final);
     }
+    this.loadOrder();
 };
 
 AppController.prototype.saveInventory = function () {
@@ -296,10 +380,7 @@ AppController.prototype.saveInventory = function () {
         items.push({n: item.name.original, l: item.level});
     }
 
-    console.log(items);
-
     localStorage.inventory = JSON.stringify(items);
-    console.log(localStorage.inventory);
 };
 
 AppController.prototype.loadLang = function () {

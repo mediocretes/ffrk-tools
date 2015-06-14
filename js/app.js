@@ -271,10 +271,8 @@ AppController.prototype.addItem = function (item) {
 };
 
 AppController.prototype.removeItem = function (item) {
-    if (confirm('Are you sure?')) {
-        _.remove(this.inventory, item);
-        this.saveInventory();
-    }
+    _.remove(this.inventory, item);
+    this.saveInventory();
     return false;
 };
 

@@ -13,7 +13,7 @@ function Item(app, name) {
 
     this.index = _.uniqueId();
     this.name = name;
-    this.origin = origins[1];
+    this.origin = origins ? origins[1]: '';
     this.rarity = d[2];
     this.url = d[3];
     this.level = (this.rarity - 1) * 5;

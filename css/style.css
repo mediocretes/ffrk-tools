@@ -23,6 +23,11 @@ body {
     padding-bottom: 10px;
 }
 
+.logo {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 .suggested {
     height: 220px;
     font-size: 12px;

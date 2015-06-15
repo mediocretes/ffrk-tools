@@ -13,5 +13,7 @@
     "origin": "realm",
     "rarity": "rarity",
     "type": "type",
-    "level": "level"
+    "level": "level",
+    "Last commits": "Last commits",
+    "New issue": "Bug or suggestion ?"
 }

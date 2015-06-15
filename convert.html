@@ -40,8 +40,8 @@
                     item = new Item();
                     item.name = line[3];
                     item.type = line[5].replace('Type: ', '');
-                    item.rarity = parseInt(line[7]);
-                    item.url = line[9];
+                    item.rarity = parseInt(line[6]);
+                    item.url = line[8];
 
                     if (item.type != 'Accessory') {
                         item.addStat(line[0], line[1], line[2]);

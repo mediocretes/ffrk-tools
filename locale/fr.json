@@ -14,5 +14,7 @@
 	"origin": "monde",
 	"rarity": "rareté",
 	"type": "type",
-	"level": "niveau"
+	"level": "niveau",
+	"Last commits": "Derniers commits",
+    "New issue": "Bug ou suggestion ?"
 }

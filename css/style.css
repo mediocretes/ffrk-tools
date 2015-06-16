@@ -121,6 +121,7 @@ input:focus {
     top: 0;
     position: absolute;
     background-color: rgba(22,22,22,0.5);
+    display: none;
 }
 .box {
     position: relative;

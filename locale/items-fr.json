@@ -53,6 +53,7 @@
 "Silver Bangle (XIII)":"Bracelet d'argent (XIII)",
 "Fire Ring (VII)":"Anneau feu (VII)",
 "Ice Ring (VII)":"Anneau glace (VII)",
+"Magic Armlet (IX)":"Brassard enchanté (IX)",
 
 "Danjuro (XII)":"Danjuro (XII)",
 "Behemoth Knife":"Lame béhémoth",
@@ -80,8 +81,10 @@
 "Guard Stick (VII)":"Bâton de garde (VII)",
 "Full Metal Staff (VII)":"Bâton blindé (VII)",
 "Binding Rod (XIII)":"Canne entravante (XIII)",
+"Oak Staff (IX)":"Crosse de chêne (IX)",
 "Healing Staff (V)":"Caducée (V)",
 "Judgment Staff (V)":"Damoclès (V)",
+"Storm Staff (IX)":"Bâton de foudre (IX)",
 "Ice Whip (IV)":"Fouet de glace (IV)",
 "Hawkeye (VI)":"Oeil d'aigle (IV)",
 "Valkyrie (VIII):":"Walkyrie (VIII)",
@@ -104,6 +107,7 @@
 "Gold Armlet (VII)":"Brassard d'or (VII)",
 "Emerald Bracer (X)":"Brassard émeraude (X)",
 "Safety Bit (X)":"Bague salvatrice (X)",
+"Dark Armor (IV)":"Armure noire (IV)",
 
 "Orichalcum Dirk (V)":"Orichalcum (IX)",
 "Dancing Dagger (V)":"Dague dansante (V)",
@@ -147,6 +151,7 @@
 "Ice Rod (IV)":"Bâton de glace (IV)",
 "Bronze Mace (XII)":"Masse de bronze (XII)",
 "Golem Staff (III)":"Crosse golem (III)",
+"Stardust Rod (IX)":"Sceptre astral (IX)",
 "Diamond Mace (II)":"Crosse Diamant (II)",
 "Wizard's Staff (XII)":"Bâton de mage (XII)",
 "Golden Staff (XII)":"Bâton doré (XII)",
@@ -192,6 +197,7 @@
 "White Dress (VI)":"Robe blanche (VI)",
 "Magus Robe (VI)":"Aube de Magus (VI)",
 "Sage's Surplice (IV)":"Surplis de sage (IV)",
+"Magician Robe (IX)":"Toge de magicien (IX)",
 "Silver Armlet (VII)":"Bracelet argent (VII)",
 "Diamond Bangle (VII)":"Bijou diamant (VII)",
 "Rune Armlet (VII)":"Bracelet de rune (VII)",
@@ -207,5 +213,6 @@
 "Hero's Ring (VI)":"Anneau de héros (VI)",
 "Angel Ring (V)":"Anneau d'ange (V)",
 "Elven Mantle (V)":"Cape elfique (V)",
-"Durable Power Wristband (XIII)":"Poignet de force +1 (XIII)"
+"Durable Power Wristband (XIII)":"Poignet de force +1 (XIII)",
+"Power Belt (IX)":"Ceinture de force (IX)"
 }

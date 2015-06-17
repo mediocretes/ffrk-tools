@@ -52,6 +52,7 @@ Wizard Armlet (X),Bracer,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equi
 Silver Bangle (XIII),Bracer,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Silver Bangle (XIII),9,9,,20,25,103,9,15,15,,43,54,103,15,30,30,,101,127,103,30
 Fire Ring (VII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Fire Ring (VII),,,,,,,,,,,,,,,,,,,,,
 Ice Ring (VII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Ice Ring (VII),,,,,,,,,,,,,,,,,,,,,
+Magic Armlet (IX),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Magic Armlet (IX),,,,,,,,,,,,,,,,,,,,,
 Danjuro (XII),Dagger,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Danjuro (XII),69,,95,,,,,113,,95,,,,,220,,95,,,,
 Behemoth Knife,Dagger,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Behemoth Knife,64,,95,,,,,109,,95,,,,,218,,95,,,,
 Buster Sword (VII),Sword,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Buster Sword (VII),76,,95,,,,,126,,95,,,,,247,,95,,,,
@@ -78,15 +79,17 @@ Kaiser Knuckles (XIII),Fist,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/E
 Guard Stick (VII),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Guard Stick (VII),23,76,95,,,,50,38,125,95,,,,75,75,244,95,,,,136
 Full Metal Staff (VII),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Full Metal Staff (VII),25,77,95,,,,39,39,128,95,,,,64,73,252,95,,,,125
 Binding Rod (XIII),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Binding Rod (XIII),29,77,95,,,,46,59,128,95,,,,71,132,252,95,,,,132
+Oak Staff (IX),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Oak Staff (IX),30,79,95,,,,44,60,130,95,,,,69,133,254,95,,,,130
 Healing Staff (V),Staff,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Healing Staff (V),23,60,95,,,,77,39,110,95,,,,128,78,231,95,,,,252
 Judgment Staff (V),Staff,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Judgment Staff (V),23,38,95,,,,76,38,63,95,,,,126,75,124,95,,,,247
+Storm Staff (IX),Staff,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Storm Staff (IX),23,78,95,,,,68,39,129,95,,,,118,78,253,95,,,,239
 Ice Whip (IV),Whip,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Ice Whip (IV),46,77,95,,,,,75,129,95,,,,,145,255,95,,,,
 Hawkeye (VI),Thrown,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Hawkeye (VI),65,,92,,,,,110,,92,,,,,219,,92,,,,
 Valkyrie (VIII),Thrown,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Valkyrie (VIII),52,75,95,,,,,87,127,95,,,,,172,253,95,,,,
 Rising Sun (VI),Thrown,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Rising Sun (VI),68,,95,,,,,112,,95,,,,,219,,95,,,,
 Healing Grimoire,Book,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Healing Grimoire,57,57,95,,,,67,87,108,95,,,,118,160,232,95,,,,242
 Sentinel's Grimoire,Book,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Sentinel's Grimoire,67,72,95,5,,,57,111,121,95,5,,,108,218,240,95,5,,,232
-Official Ball (X),Blitzball,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Official Ball (X),65,,95,,,,,110,,95,,,,,219,,95,,,,
+Official Ball (X),Ball,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Official Ball (X),65,,95,,,,,110,,95,,,,,219,,95,,,,
 Genji Shield (IV),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Genji Shield (IV),,,,62,39,108,,,,,102,64,108,,,,,199,125,108,
 Lustrous Shield (IV),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Lustrous Shield (IV),,,,63,40,108,15,,,,103,65,108,15,,,,200,126,108,15
 Emerald Shield (X),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Emerald Shield (X),,,,67,43,112,,,,,109,68,112,,,,,211,129,112,
@@ -143,6 +146,7 @@ Punisher (VI),Rod,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_R
 Lilith Rod (IV),Rod,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Lilith Rod (IV),7,23,89,,,,12,17,54,89,,,,27,44,136,89,,,,67
 Ice Rod (IV),Rod,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Ice Rod (IV),6,19,89,,,,10,15,48,89,,,,24,39,125,89,,,,61
 Bronze Mace (XII),Rod,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Bronze Mace (XII),7,21,89,,,,11,15,50,89,,,,25,37,127,89,,,,62
+Stardust Rod (IX),Rod,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Stardust Rod (IX),7,23,89,,,,19,17,54,89,,,,35,44,136,89,,,,78
 Golem Staff (III),Staff,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Golem Staff (III),10,11,89,,,,20,18,25,89,,,,49,40,62,89,,,,126
 Diamond Mace (II),Staff,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Diamond Mace (II),7,11,89,,,,21,15,25,89,,,,50,37,62,89,,,,127
 Wizard's Staff (XII),Staff,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Wizard's Staff (XII),7,11,89,,,,22,16,26,89,,,,52,40,66,89,,,,131
@@ -185,10 +189,12 @@ Flame Mail (IV),Armor,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipme
 Ice Armor (IV),Armor,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Ice Armor (IV),,,,24,10,99,,,,,58,24,99,,,,,148,61,99,
 Mythril Vest (VI),Armor,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Mythril Vest (VI),,,,24,10,99,,,,,58,24,99,,,,,148,61,99,
 Mythril Mail (VI),Armor,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Mythril Mail (VI),,,,25,11,99,,,,,59,25,99,,,,,149,62,99,
+Dark Armor (IV),Armor,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Dark Armor (IV),,,,15,6,96,,,,,129,71,100,,,,,405,228,110,
 Luminous Robe (V),Robe,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Luminous Robe (V),,4,,15,25,99,,,4,,35,60,99,,,4,,88,153,99,
 White Dress (VI),Robe,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_White Dress (VI),,,,15,26,99,,,,,37,63,99,,,,,95,161,99,
 Magus Robe (VI),Robe,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Magus Robe (VI),,,,16,27,99,,,,,38,65,99,,,,,96,165,99,
 Sage's Surplice (IV),Robe,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Sage's Surplice (IV),,,,16,27,99,4,,,,38,65,99,4,,,,96,165,99,4
+Magician Robe (IX),Robe,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Magician Robe (IX),,3,,17,27,99,,,3,,39,65,99,,,3,,97,165,99,
 Silver Armlet (VII),Bracer,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Silver Armlet (VII),4,4,,10,14,99,4,10,10,,24,34,99,10,26,26,,61,87,99,26
 Diamond Bangle (VII),Bracer,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Diamond Bangle (VII),5,5,,11,15,99,5,10,10,,25,35,99,10,24,24,,62,88,99,24
 Rune Armlet (VII),Bracer,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Rune Armlet (VII),5,7,,11,13,99,5,10,13,,25,30,99,10,24,29,,62,75,99,24
@@ -205,6 +211,7 @@ Hero's Ring (VI),Accessory,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Eq
 Angel Ring (V),Accessory,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Angel Ring (V),,,,,,,,,,,,,,,,,,,,,
 Elven Mantle (V),Accessory,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Elven Mantle (V),,,,,,,,,,,,,,,,,,,,,
 Durable Power Wristband (XIII),Accessory,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Durable Power Wristband (XIII),,,,,,,,,,,,,,,,,,,,,
+Power Belt (IX),Accessory,3,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 3_Power Belt (IX),,,,,,,,,,,,,,,,,,,,,
 Mythril Knife (II),Dagger,2,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 2_Mythril Knife (II),11,,86,,,,,33,,86,,,,,96,,86,,,,
 Kodachi (V),Dagger,2,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 2_Kodachi (V),11,,86,,,2,,31,,86,,,2,,89,,86,,,2,
 Chopper (XII),Dagger,2,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 2_Chopper (XII),11,,86,,,,,32,,86,,,,,92,,86,,,,

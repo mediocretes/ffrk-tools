@@ -8,7 +8,7 @@
 <body>
 <textarea name="text"></textarea>
 <button id="convert">Convert!</button>
-<div class="results"></div>
+<textarea class="results"></textarea>
 
 <script>
 
@@ -56,7 +56,7 @@
             html += item.export();
 
             // display
-            $('.results').html(html);
+            $('.results').val(html);
 
         });
 
@@ -122,7 +122,7 @@
             }
         }
 
-        return tab.join(',') + "<br />";
+        return tab.join(',') + "\n";
     };
 
 </script>

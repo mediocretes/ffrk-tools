@@ -189,7 +189,7 @@
     </table>
 </div>
 
-<div class="wrapper" ng-hide="app.box == null">
+<div class="wrapper" ng-show="app.box != null" ng-cloak>
     <div class="box" ng-show="app.box == 'import'">
         Import: <br />
         <textarea ng-model="app.importArea"></textarea><br />

@@ -54,6 +54,7 @@ Fire Ring (VII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equ
 Ice Ring (VII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Ice Ring (VII),,,,,,,,,,,,,,,,,,,,,
 Touph Ring (VII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Touph Ring (VII),,,,,,,,,,,,,,,,,,,,,
 White Cape (VII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_White Cape (VII),,,,,,,,,,,,,,,,,,,,,
+Muscle Belt (VI),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Muscle Belt (VI),,,,,,,,,,,,,,,,,,,,,
 Hyper Wrist (VIII),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Hyper Wrist (VIII),,,,,,,,,,,,,,,,,,,,,
 Magic Armlet (IX),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Magic Armlet (IX),,,,,,,,,,,,,,,,,,,,,
 Soft Bracer (X),Accessory,4,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 4_Soft Bracer (X),,,,,,,,,,,,,,,,,,,,,
@@ -87,9 +88,11 @@ Blood Lance (IV),Spear,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipm
 Golden Spear (VI),Spear,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Golden Spear (VI),73,,95,,,,,123,,95,,,,,244,,95,,,,
 Heat Lance (X),Spear,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Heat Lance (X),67,,95,,,,,117,,95,,,,,238,,95,,,,
 Wind Spear (IV),Spear,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Wind Spear (IV),68,,95,,,,,118,,95,,,,,239,,95,,,,
+Partisan (VI),Spear,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Partisan (VI),79,,95,,,,,128,,95,,,,,247,,95,,,,
 Grand Glove (VII),Fist,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Grand Glove (VII),71,,95,,,,,115,,95,,,,,222,,95,,,,
 Giant's Gloves (II),Fist,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Giant's Gloves (II),72,,95,,,,,116,,95,,,,,223,,95,,,,
 Kaiser Knuckles (XIII),Fist,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Kaiser Knuckles (XIII),66,,95,,,,,110,,95,,,,,217,,95,,,,
+Kaiser Knuckles (VI),Fist,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Kaiser Knuckles (VI),75,,95,,,,,124,,95,,,,,243,,95,,,,
 Guard Stick (VII),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Guard Stick (VII),23,76,95,,,,50,38,125,95,,,,75,75,244,95,,,,136
 Full Metal Staff (VII),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Full Metal Staff (VII),25,77,95,,,,39,39,128,95,,,,64,73,252,95,,,,125
 Magistral Rod (X),Rod,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Magistral Rod (X),29,68,95,,,,79,59,118,95,,,,130,132,239,95,,,,254
@@ -116,6 +119,7 @@ Diamond Pin (VII),Hairpin,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equ
 Genji Shield (IV),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Genji Shield (IV),,,,62,39,108,,,,,102,64,108,,,,,199,125,108,
 Lustrous Shield (IV),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Lustrous Shield (IV),,,,63,40,108,15,,,,103,65,108,15,,,,200,126,108,15
 Emerald Shield (X),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Emerald Shield (X),,,,67,43,112,,,,,109,68,112,,,,,211,129,112,
+Golden Shield (VI),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Golden Shield (VI),,,,68,45,110,,,,,108,70,110,,,,,205,131,110,
 Kaiser Shield (XII),Shield,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Kaiser Shield (XII),,,,70,47,105,,,,,110,72,105,,,,,207,133,105,
 Mystery Veil (VI),Hat,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Mystery Veil (VI),,20,,39,77,105,16,,30,,64,127,105,26,,55,,125,248,105,51
 Defense Veil (X),Hat,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Defense Veil (X),,20,,40,78,105,17,,NaN,,NaN,NaN,NaN,NaN,,NaN,,NaN,NaN,NaN,NaN
@@ -132,6 +136,8 @@ Minotaur Plate (VIII),Armor,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/E
 Golden Armor (XII),Armor,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Golden Armor (XII),,,,89,44,104,,,,,134,65,104,,,,,243,116,104,
 Regal Gown (VI),Robe,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Regal Gown (VI),,,,54,92,105,,,,,89,137,105,,,,,174,246,105,
 Monk Robe (X),Robe,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Monk Robe (X),,,,53,86,105,,,,,88,128,105,,,,,173,230,105,
+Black Robe (IX),Robe,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Black Robe (IX),,10,,50,90,105,,,10,,85,135,105,,,10,,170,244,105,
+White Robe (IX),Robe,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_White Robe (IX),,,,50,90,105,10,,,,85,135,105,10,,,,170,244,105,10
 Gold Bangle (XIII),Bracer,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Gold Bangle (XIII),13,13,,57,53,105,13,22,22,,83,89,105,22,44,44,,146,176,105,44
 Gold Armlet (VII),Bracer,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Gold Armlet (VII),14,11,,55,54,105,13,23,21,,81,90,105,22,45,46,,144,177,105,44
 Emerald Bracer (X),Bracer,5,https://ffrkstrategy.gamematome.jp/game/951/wiki/Equipment_Rarity 5_Emerald Bracer (X),14,12,,56,54,105,13,23,22,,82,90,105,22,45,47,,145,177,105,44

@@ -66,7 +66,7 @@ function AppController($http, $scope, $sce, $translate) {
     this.completed = 2;
     var date = new Date();
     var d = date.getMonth() + '-' + date.getFullYear();
-    this.$http.get('/csv/en.csv?d=' + d).
+    this.$http.get('/data/en.csv?d=' + d).
         success(function (data) {
             self.csvData.push(data);
             self.complete();

@@ -1,0 +1,19 @@
+{"level":"info","message":"Thursday, August 13th 2015, 12:24:30 am","timestamp":"2015-08-12T22:24:30.585Z"}
+{"level":"info","message":"Thursday, August 13th 2015, 12:27:30 am","timestamp":"2015-08-12T22:27:30.605Z"}
+{"level":"info","message":"Thursday, August 13th 2015, 12:27:45 am","timestamp":"2015-08-12T22:27:45.602Z"}
+{"level":"info","message":"Thursday, August 13th 2015, 12:28:00 am","timestamp":"2015-08-12T22:28:00.600Z"}
+{"level":"info","message":"Thursday, August 13th 2015, 12:30:45 am","timestamp":"2015-08-12T22:30:45.820Z"}
+{"level":"info","message":"Thursday, August 13th 2015, 12:31:00 am","timestamp":"2015-08-12T22:31:00.820Z"}
+2015-08-12T22:41:15.395Z - info: Thursday, August 13th 2015, 12:41:15 am
+2015-08-12T22:41:30.360Z - info: Thursday, August 13th 2015, 12:41:30 am
+2015-08-12T22:42:15.283Z - info: Thursday, August 13th 2015, 12:42:15 am
+2015-08-12T22:42:16.576Z - error: Test
+2015-08-12T22:42:16.579Z - info: --done
+2015-08-12T22:43:15.768Z - info: Thursday, August 13th 2015, 12:43:15 am
+2015-08-12T22:43:17.282Z - error: Wrong stat
+2015-08-12T22:44:30.720Z - info: Thursday, August 13th 2015, 12:44:30 am
+2015-08-12T22:44:31.962Z - info: --done
+2015-08-12T22:44:45.708Z - info: Thursday, August 13th 2015, 12:44:45 am
+2015-08-12T22:44:46.944Z - info: --done
+2015-08-12T22:45:15.861Z - info: Thursday, August 13th 2015, 12:45:15 am
+2015-08-12T22:45:16.807Z - info: --done

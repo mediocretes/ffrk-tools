@@ -6,7 +6,7 @@ var job = new CronJob({
     onTick: function() {
         Refresh();
     },
-    start: true,
+    start: false,
     timeZone: 'Europe/Paris'
 });
 job.start();

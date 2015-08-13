@@ -55,7 +55,7 @@ function Item(app, name) {
 Item.prototype.betterThan = function (other) {
     var diff = 0;
     for (var i in this.synergy) {
-        diff += (this.synergy[i] - other.synergy[i]);
+        diff += (this.curr(i) - other.curr(i));
     }
     return (diff > 0);
 };

@@ -22,7 +22,7 @@ function Refresh(fn) {
             }
 
             if (html != null) {
-                fs.writeFile('data/en.csv', html, function (err) {
+                fs.writeFile(__dirname + '/data/en.csv', html, function (err) {
                     if (err) {
                         winston.error(err);
                     }

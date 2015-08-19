@@ -1,0 +1,652 @@
+[
+    {
+        "name": "fire",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "blizzard",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "thunder",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "water",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "sleep",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "poison",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "confuse",
+        "type": "black-magic",
+        "rarity": 1
+    },
+    {
+        "name": "cure",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "vox",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "poisona",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "blindna",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "protect",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "shell",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "silence",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "slow",
+        "type": "white-magic",
+        "rarity": 1
+    },
+    {
+        "name": "goblin",
+        "type": "summoning",
+        "rarity": 1
+    },
+    {
+        "name": "bomb",
+        "type": "summoning",
+        "rarity": 1
+    },
+    {
+        "name": "blade-bash",
+        "type": "combat",
+        "rarity": 1
+    },
+    {
+        "name": "body-slam",
+        "type": "combat",
+        "rarity": 1
+    },
+    {
+        "name": "salve",
+        "type": "support",
+        "rarity": 1
+    },
+    {
+        "name": "boost",
+        "type": "support",
+        "rarity": 1
+    },
+    {
+        "name": "aim",
+        "type": "celerity",
+        "rarity": 1
+    },
+    {
+        "name": "fira",
+        "type": "black-magic",
+        "rarity": 2
+    },
+    {
+        "name": "blizzara",
+        "type": "black-magic",
+        "rarity": 2
+    },
+    {
+        "name": "thundara",
+        "type": "black-magic",
+        "rarity": 2
+    },
+    {
+        "name": "watera",
+        "type": "black-magic",
+        "rarity": 2
+    },
+    {
+        "name": "bio",
+        "type": "black-magic",
+        "rarity": 2
+    },
+    {
+        "name": "cura",
+        "type": "white-magic",
+        "rarity": 2
+    },
+    {
+        "name": "regen",
+        "type": "white-magic",
+        "rarity": 2
+    },
+    {
+        "name": "stona",
+        "type": "white-magic",
+        "rarity": 2
+    },
+    {
+        "name": "hold",
+        "type": "white-magic",
+        "rarity": 2
+    },
+    {
+        "name": "dia",
+        "type": "white-magic",
+        "rarity": 2
+    },
+    {
+        "name": "chocobo",
+        "type": "summoning",
+        "rarity": 2
+    },
+    {
+        "name": "dragon",
+        "type": "summoning",
+        "rarity": 2
+    },
+    {
+        "name": "kirin",
+        "type": "summoning",
+        "rarity": 2
+    },
+    {
+        "name": "fire-strike",
+        "type": "spellblade",
+        "rarity": 2
+    },
+    {
+        "name": "blizzard-strike",
+        "type": "spellblade",
+        "rarity": 2
+    },
+    {
+        "name": "thunder-strike",
+        "type": "spellblade",
+        "rarity": 2
+    },
+    {
+        "name": "water-strike",
+        "type": "spellblade",
+        "rarity": 2
+    },
+    {
+        "name": "aero-strike",
+        "type": "spellblade",
+        "rarity": 2
+    },
+    {
+        "name": "charge",
+        "type": "combat",
+        "rarity": 2
+    },
+    {
+        "name": "double-cut",
+        "type": "combat",
+        "rarity": 2
+    },
+    {
+        "name": "sleep-attack",
+        "type": "support",
+        "rarity": 2
+    },
+    {
+        "name": "silence-attack",
+        "type": "support",
+        "rarity": 2
+    },
+    {
+        "name": "venom-attack",
+        "type": "support",
+        "rarity": 2
+    },
+    {
+        "name": "dark-attack",
+        "type": "support",
+        "rarity": 2
+    },
+    {
+        "name": "cry",
+        "type": "support",
+        "rarity": 2
+    },
+    {
+        "name": "revive",
+        "type": "support",
+        "rarity": 2
+    },
+    {
+        "name": "wind-slash",
+        "type": "celerity",
+        "rarity": 2
+    },
+    {
+        "name": "jump",
+        "type": "dragoon",
+        "rarity": 2
+    },
+    {
+        "name": "death-strike",
+        "type": "monk",
+        "rarity": 2
+    },
+    {
+        "name": "chi-blast",
+        "type": "monk",
+        "rarity": 2
+    },
+    {
+        "name": "guard",
+        "type": "knight",
+        "rarity": 2
+    },
+    {
+        "name": "retaliate",
+        "type": "samurai",
+        "rarity": 2
+    },
+    {
+        "name": "shuriken",
+        "type": "ninja",
+        "rarity": 2
+    },
+    {
+        "name": "firaga",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "blizzaga",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "thundaga",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "waterga",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "biora",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "dark",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "gravity",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "stop",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "comet",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "curaga",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "silencega",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "haste",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "esuna",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "diara",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "berserk",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "faith",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "shiva",
+        "type": "summoning",
+        "rarity": 3
+    },
+    {
+        "name": "ramuh",
+        "type": "summoning",
+        "rarity": 3
+    },
+    {
+        "name": "ifrit",
+        "type": "summoning",
+        "rarity": 3
+    },
+    {
+        "name": "fira-strike",
+        "type": "spellblade",
+        "rarity": 3
+    },
+    {
+        "name": "blizzara-strike",
+        "type": "spellblade",
+        "rarity": 3
+    },
+    {
+        "name": "thundara-strike",
+        "type": "spellblade",
+        "rarity": 3
+    },
+    {
+        "name": "drain-strike",
+        "type": "spellblade",
+        "rarity": 3
+    },
+    {
+        "name": "magic-break",
+        "type": "combat",
+        "rarity": 3
+    },
+    {
+        "name": "armor-break",
+        "type": "combat",
+        "rarity": 3
+    },
+    {
+        "name": "mental-break",
+        "type": "combat",
+        "rarity": 3
+    },
+    {
+        "name": "cripple",
+        "type": "combat",
+        "rarity": 3
+    },
+    {
+        "name": "launch",
+        "type": "combat",
+        "rarity": 3
+    },
+    {
+        "name": "intimidate",
+        "type": "support",
+        "rarity": 3
+    },
+    {
+        "name": "silence-buster",
+        "type": "support",
+        "rarity": 3
+    },
+    {
+        "name": "dark-buster",
+        "type": "support",
+        "rarity": 3
+    },
+    {
+        "name": "venom-buster",
+        "type": "support",
+        "rarity": 3
+    },
+    {
+        "name": "sleep-buster",
+        "type": "support",
+        "rarity": 3
+    },
+    {
+        "name": "quickness",
+        "type": "celerity",
+        "rarity": 3
+    },
+    {
+        "name": "leg-shot",
+        "type": "celerity",
+        "rarity": 3
+    },
+    {
+        "name": "chakra",
+        "type": "monk",
+        "rarity": 3
+    },
+    {
+        "name": "drain",
+        "type": "black-magic",
+        "rarity": 3
+    },
+    {
+        "name": "reflect",
+        "type": "white-magic",
+        "rarity": 3
+    },
+    {
+        "name": "firaja",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "blizzaja",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "thundaja",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "waterja",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "death",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "break",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "quake",
+        "type": "black-magic",
+        "rarity": 4
+    },
+    {
+        "name": "curaja",
+        "type": "white-magic",
+        "rarity": 4
+    },
+    {
+        "name": "protectga",
+        "type": "white-magic",
+        "rarity": 4
+    },
+    {
+        "name": "shellga",
+        "type": "white-magic",
+        "rarity": 4
+    },
+    {
+        "name": "slowga",
+        "type": "white-magic",
+        "rarity": 4
+    },
+    {
+        "name": "raise",
+        "type": "white-magic",
+        "rarity": 4
+    },
+    {
+        "name": "syldra",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "leviathan",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "maduin",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "phoenix",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "valefor",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "carbuncle",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "ixion",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "alexander",
+        "type": "summoning",
+        "rarity": 4
+    },
+    {
+        "name": "break-strike",
+        "type": "spellblade",
+        "rarity": 4
+    },
+    {
+        "name": "bladeblitz",
+        "type": "combat",
+        "rarity": 4
+    },
+    {
+        "name": "pound",
+        "type": "combat",
+        "rarity": 4
+    },
+    {
+        "name": "wrath",
+        "type": "support",
+        "rarity": 4
+    },
+    {
+        "name": "mental-breakdown",
+        "type": "support",
+        "rarity": 4
+    },
+    {
+        "name": "magic-breakdown",
+        "type": "support",
+        "rarity": 4
+    },
+    {
+        "name": "power-breakdown",
+        "type": "support",
+        "rarity": 4
+    },
+    {
+        "name": "armor-breakdown",
+        "type": "support",
+        "rarity": 4
+    },
+    {
+        "name": "shadowbind",
+        "type": "celerity",
+        "rarity": 4
+    },
+    {
+        "name": "pressure-point",
+        "type": "monk",
+        "rarity": 4
+    },
+    {
+        "name": "flare",
+        "type": "black-magic",
+        "rarity": 5
+    },
+    {
+        "name": "holy",
+        "type": "white-magic",
+        "rarity": 5
+    },
+    {
+        "name": "odin",
+        "type": "summoning",
+        "rarity": 5
+    },
+    {
+        "name": "flare-strike",
+        "type": "spellblade",
+        "rarity": 5
+    },
+    {
+        "name": "barrage",
+        "type": "combat",
+        "rarity": 5
+    },
+    {
+        "name": "entrust",
+        "type": "support",
+        "rarity": 5
+    },
+    {
+        "name": "quick-hit",
+        "type": "celerity",
+        "rarity": 5
+    }
+]

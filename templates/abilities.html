@@ -1,17 +1,25 @@
-<div class="uk-autocomplete uk-form" id="abilityForm">
-    <input type="text" ng-model="app.input"/>
-</div>
 
-<div class="uk-grid uk-grid-medium">
+
+<div class="uk-grid uk-grid-medium uk-grid-margin">
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box uk-panel-box-primary">
+
+            <div class="uk-autocomplete uk-form" id="abilityForm">
+                <input type="text" ng-model="app.input" placeholder="Type ability.."/>
+            </div>
+
+        </div>
+    </div>
 
     <div class="uk-width-medium-1-3">
         <div class="uk-panel uk-panel-box uk-panel-header">
             <h3 class="uk-panel-title">Abilities</h3>
 
             <ul class="uk-list uk-list-line">
-                <li class="ability" ng-repeat="ability in app.selectedAbilities track by $index">
+                <li class="ability" ng-repeat="ability in app.abilities track by $index">
                     <div class="uk-icon uk-icon-remove uk-icon-hover" ng-click="app.removeAbility(ability)"></div>
-                    {{ability.name}}, {{ability.type}}, {{ability.rarity}}*
+                    {{ability.data.name}}, {{ability.data.type}}, {{ability.data.rarity}}*
                 </li>
             </ul>
 
@@ -22,11 +30,16 @@
         <div class="uk-panel uk-panel-box uk-panel-header">
             <h3 class="uk-panel-title">Characters</h3>
 
-            <div class="character" ng-repeat="character in app.selectedCharacters track by $index">
-                {{character.name}} {{character.origin}}
+            <div class="character" ng-repeat="character in app.characters track by $index">
+                {{character.name}} ({{character.data.origin}})
                 <ul>
-                    <li ng-repeat="ability in character.choices">
-                        {{ability.name}}, {{ability.type}}, {{ability.rarity}}*
+                    <li ng-repeat="ability in character.selected">
+                        <div class="uk-icon uk-icon-check-square-o uk-icon-hover" ng-click="ability.unselect()"></div>
+                        {{ability.data.name}}, {{ability.data.type}}, {{ability.data.rarity}}*
+                    </li>
+                    <li ng-repeat="ability in character.abilities" ng-if="character.selected.length < 2">
+                        <div class="uk-icon uk-icon-square-o uk-icon-hover" ng-click="ability.select()"></div>
+                        {{ability.data.name}}, {{ability.data.type}}, {{ability.data.rarity}}*
                     </li>
                 </ul>
             </div>

@@ -343,7 +343,7 @@
         "origin": "XIII",
         "abilities": {
             "black-magic": 3,
-            "white-magic": 4,
+            "white-magic": 2,
             "spellblade": 4,
             "combat": 5
         }

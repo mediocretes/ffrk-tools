@@ -18,8 +18,8 @@
             <a href="">{{'Languages'|translate}}</a>
             <div class="uk-dropdown uk-dropdown-navbar">
                 <ul class="uk-nav uk-nav-navbar">
-                    <li>{{'English'|translate}}</li>
-                    <li>{{'French'|translate}}</li>
+                    <li ng-class="{selected: app.lang == 'en'}" ng-click="app.changeLang('en')">{{'English'|translate}}</li>
+                    <li ng-class="{selected: app.lang == 'fr'}" ng-click="app.changeLang('fr')">{{'French'|translate}}</li>
                 </ul>
             </div>
         </li>

@@ -1,37 +1,46 @@
-<div class="menu">
-    <div ng-hide="app.loaded">{{'Loading'|translate}}</div>
-    <div class="section logo">ffrk-io</div>
-    <div class="section search">
-        <input type="text" placeholder="{{'Add item'|translate}}" ng-keyup="app.findSuggestions($event)"
-               ng-model="app.typingName"/>
+<div class="uk-grid uk-grid-medium uk-grid-margin">
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box uk-panel-box-primary">
+
+            <div class="section search">
+                <input type="text" placeholder="{{'Add item'|translate}}" ng-keyup="app.findSuggestions($event)"
+                       ng-model="app.typingName"/>
+            </div>
+            <div class="section suggested">
+                <a href="" ng-repeat="suggest in app.suggested" ng-bind-html="suggest.name.formatted()"
+                   ng-class="{selected: $index == app.selected}"
+                   ng-click="app.chooseSuggest(suggest)">
+                </a>
+            </div>
+
+        </div>
     </div>
-    <div class="section suggested">
-        <a href="" ng-repeat="suggest in app.suggested" ng-bind-html="suggest.name.formatted()" ng-class="{selected: $index == app.selected}"
-           ng-click="app.chooseSuggest(suggest)">
-        </a>
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box uk-panel-header">
+            <h3 class="uk-panel-title">{{'Realm'|translate}}</h3>
+            <select class="uk-dropdown">
+
+            </select>
+        </div>
     </div>
-    <div class="section optimize">
-        <div class="title">{{'Actions'|translate}}</div>
-        <a href="" ng-click="app.optimize()">{{'Optimize'|translate}}</a><br/>
-        <a href="" ng-click="app.showBox('import')">{{'Import'|translate}}</a><br/>
-        <a href="" ng-click="app.export()">{{'Export'|translate}}</a><br/>
-        <a href="" ng-click="app.reset()">{{'Reset'|translate}}</a>
+
+    <div class="uk-width-medium-1-3">
+        <div class="uk-panel uk-panel-box uk-panel-header">
+            <h3 class="uk-panel-title">{{'Optimize'|translate}}</h3>
+            <p>Optimize will highlight the items you can remove.</p>
+            <button class="uk-button uk-button-primary" ng-click="app.optimize()">{{'Optimize'|translate}}</button>
+        </div>
     </div>
-    <div class="section links">
-        <div class="title">Github</div>
-        <a href="https://github.com/Menencia/ffrk-io/commits/master" target="_target">{{'Last commits'|translate}}</a><br/>
-        <a href="https://github.com/Menencia/ffrk-io/issues/new" target="_target">{{'New issue'|translate}}</a><br/>
-    </div>
-    <div class="section language">
-        <div class="title">{{'Languages'|translate}}</div>
-        <a href="" ng-click="app.changeLang('en')"
-           ng-class="{selected: app.lang == 'en'}">{{'English'|translate}}</a><br/>
-        <a href="" ng-click="app.changeLang('fr')" ng-class="{selected: app.lang == 'fr'}">{{'French'|translate}}</a>
-    </div>
+
 </div>
-<div class="main">
-    <table class="uk-table">
-        <thead>
+
+<div class="uk-block">
+    <div class="uk-panel-box">
+
+        <table class="uk-table">
+            <thead>
             <tr>
                 <th></th>
                 <th></th>
@@ -66,86 +75,86 @@
             </tr>
             <tr>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('name', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('name', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('name', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('name', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('origin', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('origin', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('origin', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('origin', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('rarity', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('rarity', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('rarity', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('rarity', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('type', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('type', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('type', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('type', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('level', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('level', false)"></span>
-                </th>
-
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:atk', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:atk', false)"></span>
-                </th>
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:mag', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:mag', false)"></span>
-                </th>
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:acc', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:acc', false)"></span>
-                </th>
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:def', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:def', false)"></span>
-                </th>
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:res', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:res', false)"></span>
-                </th>
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:eva', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:eva', false)"></span>
-                </th>
-                <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('curr:mnd', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('curr:mnd', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('level', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('level', false)"></span>
                 </th>
 
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:atk', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:atk', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:atk', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:atk', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:mag', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:mag', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:mag', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:mag', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:acc', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:acc', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:acc', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:acc', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:def', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:def', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:def', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:def', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:res', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:res', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:res', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:res', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:eva', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:eva', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:eva', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:eva', false)"></span>
                 </th>
                 <th>
-                    <span class="fa fa-caret-down" ng-show="app.isOrder('syn:mnd', true)"></span>
-                    <span class="fa fa-caret-up" ng-show="app.isOrder('syn:mnd', false)"></span>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:mnd', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:mnd', false)"></span>
+                </th>
+
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:atk', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:atk', false)"></span>
+                </th>
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:mag', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:mag', false)"></span>
+                </th>
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:acc', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:acc', false)"></span>
+                </th>
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:def', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:def', false)"></span>
+                </th>
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:res', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:res', false)"></span>
+                </th>
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:eva', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:eva', false)"></span>
+                </th>
+                <th>
+                    <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:mnd', true)"></span>
+                    <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:mnd', false)"></span>
                 </th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
                 <td><a href="{{item.url}}" target="_blank">
                     {{item.name.translated}}
@@ -172,22 +181,25 @@
                 <td class="stat_synergy">{{item.syn('eva')}}</td>
                 <td class="stat_synergy">{{item.syn('mnd')}}</td>
 
-                <td class="remove"><a href="" ng-click="app.removeItem(item)"><i class="fa fa-times"></i></a></td>
+                <td class="remove"><a href="" ng-click="app.removeItem(item)"><i class="uk-icon uk-icon-remove"></i></a></td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+
+    </div>
 </div>
 
 <div class="wrapper" ng-show="app.box != null" ng-cloak>
     <div class="box" ng-show="app.box == 'import'">
-        Import: <br />
-        <textarea ng-model="app.importArea"></textarea><br />
+        Import: <br/>
+        <textarea ng-model="app.importArea"></textarea><br/>
         <button ng-click="app.import()">Import</button>
         <div class="close" ng-click="app.closeBox()">X</div>
     </div>
     <div class="box" ng-show="app.box == 'export'">
-        Export: <br />
+        Export: <br/>
         <textarea>{{app.exportArea}}</textarea>
+
         <div class="close" ng-click="app.closeBox()">X</div>
     </div>
 </div>

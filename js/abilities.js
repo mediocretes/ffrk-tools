@@ -42,8 +42,8 @@ AbilitiesController.prototype.autocomplete = function () {
             source  : function (release) {
 
                 var regex  = new RegExp(self.input, 'i'),
-                    result = self.main.abilities.filter(function (e) {
-                        return regex.test(e.name);
+                    result = self.main.names.abilities.filter(function (e) {
+                        return regex.test(e.translated);
                     });
 
                 release(result); // release the data back to the autocompleter
@@ -51,9 +51,10 @@ AbilitiesController.prototype.autocomplete = function () {
             },
             template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
                         {{~items}}\
-                            <li data-value="{{ $item.name }}">\
+                            <li data-original="{{ $item.original }}" \
+                                data-translated="{{ $item.translated }}">\
                                 <a>\
-                                    {{ $item.name }}, {{ $item.type }}, {{ $item.rarity }}*\
+                                    {{ $item.translated }}\
                                 </a>\
                             </li>\
                         {{/items}}\
@@ -61,7 +62,7 @@ AbilitiesController.prototype.autocomplete = function () {
         });
 
         UIkit.$('#abilityForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
-            self.addAbility(data.value);
+            self.addAbility(new Name(self, data.original, data.translated));
             self.$scope.$apply();
             ac.input.val('');
             data.value = null;
@@ -71,17 +72,17 @@ AbilitiesController.prototype.autocomplete = function () {
 
 };
 
-AbilitiesController.prototype.addAbility = function (value) {
+AbilitiesController.prototype.addAbility = function (name) {
 
     // stop if it's already in abilities
-    var b = _.find(this.abilities, {name: value});
+    var b = _.find(this.abilities, {name: name.original});
     if (b) throw new Error('Ability already added!');
 
     // search ability data
-    var a = _.find(this.main.abilities, {name: value});
+    var a = _.find(this.main.abilities, {name: name.original});
     if (!a) throw new Error('Ability not found!');
 
-    var ability = new Ability(this, a);
+    var ability = new Ability(this, name, a);
     this.abilities.push(ability);
 
     for (var i in this.main.characters) {
@@ -156,6 +157,7 @@ Character.prototype.addLinkedAbility = function (a) {
     );
 };
 
+
 /**
  *
  * @param character
@@ -195,15 +197,17 @@ LinkedAbility.prototype.canBeSelected = function () {
     return (this.character.selected.length < 2);
 };
 
+
 /**
  *
  * @param ctrl
+ * @param name
  * @param data
  * @constructor
  */
-function Ability(ctrl, data) {
+function Ability(ctrl, name, data) {
     this.ctrl = ctrl;
 
-    this.name = data.name;
+    this.name = name;
     this.data = data;
 }

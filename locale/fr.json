@@ -1,23 +1,46 @@
 {
-	"Actions": "Actions",
+	"Inventory (menu)": "Inventaire",
+	"Abilities (menu)": "Capacités",
 	"Languages": "Langues",
 	"English": "Anglais",
 	"French": "Français",
-	"Optimize": "Optimiser",
-	"Import": "Importer",
-	"Export": "Exporter",
-	"Reset": "Réinitialiser",
-	"Add item": "Ajouter un équipement ici",
-	"current": "Actuel",
+
+    "current": "Actuel",
 	"synergy": "Synergie",
-	"name": "nom",
+
+    "name": "nom",
 	"origin": "monde",
 	"rarity": "rareté",
 	"type": "type",
 	"level": "niveau",
-	"Last commits": "Derniers commits",
-    "New issue": "Bug ou suggestion ?",
-	"realm notice": "Vous pouvez renseigner un monde ici.",
+
+    "atk": "atq",
+    "mag": "mag",
+    "acc": "esp",
+    "def": "déf",
+    "eva": "esq",
+    "mnd": "esp",
+
+	"Type item..": "Rechercher..",
+	"Realm": "Monde",
+	"realm notice": "Uitlisez ce paramètre pour pouvoir comparer plus facilement les objets à l'intérieur d'un monde.",
 	"current realm": "Monde actuel : ",
-	"optimize notice": "Met en évidence les objets qui peuvent être supprimés selon leurs caractéristiques (un seul objet est gardé par type et monde). Utilisez cette fonctionnalité avec attention."
+	"optimize notice": "Met en évidence les objets qui peuvent être supprimés selon leurs caractéristiques (un seul objet est gardé par type et monde). Utilisez cette fonctionnalité avec attention.",
+    "Optimize": "Optimiser",
+
+    "Type ability..": "Rechercher..",
+    "Abilities": "Capacités",
+    "Characters": "Personnages",
+
+	"Black Magic": "Magie Noire",
+	"White Magic": "Magie blanche",
+	"Summoning": "Invocation",
+	"Combat": "Combat",
+	"Support": "Soutien",
+	"Celerity": "Célérité",
+	"Spellblade": "Magilame",
+	"Dragoon": "Chevalier Dragon",
+	"Monk": "Moine",
+	"Samurai": "Samouraï",
+	"Ninja": "Ninja"
 }

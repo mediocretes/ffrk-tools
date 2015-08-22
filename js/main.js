@@ -27,6 +27,8 @@ Main.prototype.load = function (callback) {
 
     self.loadData(function () {
         self.loadLocales(function () {
+            self.refreshItemsNames();
+            self.refreshAbilitiesNames();
             if (callback) callback();
         });
     });
@@ -43,7 +45,7 @@ Main.prototype.loadData = function (callback) {
 
     this.$http.get('/data/en.csv').
         then(function (r) {
-            self.csvParse(r.data);
+            self.items = r.data.split("\n");
             self.complete(callback);
         });
 
@@ -62,30 +64,34 @@ Main.prototype.loadData = function (callback) {
 
 /**
  *
- * @param csvData
  */
-Main.prototype.csvParse = function (csvData) {
+Main.prototype.refreshItemsNames = function () {
 
-    this.items = csvData.split("\n");
+    this.names.items = [];
 
-    this.refreshNames('items');
+    for (var i in this.items) {
+        var infos = this.items[i].split(',');
+
+        var name = infos[0];
+        var translatedName = this.getTranslatedName('items', name);
+
+        this.names.items.push(new Name(null, name, translatedName));
+    }
 };
 
 /**
  *
- * @param type
  */
-Main.prototype.refreshNames = function (type) {
+Main.prototype.refreshAbilitiesNames = function () {
 
-    this.names[type] = [];
+    this.names.abilities = [];
 
-    for (var i in this[type]) {
-        var infos = this[type][i].split(',');
+    for (var i in this.abilities) {
 
-        var name = infos[0];
-        var translatedName = this.getTranslatedName(type, name);
+        var name = this.abilities[i].name;
+        var translatedName = this.getTranslatedName('abilities', name);
 
-        this.names[type].push(new Name(null, name, translatedName));
+        this.names.abilities.push(new Name(null, name, translatedName));
     }
 };
 
@@ -141,6 +147,7 @@ Main.prototype.loadLocales = function (callback) {
     this.$http.get('/locale/abilities-' + this.lang + '.json').
         success(function (data) {
             self.locales[self.lang]['abilities'] = data;
+            self.refreshAbilitiesNames();
             self.complete(callback);
         });
 };
@@ -169,23 +176,46 @@ Main.prototype.getTranslatedName = function (type, name) {
  * @param lang
  */
 Main.prototype.changeLang = function (lang) {
-    var self = this;
+    var self = this, ability;
 
     this.lang = lang;
     this.$translate.use(lang);
 
     this.loadLocales(function () {
 
-        // change items names
-        for (var i in self.InventoryController.inventory) {
-            var item = self.InventoryController.inventory[i];
-            item.name.refreshTranslated();
+        if (self.InventoryController) {
+
+            // change items names
+            for (var i in self.InventoryController.inventory) {
+                var item = self.InventoryController.inventory[i];
+                item.name.refreshTranslated();
+            }
+
+            // change autocomplete names
+            self.refreshItemsNames();
         }
 
-        self.refreshNames('items');
-        //console.log(self.itemNames);
+        if (self.AbilitiesController) {
 
-        // todo change abilities names
+            // change abilities names
+            for (var j in self.AbilitiesController.abilities) {
+                ability = self.AbilitiesController.abilities[j];
+                ability.name.refreshTranslated();
+            }
+
+            // change linked abilities names
+            for (var k in self.AbilitiesController.characters) {
+                var character = self.AbilitiesController.characters[k];
+                for (var l in character.abilities) {
+                    ability = character.abilities[l];
+                    ability.name.refreshTranslated();
+                }
+            }
+
+            // change autocomplete names
+            self.refreshAbilitiesNames();
+
+        }
 
     });
 

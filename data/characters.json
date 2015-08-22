@@ -3,377 +3,377 @@
         "name": "warrior-of-light",
         "origin": "I",
         "abilities": {
-            "combat": 5,
-            "celerity": 2,
-            "knight": 5
+            "Combat": 5,
+            "Celerity": 2,
+            "Knight": 5
         }
     },
     {
         "name": "maria",
         "origin": "II",
         "abilities": {
-            "black-magic": 5,
-            "white-magic": 3
+            "Black Magic": 5,
+            "White Magic": 3
         }
     },
     {
         "name": "gordon",
         "origin": "II",
         "abilities": {
-            "black-magic": 3,
-            "white-magic": 3,
-            "support": 5
+            "Black Magic": 3,
+            "White Magic": 3,
+            "Support": 5
         }
     },
     {
         "name": "ricard",
         "origin": "II",
         "abilities": {
-            "black-magic": 2,
-            "combat": 4,
-            "dragoon": 5
+            "Black Magic": 2,
+            "Combat": 4,
+            "Dragoon": 5
         }
     },
     {
         "name": "joseph",
         "origin": "II",
         "abilities": {
-            "combat": 5,
-            "monk": 5
+            "Combat": 5,
+            "Monk": 5
         }
     },
     {
         "name": "luneth",
         "origin": "III",
         "abilities": {
-            "combat": 5,
-            "support": 3,
-            "celerity": 3
+            "Combat": 5,
+            "Support": 3,
+            "Celerity": 3
         }
     },
     {
         "name": "arc",
         "origin": "III",
         "abilities": {
-            "black-magic": 2,
-            "white-magic": 5
+            "Black Magic": 2,
+            "White Magic": 5
         }
     },
     {
         "name": "refia",
         "origin": "III",
         "abilities": {
-            "combat": 5,
-            "celerity": 3,
-            "monk": 5
+            "Combat": 5,
+            "Celerity": 3,
+            "Monk": 5
         }
     },
     {
-        "name": "cecil-dark-knight",
+        "name": "cecil-dark-Knight",
         "origin": "IV",
         "abilities": {
-            "combat": 5
+            "Combat": 5
         }
     },
     {
         "name": "cecil-paladin",
         "origin": "IV",
         "abilities": {
-            "knight": 5,
-            "combat": 5,
-            "white-magic": 2
+            "Knight": 5,
+            "Combat": 5,
+            "White Magic": 2
         }
     },
     {
         "name": "kain",
         "origin": "IV",
         "abilities": {
-            "combat": 5,
-            "dragoon": 5
+            "Combat": 5,
+            "Dragoon": 5
         }
     },
     {
         "name": "rydia",
         "origin": "IV",
         "abilities": {
-            "summoning": 5,
-            "white-magic": 2,
-            "black-magic": 3
+            "Summoning": 5,
+            "White Magic": 2,
+            "Black Magic": 3
         }
     },
     {
         "name": "lenna",
         "origin": "V",
         "abilities": {
-            "black-magic": 2,
-            "white-magic": 5
+            "Black Magic": 2,
+            "White Magic": 5
         }
     },
     {
         "name": "terra",
         "origin": "VI",
         "abilities": {
-            "black-magic": 5,
-            "white-magic": 3,
-            "support": 4
+            "Black Magic": 5,
+            "White Magic": 3,
+            "Support": 4
         }
     },
     {
         "name": "locke",
         "origin": "VI",
         "abilities": {
-            "combat": 4,
-            "support": 3,
-            "celerity": 5,
-            "thief": 5
+            "Combat": 4,
+            "Support": 3,
+            "Celerity": 5,
+            "Thief": 5
         }
     },
     {
         "name": "celes",
         "origin": "VI",
         "abilities": {
-            "black-magic": 2,
-            "white-magic": 2,
-            "spellblade": 5
+            "Black Magic": 2,
+            "White Magic": 2,
+            "Spellblade": 5
         }
     },
     {
         "name": "edgar",
         "origin": "VI",
         "abilities": {
-            "combat": 5,
-            "support": 3,
-            "knight": 5
+            "Combat": 5,
+            "Support": 3,
+            "Knight": 5
         }
     },
     {
         "name": "sabin",
         "origin": "VI",
         "abilities": {
-            "combat": 5,
-            "monk": 5
+            "Combat": 5,
+            "Monk": 5
         }
     },
     {
         "name": "cyan",
         "origin": "VI",
         "abilities": {
-            "combat": 5,
-            "samurai": 5
+            "Combat": 5,
+            "Samurai": 5
         }
     },
     {
         "name": "cloud",
         "origin": "VII",
         "abilities": {
-            "combat": 5,
-            "samurai": 3,
-            "spellblade": 4,
-            "celerity": 3
+            "Combat": 5,
+            "Samurai": 3,
+            "Spellblade": 4,
+            "Celerity": 3
         }
     },
     {
         "name": "tifa",
         "origin": "VII",
         "abilities": {
-            "monk": 5,
-            "combat": 5,
-            "celerity": 3
+            "Monk": 5,
+            "Combat": 5,
+            "Celerity": 3
         }
     },
     {
         "name": "aerith",
         "origin": "VII",
         "abilities": {
-            "summoning": 2,
-            "black-magic": 3,
-            "white-magic": 5,
-            "support": 2
+            "Summoning": 2,
+            "Black Magic": 3,
+            "White Magic": 5,
+            "Support": 2
         }
     },
     {
         "name": "red-xiii",
         "origin": "VII",
         "abilities": {
-            "black-magic": 4,
-            "white-magic": 1,
-            "combat": 3,
-            "support": 5
+            "Black Magic": 4,
+            "White Magic": 1,
+            "Combat": 3,
+            "Support": 5
         }
     },
     {
         "name": "sephiroth",
         "origin": "VII",
         "abilities": {
-            "black-magic": 3,
-            "combat": 5,
-            "samurai": 5
+            "Black Magic": 3,
+            "Combat": 5,
+            "Samurai": 5
         }
     },
     {
         "name": "squall",
         "origin": "VIII",
         "abilities": {
-            "black-magic": 2,
-            "white-magic": 2,
-            "spellblade": 3,
-            "combat": 5
+            "Black Magic": 2,
+            "White Magic": 2,
+            "Spellblade": 3,
+            "Combat": 5
         }
     },
     {
         "name": "rinoa",
         "origin": "VIII",
         "abilities": {
-            "black-magic": 5,
-            "white-magic": 3,
-            "support": 3,
-            "celerity": 2
+            "Black Magic": 5,
+            "White Magic": 3,
+            "Support": 3,
+            "Celerity": 2
         }
     },
     {
         "name": "quistis",
         "origin": "VIII",
         "abilities": {
-            "black-magic": 4,
-            "white-magic": 2,
-            "support": 4
+            "Black Magic": 4,
+            "White Magic": 2,
+            "Support": 4
         }
     },
     {
         "name": "selphie",
         "origin": "VIII",
         "abilities": {
-            "black-magic": 3,
-            "white-magic": 5,
-            "celerity": 3
+            "Black Magic": 3,
+            "White Magic": 5,
+            "Celerity": 3
         }
     },
     {
         "name": "irvine",
         "origin": "VIII",
         "abilities": {
-            "black-magic": 1,
-            "white-magic": 2,
-            "combat": 3,
-            "support": 5
+            "Black Magic": 1,
+            "White Magic": 2,
+            "Combat": 3,
+            "Support": 5
         }
     },
     {
         "name": "garnet",
         "origin": "IX",
         "abilities": {
-            "white-magic": 4,
-            "summoning": 5,
-            "support": 2
+            "White Magic": 4,
+            "Summoning": 5,
+            "Support": 2
         }
     },
     {
         "name": "vivi",
         "origin": "IX",
         "abilities": {
-            "black-magic": 4
+            "Black Magic": 4
         }
     },
     {
         "name": "steiner",
         "origin": "IX",
         "abilities": {
-            "spellblade": 3,
-            "combat": 5,
-            "knight": 5
+            "Spellblade": 3,
+            "Combat": 5,
+            "Knight": 5
         }
     },
     {
         "name": "tidus",
         "origin": "X",
         "abilities": {
-            "celerity": 5,
-            "combat": 4,
-            "support": 3
+            "Celerity": 5,
+            "Combat": 4,
+            "Support": 3
         }
     },
     {
         "name": "yuna",
         "origin": "X",
         "abilities": {
-            "white-magic": 5,
-            "summoning": 5,
-            "support": 3
+            "White Magic": 5,
+            "Summoning": 5,
+            "Support": 3
         }
     },
     {
         "name": "wakka",
         "origin": "X",
         "abilities": {
-            "celerity": 3,
-            "support": 5,
-            "combat": 3
+            "Celerity": 3,
+            "Support": 5,
+            "Combat": 3
         }
     },
     {
         "name": "kimahri",
         "origin": "X",
         "abilities": {
-            "black-magic": 3,
-            "support": 3,
-            "dragoon": 5
+            "Black Magic": 3,
+            "Support": 3,
+            "Dragoon": 5
         }
     },
     {
         "name": "balthier",
         "origin": "XII",
         "abilities": {
-            "combat": 5,
-            "support": 3,
-            "celerity": 4,
-            "thief": 4
+            "Combat": 5,
+            "Support": 3,
+            "Celerity": 4,
+            "Thief": 4
         }
     },
     {
         "name": "fran",
         "origin": "XII",
         "abilities": {
-            "black-magic": 3,
-            "support": 4,
-            "celerity": 5
+            "Black Magic": 3,
+            "Support": 4,
+            "Celerity": 5
         }
     },
     {
         "name": "lightning",
         "origin": "XIII",
         "abilities": {
-            "black-magic": 3,
-            "white-magic": 2,
-            "spellblade": 4,
-            "combat": 5
+            "Black Magic": 3,
+            "White Magic": 2,
+            "Spellblade": 4,
+            "Combat": 5
         }
     },
     {
         "name": "snow",
         "origin": "XIII",
         "abilities": {
-            "combat": 5,
-            "celerity": 2,
-            "monk": 5
+            "Combat": 5,
+            "Celerity": 2,
+            "Monk": 5
         }
     },
     {
         "name": "vanille",
         "origin": "XIII",
         "abilities": {
-            "black-magic": 4,
-            "white-magic": 5,
-            "support": 2
+            "Black Magic": 4,
+            "White Magic": 5,
+            "Support": 2
         }
     },
     {
         "name": "sahz",
         "origin": "XIII",
         "abilities": {
-            "black-magic": 3,
-            "white-magic": 3,
-            "combat": 2,
-            "support": 5
+            "Black Magic": 3,
+            "White Magic": 3,
+            "Combat": 2,
+            "Support": 5
         }
     }
 ]

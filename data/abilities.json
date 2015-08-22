@@ -1,652 +1,662 @@
 [
     {
-        "name": "fire",
-        "type": "black-magic",
+        "name": "Fire",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "blizzard",
-        "type": "black-magic",
+        "name": "Blizzard",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "thunder",
-        "type": "black-magic",
+        "name": "Thunder",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "water",
-        "type": "black-magic",
+        "name": "Water",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "sleep",
-        "type": "black-magic",
+        "name": "Sleep",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "poison",
-        "type": "black-magic",
+        "name": "Poison",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "confuse",
-        "type": "black-magic",
+        "name": "Confuse",
+        "type": "Black Magic",
         "rarity": 1
     },
     {
-        "name": "cure",
-        "type": "white-magic",
+        "name": "Cure",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "vox",
-        "type": "white-magic",
+        "name": "Vox",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "poisona",
-        "type": "white-magic",
+        "name": "Poisona",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "blindna",
-        "type": "white-magic",
+        "name": "Blindna",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "protect",
-        "type": "white-magic",
+        "name": "Protect",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "shell",
-        "type": "white-magic",
+        "name": "Shell",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "silence",
-        "type": "white-magic",
+        "name": "Silence",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "slow",
-        "type": "white-magic",
+        "name": "Slow",
+        "type": "White Magic",
         "rarity": 1
     },
     {
-        "name": "goblin",
-        "type": "summoning",
+        "name": "Goblin",
+        "type": "Summoning",
         "rarity": 1
     },
     {
-        "name": "bomb",
-        "type": "summoning",
+        "name": "Bomb",
+        "type": "Summoning",
         "rarity": 1
     },
     {
-        "name": "blade-bash",
-        "type": "combat",
+        "name": "Blade Bash",
+        "type": "Combat",
         "rarity": 1
     },
     {
-        "name": "body-slam",
-        "type": "combat",
+        "name": "Body Slam",
+        "type": "Combat",
         "rarity": 1
     },
     {
-        "name": "salve",
-        "type": "support",
+        "name": "Salve",
+        "type": "Support",
         "rarity": 1
     },
     {
-        "name": "boost",
-        "type": "support",
+        "name": "Boost",
+        "type": "Support",
         "rarity": 1
     },
     {
-        "name": "aim",
-        "type": "celerity",
+        "name": "Aim",
+        "type": "Celerity",
         "rarity": 1
     },
     {
-        "name": "fira",
-        "type": "black-magic",
+        "name": "Fira",
+        "type": "Black Magic",
         "rarity": 2
     },
     {
-        "name": "blizzara",
-        "type": "black-magic",
+        "name": "Blizzara",
+        "type": "Black Magic",
         "rarity": 2
     },
     {
-        "name": "thundara",
-        "type": "black-magic",
+        "name": "Thundara",
+        "type": "Black Magic",
         "rarity": 2
     },
     {
-        "name": "watera",
-        "type": "black-magic",
+        "name": "Watera",
+        "type": "Black Magic",
         "rarity": 2
     },
     {
-        "name": "bio",
-        "type": "black-magic",
+        "name": "Bio",
+        "type": "Black Magic",
         "rarity": 2
     },
     {
-        "name": "cura",
-        "type": "white-magic",
+        "name": "Cura",
+        "type": "White Magic",
         "rarity": 2
     },
     {
-        "name": "regen",
-        "type": "white-magic",
+        "name": "Regen",
+        "type": "White Magic",
         "rarity": 2
     },
     {
-        "name": "stona",
-        "type": "white-magic",
+        "name": "Stona",
+        "type": "White Magic",
         "rarity": 2
     },
     {
-        "name": "hold",
-        "type": "white-magic",
+        "name": "Hold",
+        "type": "White Magic",
         "rarity": 2
     },
     {
-        "name": "dia",
-        "type": "white-magic",
+        "name": "Dia",
+        "type": "White Magic",
         "rarity": 2
     },
     {
-        "name": "chocobo",
-        "type": "summoning",
+        "name": "Chocobo",
+        "type": "Summoning",
         "rarity": 2
     },
     {
-        "name": "dragon",
-        "type": "summoning",
+        "name": "Dragon",
+        "type": "Summoning",
         "rarity": 2
     },
     {
-        "name": "kirin",
-        "type": "summoning",
+        "name": "Kirin",
+        "type": "Summoning",
         "rarity": 2
     },
     {
-        "name": "fire-strike",
-        "type": "spellblade",
+        "name": "Fire Strike",
+        "type": "Spellblade",
         "rarity": 2
     },
     {
-        "name": "blizzard-strike",
-        "type": "spellblade",
+        "name": "Blizzard Strike",
+        "type": "Spellblade",
         "rarity": 2
     },
     {
-        "name": "thunder-strike",
-        "type": "spellblade",
+        "name": "Thunder Strike",
+        "type": "Spellblade",
         "rarity": 2
     },
     {
-        "name": "water-strike",
-        "type": "spellblade",
+        "name": "Water Strike",
+        "type": "Spellblade",
         "rarity": 2
     },
     {
-        "name": "aero-strike",
-        "type": "spellblade",
+        "name": "Aero Strike",
+        "type": "Spellblade",
         "rarity": 2
     },
     {
-        "name": "charge",
-        "type": "combat",
+        "name": "Charge",
+        "type": "Combat",
         "rarity": 2
     },
     {
-        "name": "double-cut",
-        "type": "combat",
+        "name": "Double Cut",
+        "type": "Combat",
         "rarity": 2
     },
     {
-        "name": "sleep-attack",
-        "type": "support",
+        "name": "Sleep Attack",
+        "type": "Support",
         "rarity": 2
     },
     {
-        "name": "silence-attack",
-        "type": "support",
+        "name": "Silence Attack",
+        "type": "Support",
         "rarity": 2
     },
     {
-        "name": "venom-attack",
-        "type": "support",
+        "name": "Venom Attack",
+        "type": "Support",
         "rarity": 2
     },
     {
-        "name": "dark-attack",
-        "type": "support",
+        "name": "Dark Attack",
+        "type": "Support",
         "rarity": 2
     },
     {
-        "name": "cry",
-        "type": "support",
+        "name": "Cry",
+        "type": "Support",
         "rarity": 2
     },
     {
-        "name": "revive",
-        "type": "support",
+        "name": "Revive",
+        "type": "Support",
         "rarity": 2
     },
     {
-        "name": "wind-slash",
-        "type": "celerity",
+        "name": "Wind Slash",
+        "type": "Celerity",
         "rarity": 2
     },
     {
-        "name": "jump",
-        "type": "dragoon",
+        "name": "Jump",
+        "type": "Dragoon",
         "rarity": 2
     },
     {
-        "name": "death-strike",
-        "type": "monk",
+        "name": "Death Strike",
+        "type": "Monk",
         "rarity": 2
     },
     {
-        "name": "chi-blast",
-        "type": "monk",
+        "name": "Chi Blast",
+        "type": "Monk",
         "rarity": 2
     },
     {
-        "name": "guard",
-        "type": "knight",
+        "name": "Guard",
+        "type": "Knight",
         "rarity": 2
     },
     {
-        "name": "retaliate",
-        "type": "samurai",
+        "name": "Retaliate",
+        "type": "Samurai",
         "rarity": 2
     },
     {
-        "name": "shuriken",
-        "type": "ninja",
+        "name": "Shuriken",
+        "type": "Ninja",
         "rarity": 2
     },
     {
-        "name": "firaga",
-        "type": "black-magic",
+        "name": "Firaga",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "blizzaga",
-        "type": "black-magic",
+        "name": "Blizzaga",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "thundaga",
-        "type": "black-magic",
+        "name": "Thundaga",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "waterga",
-        "type": "black-magic",
+        "name": "Waterga",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "biora",
-        "type": "black-magic",
+        "name": "Biora",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "dark",
-        "type": "black-magic",
+        "name": "Dark",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "gravity",
-        "type": "black-magic",
+        "name": "Gravity",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "stop",
-        "type": "black-magic",
+        "name": "Stop",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "comet",
-        "type": "black-magic",
+        "name": "Comet",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "curaga",
-        "type": "white-magic",
+        "name": "Curaga",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "silencega",
-        "type": "white-magic",
+        "name": "Silencega",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "haste",
-        "type": "white-magic",
+        "name": "Haste",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "esuna",
-        "type": "white-magic",
+        "name": "Esuna",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "diara",
-        "type": "white-magic",
+        "name": "Diara",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "berserk",
-        "type": "white-magic",
+        "name": "Berserk",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "faith",
-        "type": "white-magic",
+        "name": "Faith",
+        "type": "White Magic",
         "rarity": 3
     },
     {
-        "name": "shiva",
-        "type": "summoning",
+        "name": "Shiva",
+        "type": "Summoning",
         "rarity": 3
     },
     {
-        "name": "ramuh",
-        "type": "summoning",
+        "name": "Ramuh",
+        "type": "Summoning",
         "rarity": 3
     },
     {
-        "name": "ifrit",
-        "type": "summoning",
+        "name": "Ifrit",
+        "type": "Summoning",
         "rarity": 3
     },
     {
-        "name": "fira-strike",
-        "type": "spellblade",
+        "name": "Fira Strike",
+        "type": "Spellblade",
         "rarity": 3
     },
     {
-        "name": "blizzara-strike",
-        "type": "spellblade",
+        "name": "Blizzara Strike",
+        "type": "Spellblade",
         "rarity": 3
     },
     {
-        "name": "thundara-strike",
-        "type": "spellblade",
+        "name": "Thundara Strike",
+        "type": "Spellblade",
         "rarity": 3
     },
     {
-        "name": "drain-strike",
-        "type": "spellblade",
+        "name": "Drain Strike",
+        "type": "Spellblade",
         "rarity": 3
     },
     {
-        "name": "magic-break",
-        "type": "combat",
+        "name": "Magic Break",
+        "type": "Combat",
         "rarity": 3
     },
     {
-        "name": "armor-break",
-        "type": "combat",
+        "name": "Armor Break",
+        "type": "Combat",
         "rarity": 3
     },
     {
-        "name": "mental-break",
-        "type": "combat",
+        "name": "Power Break",
+        "type": "Combat",
         "rarity": 3
     },
     {
-        "name": "cripple",
-        "type": "combat",
+        "name": "Mental Break",
+        "type": "Combat",
         "rarity": 3
     },
     {
-        "name": "launch",
-        "type": "combat",
+        "name": "Cripple",
+        "type": "Combat",
         "rarity": 3
     },
     {
-        "name": "intimidate",
-        "type": "support",
+        "name": "Launch",
+        "type": "Combat",
         "rarity": 3
     },
     {
-        "name": "silence-buster",
-        "type": "support",
+        "name": "Intimidate",
+        "type": "Support",
         "rarity": 3
     },
     {
-        "name": "dark-buster",
-        "type": "support",
+        "name": "Silence Buster",
+        "type": "Support",
         "rarity": 3
     },
     {
-        "name": "venom-buster",
-        "type": "support",
+        "name": "Dark Buster",
+        "type": "Support",
         "rarity": 3
     },
     {
-        "name": "sleep-buster",
-        "type": "support",
+        "name": "Venom Buster",
+        "type": "Support",
         "rarity": 3
     },
     {
-        "name": "quickness",
-        "type": "celerity",
+        "name": "Sleep Buster",
+        "type": "Support",
         "rarity": 3
     },
     {
-        "name": "leg-shot",
-        "type": "celerity",
+        "name": "Quickness",
+        "type": "Celerity",
         "rarity": 3
     },
     {
-        "name": "chakra",
-        "type": "monk",
+        "name": "Leg Shot",
+        "type": "Celerity",
         "rarity": 3
     },
     {
-        "name": "drain",
-        "type": "black-magic",
+        "name": "Chakra",
+        "type": "Monk",
         "rarity": 3
     },
     {
-        "name": "reflect",
-        "type": "white-magic",
+        "name": "Drain",
+        "type": "Black Magic",
         "rarity": 3
     },
     {
-        "name": "firaja",
-        "type": "black-magic",
+        "name": "Reflect",
+        "type": "White Magic",
+        "rarity": 3
+    },
+    {
+        "name": "Firaja",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "blizzaja",
-        "type": "black-magic",
+        "name": "Blizzaja",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "thundaja",
-        "type": "black-magic",
+        "name": "Thundaja",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "waterja",
-        "type": "black-magic",
+        "name": "Waterja",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "death",
-        "type": "black-magic",
+        "name": "Death",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "break",
-        "type": "black-magic",
+        "name": "Break",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "quake",
-        "type": "black-magic",
+        "name": "Quake",
+        "type": "Black Magic",
         "rarity": 4
     },
     {
-        "name": "curaja",
-        "type": "white-magic",
+        "name": "Curaja",
+        "type": "White Magic",
         "rarity": 4
     },
     {
-        "name": "protectga",
-        "type": "white-magic",
+        "name": "Protectga",
+        "type": "White Magic",
         "rarity": 4
     },
     {
-        "name": "shellga",
-        "type": "white-magic",
+        "name": "Shellga",
+        "type": "White Magic",
         "rarity": 4
     },
     {
-        "name": "slowga",
-        "type": "white-magic",
+        "name": "Slowga",
+        "type": "White Magic",
         "rarity": 4
     },
     {
-        "name": "raise",
-        "type": "white-magic",
+        "name": "Raise",
+        "type": "White Magic",
         "rarity": 4
     },
     {
-        "name": "syldra",
-        "type": "summoning",
+        "name": "Diaga",
+        "type": "White Magic",
         "rarity": 4
     },
     {
-        "name": "leviathan",
-        "type": "summoning",
+        "name": "Syldra",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "maduin",
-        "type": "summoning",
+        "name": "Leviathan",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "phoenix",
-        "type": "summoning",
+        "name": "Maduin",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "valefor",
-        "type": "summoning",
+        "name": "Phoenix",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "carbuncle",
-        "type": "summoning",
+        "name": "Valefor",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "ixion",
-        "type": "summoning",
+        "name": "Carbuncle",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "alexander",
-        "type": "summoning",
+        "name": "Ixion",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "break-strike",
-        "type": "spellblade",
+        "name": "Alexander",
+        "type": "Summoning",
         "rarity": 4
     },
     {
-        "name": "bladeblitz",
-        "type": "combat",
+        "name": "Break Strike",
+        "type": "Spellblade",
         "rarity": 4
     },
     {
-        "name": "pound",
-        "type": "combat",
+        "name": "Bladeblitz",
+        "type": "Combat",
         "rarity": 4
     },
     {
-        "name": "wrath",
-        "type": "support",
+        "name": "Pound",
+        "type": "Combat",
         "rarity": 4
     },
     {
-        "name": "mental-breakdown",
-        "type": "support",
+        "name": "Wrath",
+        "type": "Support",
         "rarity": 4
     },
     {
-        "name": "magic-breakdown",
-        "type": "support",
+        "name": "Mental Breakdown",
+        "type": "Support",
         "rarity": 4
     },
     {
-        "name": "power-breakdown",
-        "type": "support",
+        "name": "Magic Breakdown",
+        "type": "Support",
         "rarity": 4
     },
     {
-        "name": "armor-breakdown",
-        "type": "support",
+        "name": "Power Breakdown",
+        "type": "Support",
         "rarity": 4
     },
     {
-        "name": "shadowbind",
-        "type": "celerity",
+        "name": "Armor Breakdown",
+        "type": "Support",
         "rarity": 4
     },
     {
-        "name": "pressure-point",
-        "type": "monk",
+        "name": "Shadowbind",
+        "type": "Celerity",
         "rarity": 4
     },
     {
-        "name": "flare",
-        "type": "black-magic",
+        "name": "Pressure Point",
+        "type": "Monk",
+        "rarity": 4
+    },
+    {
+        "name": "Flare",
+        "type": "Black Magic",
         "rarity": 5
     },
     {
-        "name": "holy",
-        "type": "white-magic",
+        "name": "Holy",
+        "type": "White Magic",
         "rarity": 5
     },
     {
-        "name": "odin",
-        "type": "summoning",
+        "name": "Odin",
+        "type": "Summoning",
         "rarity": 5
     },
     {
-        "name": "flare-strike",
-        "type": "spellblade",
+        "name": "Flare Strike",
+        "type": "Spellblade",
         "rarity": 5
     },
     {
-        "name": "barrage",
-        "type": "combat",
+        "name": "Barrage",
+        "type": "Combat",
         "rarity": 5
     },
     {
-        "name": "entrust",
-        "type": "support",
+        "name": "Entrust",
+        "type": "Support",
         "rarity": 5
     },
     {
-        "name": "quick-hit",
-        "type": "celerity",
+        "name": "Quick Hit",
+        "type": "Celerity",
         "rarity": 5
     }
 ]

@@ -3,15 +3,8 @@
     <div class="uk-width-medium-1-3">
         <div class="uk-panel uk-panel-box uk-panel-box-primary">
 
-            <div class="section search">
-                <input type="text" placeholder="{{'Add item'|translate}}" ng-keyup="app.findSuggestions($event)"
-                       ng-model="app.typingName"/>
-            </div>
-            <div class="section suggested">
-                <a href="" ng-repeat="suggest in app.suggested" ng-bind-html="suggest.name.formatted()"
-                   ng-class="{selected: $index == app.selected}"
-                   ng-click="app.chooseSuggest(suggest)">
-                </a>
+            <div class="uk-autocomplete uk-form" id="itemForm">
+                <input type="text" ng-model="app.input" placeholder="Type item.."/>
             </div>
 
         </div>

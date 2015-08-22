@@ -29,11 +29,8 @@ function InventoryController($http, $scope, $sce, $translate) {
     this.realm = null;
     this.realms = ['II'];
 
-    this.translatedNames = {};
-
-    this.selected = 0;
-
-    this.typingName = '';
+    // input
+    this.input = '';
 
     this.orders = [];
 
@@ -51,13 +48,11 @@ function InventoryController($http, $scope, $sce, $translate) {
         success(function (data) {
             self.csvData.push(data);
             self.complete();
-        }).
-        error(function (data, status, headers, config) {
-            // todo handle error loading
         });
 
     this.afterRefreshLocales = function () {
         self.loadInventory();
+        self.autocomplete();
     };
     this.refreshLocales();
 
@@ -78,9 +73,6 @@ InventoryController.prototype.refreshLocales = function () {
         success(function (data) {
             self.locales = data;
             self.complete();
-        }).
-        error(function (data, status, headers, config) {
-            // todo handle error loading
         });
 };
 
@@ -111,74 +103,39 @@ InventoryController.prototype.csvParse = function (csvData) {
     if (this.afterRefreshLocales) this.afterRefreshLocales();
 };
 
-InventoryController.prototype.findSuggestions = function (ev) {
-    if (ev.keyCode == 38) // top
-    {
-        if (this.suggested.length == 0) {
-            eventCancel(ev);
-        }
+InventoryController.prototype.autocomplete = function () {
+    var self = this;
 
-        this.selected--;
-        if (this.selected < 0) {
-            this.selected = this.suggested.length - 1;
-        }
+    UIkit.autocomplete($('#itemForm'), {
+        source  : function (release) {
 
-        eventCancel(ev);
-    }
-    if (ev.keyCode == 40) // bottom
-    {
-        if (this.suggested.length == 0) {
-            eventCancel(ev);
-        }
+            var regex  = new RegExp(self.input, 'i'),
+                result = self.itemNames.filter(function (e) {
+                    return regex.test(e.translated);
+                });
 
-        this.selected++;
-        if (this.selected >= this.suggested.length) {
-            this.selected = 0;
-        }
+            release(result); // release the data back to the autocompleter
 
-        eventCancel(ev);
-    }
-    if (ev.keyCode == 13) // enter
-    {
-        if (this.suggested.length == 0) {
-            eventCancel(ev);
-        }
+        },
+        template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
+                        {{~items}}\
+                            <li data-original="{{ $item.original }}" \
+                                data-translated="{{ $item.translated }}">\
+                                <a>\
+                                    {{ $item.translated }}\
+                                </a>\
+                            </li>\
+                        {{/items}}\
+                    </ul>'
+    });
 
-        this.addItem(new Item(this, this.suggested[this.selected].name));
+    UIkit.$('#itemForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
+        self.addItem(new Item(self, new Name(self, data.original, data.translated)));
+        self.$scope.$apply();
+        ac.input.val('');
+        data.value = null;
+    });
 
-        eventCancel(ev);
-    }
-
-    if (this.typingName == '') {
-        this.suggested = [];
-    } else {
-        this.suggested = [];
-        // find the 15 first matches
-        var i = 0;
-        var nbr = 0;
-        while (i < this.itemNames.length && nbr < 15) {
-            var name = this.itemNames[i];
-            var regex = this.buildRegex();
-            if (name.translated.match(regex)) {
-                this.suggested.push(new Suggest(this, name));
-                nbr++;
-            }
-            i++;
-        }
-    }
-};
-
-InventoryController.prototype.chooseSuggest = function (suggest) {
-    this.addItem(new Item(this, suggest.name));
-    return false;
-};
-
-InventoryController.prototype.buildRegex = function () {
-    var regex;
-    regex = this.typingName.split('');
-    regex = regex.join('.*');
-    regex = new RegExp(regex, 'i');
-    return regex;
 };
 
 InventoryController.prototype.optimize = function () {
@@ -285,7 +242,7 @@ InventoryController.prototype.changeOrder = function (field) {
     this.refreshOrder();
 };
 
-InventoryController.prototype.refreshOrder = function (field) {
+InventoryController.prototype.refreshOrder = function () {
     var fields = [];
     for (var i in this.orders) {
         var order = this.orders[i];
@@ -358,8 +315,8 @@ InventoryController.prototype.changeLang = function (lang) {
             }
 
             // change inventory names
-            for (var i in this.inventory) {
-                var item = this.inventory[i];
+            for (var j in this.inventory) {
+                var item = this.inventory[j];
                 item.name.refreshTranslated();
             }
         };

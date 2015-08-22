@@ -24,6 +24,11 @@ function InventoryController($http, $scope, $sce, $translate) {
     // Item[]
     this.inventory = [];
 
+    // actual realm
+    // example: IX, XIII
+    this.realm = null;
+    this.realms = ['II'];
+
     this.translatedNames = {};
 
     this.selected = 0;
@@ -244,14 +249,25 @@ InventoryController.prototype.reset = function () {
 
 InventoryController.prototype.addItem = function (item) {
     this.inventory.push(item);
+    this.refreshRealms();
     this.refreshOrder();
     this.saveInventory();
 };
 
 InventoryController.prototype.removeItem = function (item) {
     _.remove(this.inventory, item);
+    this.refreshRealms();
     this.saveInventory();
     return false;
+};
+
+InventoryController.prototype.refreshRealms = function () {
+    this.realms = _.uniq(_.pluck(this.inventory, 'origin'));
+    this.realms.push(null);
+    if ($.inArray(this.realm, this.realms) == -1) {
+        this.realm = null;
+        this.saveRealm();
+    }
 };
 
 InventoryController.prototype.changeOrder = function (field) {
@@ -313,6 +329,16 @@ InventoryController.prototype.saveOrder = function () {
     localStorage.orders = JSON.stringify(this.orders);
 };
 
+InventoryController.prototype.loadRealm = function () {
+    if (localStorage.realm) {
+        this.realm = localStorage.realm;
+    }
+};
+
+InventoryController.prototype.saveRealm = function () {
+    localStorage.realm = this.realm;
+};
+
 InventoryController.prototype.isOrder = function (field, asc) {
     var order = _.find(this.orders, {field: field});
     return (order) ? (order.asc == asc) : false;
@@ -364,6 +390,8 @@ InventoryController.prototype.loadInventory = function (data) {
         final.level = item.l;
         this.inventory.push(final);
     }
+    this.loadRealm();
+    this.refreshRealms();
     this.loadOrder();
 };
 

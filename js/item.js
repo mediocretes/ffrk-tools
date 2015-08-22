@@ -1,4 +1,6 @@
 function Item(app, name) {
+    this.app = app;
+
     var infos = _.find(app.items, function (x) {
         return x.indexOf(name.original) === 0;
     });
@@ -89,4 +91,8 @@ Item.prototype.syn = function (stat) {
     } else {
         return start + Math.ceil((max - start) * ((level - 1 + bonusLevel) / (maxLevel - 1)));
     }
+};
+
+Item.prototype.realm = function(stat) {
+    return (this.app.realm == this.origin) ? this.syn(stat): this.curr(stat);
 };

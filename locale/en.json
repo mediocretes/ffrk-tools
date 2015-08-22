@@ -15,5 +15,8 @@
     "type": "type",
     "level": "level",
     "Last commits": "Last commits",
-    "New issue": "Bug or suggestion ?"
+    "New issue": "Bug or suggestion ?",
+    "realm notice": "You can set/unset a realm here.",
+    "current realm": "Current realm: ",
+    "optimize notice": "Highlight deletable items based on stats (one item by type and realm). Please use this feature carefully."
 }

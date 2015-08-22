@@ -1,0 +1,100 @@
+<table class="uk-table">
+    <thead>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th colspan="7" class="stat_realm">{{'realm'|translate}} {{app.realm}}</th>
+    </tr>
+    <tr>
+        <th><a href="" ng-click="app.changeOrder('name')">{{'name'|translate}}</a></th>
+        <th><a href="" ng-click="app.changeOrder('origin')">{{'origin'|translate}}</a></th>
+        <th><a href="" ng-click="app.changeOrder('rarity')">{{'rarity'|translate}}</a></th>
+        <th><a href="" ng-click="app.changeOrder('type')">{{'type'|translate}}</a></th>
+        <th><a href="" ng-click="app.changeOrder('level')">{{'level'|translate}}</a></th>
+
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:atk')">atk</a></th>
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:mag')">mag</a></th>
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:acc')">acc</a></th>
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:def')">def</a></th>
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:res')">res</a></th>
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:eva')">eva</a></th>
+        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:mnd')">mnd</a></th>
+    </tr>
+    <tr>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('name', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('name', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('origin', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('origin', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('rarity', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('rarity', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('type', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('type', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('level', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('level', false)"></span>
+        </th>
+
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:atk', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:atk', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:mag', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:mag', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:acc', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:acc', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:def', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:def', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:res', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:res', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:eva', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:eva', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('realm:mnd', true)"></span>
+            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('realm:mnd', false)"></span>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
+        <td><a href="{{item.url}}" target="_blank">
+            {{item.name.translated}}
+            <span ng-if="item.level>item.levelMax1">+</span><span ng-if="item.level>item.levelMax2">+</span>
+        </a></td>
+        <td>{{item.origin}}</td>
+        <td>{{item.rarity}}</td>
+        <td>{{item.type}}</td>
+        <td class="level"><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
+
+        <td class="stat_realm">{{item.realm('atk')}}</td>
+        <td class="stat_realm">{{item.realm('mag')}}</td>
+        <td class="stat_realm">{{item.realm('acc')}}</td>
+        <td class="stat_realm">{{item.realm('def')}}</td>
+        <td class="stat_realm">{{item.realm('res')}}</td>
+        <td class="stat_realm">{{item.realm('eva')}}</td>
+        <td class="stat_realm">{{item.realm('mnd')}}</td>
+
+        <td class="remove"><a href="" ng-click="app.removeItem(item)"><i class="uk-icon uk-icon-remove"></i></a></td>
+    </tr>
+    </tbody>
+</table>

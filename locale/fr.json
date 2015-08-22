@@ -16,5 +16,8 @@
 	"type": "type",
 	"level": "niveau",
 	"Last commits": "Derniers commits",
-    "New issue": "Bug ou suggestion ?"
+    "New issue": "Bug ou suggestion ?",
+	"realm notice": "Vous pouvez renseigner un monde ici.",
+	"current realm": "Monde actuel : ",
+	"optimize notice": "Met en évidence les objets qui peuvent être supprimés selon leurs caractéristiques (un seul objet est gardé par type et monde). Utilisez cette fonctionnalité avec attention."
 }

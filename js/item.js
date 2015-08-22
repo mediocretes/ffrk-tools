@@ -1,7 +1,7 @@
 function Item(app, name) {
     this.app = app;
 
-    var infos = _.find(app.items, function (x) {
+    var infos = _.find(app.main.items, function (x) {
         return x.indexOf(name.original) === 0;
     });
 

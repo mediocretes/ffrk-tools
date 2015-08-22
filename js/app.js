@@ -22,9 +22,10 @@ app.config(function ($translateProvider, $routeProvider) {
         });
 });
 
-app.controller('MenuController', [MenuController]);
-app.controller('InventoryController', ['$http', '$scope', '$sce', '$translate', InventoryController]);
-app.controller('AbilitiesController', ['$http', '$scope', AbilitiesController]);
+app.service('Main', ['$http', '$translate', Main]);
+app.controller('MenuController', ['Main', MenuController]);
+app.controller('InventoryController', ['Main', '$scope', '$sce', InventoryController]);
+app.controller('AbilitiesController', ['Main', '$scope', AbilitiesController]);
 
 function eventCancel(e) {
     if (!e)
@@ -37,11 +38,11 @@ function eventCancel(e) {
     if (e.cancel != null) e.cancel = true;
 }
 
-app.directive('ngEnter', function() {
-    return function(scope, element, attrs) {
-        element.bind("keydown keypress", function(event) {
-            if(event.which === 13) {
-                scope.$apply(function(){
+app.directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if (event.which === 13) {
+                scope.$apply(function () {
                     scope.$eval(attrs.ngEnter);
                 });
 

@@ -1,123 +1,57 @@
-function InventoryController($http, $scope, $sce, $translate) {
-    var self = this;
+function InventoryController(main, $scope, $sce) {
 
-    this.$http = $http;
+    this.main = main;
     this.$scope = $scope;
     this.$sce = $sce;
-    this.$translate = $translate;
 
-    this.nbLoaded = 0;
+    // ??
     this.loaded = false;
 
-    this.csvData = [];
-
-    // String[]
-    // csv lines
-    this.items = [];
-
-    // String[]
-    this.itemNames = [];
-
-    // String[]
-    this.suggested = [];
+    // item input
+    this.input = '';
 
     // Item[]
     this.inventory = [];
 
-    // actual realm
-    // example: IX, XIII
+    // realm
     this.realm = null;
     this.realms = ['II'];
 
-    // input
-    this.input = '';
-
+    // specific orders to sort the inventory
     this.orders = [];
 
-    this.box = null;
-    this.importArea = '';
-    this.exportArea = '';
-
-    this.loadLang();
-    this.locales = {};
-
-    this.completed = 2;
-    var date = new Date();
-    var d = date.getMonth() + '-' + date.getFullYear();
-    this.$http.get('/data/en.csv?d=' + d).
-        success(function (data) {
-            self.csvData.push(data);
-            self.complete();
-        });
-
-    this.afterRefreshLocales = function () {
-        self.loadInventory();
-        self.autocomplete();
-    };
-    this.refreshLocales();
+    // ... and here we go
+    this.load();
 
 }
 
-InventoryController.prototype.refreshLocales = function () {
+InventoryController.prototype.load = function () {
     var self = this;
 
-    this.locale = {};
-
-    if (this.lang == 'en') {
-        this.locales = {};
-        this.complete();
-        return;
-    }
-
-    this.$http.get('/locale/items-' + this.lang + '.json').
-        success(function (data) {
-            self.locales = data;
-            self.complete();
-        });
-};
-
-InventoryController.prototype.complete = function () {
-    this.nbLoaded++;
-    if (this.nbLoaded >= this.completed) {
-        this.loaded = true;
-        for (var i in this.csvData) {
-            this.csvParse(this.csvData[i]);
-        }
-    }
-};
-
-InventoryController.prototype.csvParse = function (csvData) {
-    var lines = csvData.split("\n");
-    this.items = [];
-    this.itemNames = [];
-    for (var i in lines) {
-        var infos = lines[i].split(',');
-
-        var name = infos[0];
-        var translatedName = this.locales[name] ? this.locales[name] : name;
-
-        this.items.push(lines[i]);
-        this.itemNames.push(new Name(this, name, translatedName));
-    }
-
-    if (this.afterRefreshLocales) this.afterRefreshLocales();
+    self.main.InventoryController = this;
+    self.main.load(function() {
+        self.loadInventory();
+        self.autocomplete();
+    });
 };
 
 InventoryController.prototype.autocomplete = function () {
     var self = this;
 
-    UIkit.autocomplete($('#itemForm'), {
-        source  : function (release) {
+    UIkit.ready(function () {
 
-            var regex  = new RegExp(self.input, 'i'),
-                result = self.itemNames.filter(function (e) {
-                    return regex.test(e.translated);
-                });
+        UIkit.autocomplete($('#itemForm'), {
+            source  : function (release) {
 
-            release(result); // release the data back to the autocompleter
+                var regex  = new RegExp(self.input, 'i'),
+                    result = self.main.names.items.filter(function (e) {
+                        return regex.test(e.translated);
+                    });
 
-        },
-        template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
+                release(result); // release the data back to the autocompleter
+
+            },
+            template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
                         {{~items}}\
                             <li data-original="{{ $item.original }}" \
                                 data-translated="{{ $item.translated }}">\
@@ -127,13 +61,15 @@ InventoryController.prototype.autocomplete = function () {
                             </li>\
                         {{/items}}\
                     </ul>'
-    });
+        });
 
-    UIkit.$('#itemForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
-        self.addItem(new Item(self, new Name(self, data.original, data.translated)));
-        self.$scope.$apply();
-        ac.input.val('');
-        data.value = null;
+        UIkit.$('#itemForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
+            self.addItem(new Item(self, new Name(self, data.original, data.translated)));
+            self.$scope.$apply();
+            ac.input.val('');
+            data.value = null;
+        });
+
     });
 
 };
@@ -167,41 +103,6 @@ InventoryController.prototype.optimize = function () {
 
     return false;
 
-};
-
-InventoryController.prototype.showBox = function (name) {
-    this.box = name;
-    if (name == 'import') {
-        this.importArea = '';
-    }
-    return false;
-};
-
-InventoryController.prototype.closeBox = function () {
-    this.box = null;
-    return false;
-};
-
-InventoryController.prototype.import = function () {
-    this.loadInventory(this.importArea);
-    this.saveInventory();
-    this.closeBox();
-    return false;
-};
-
-InventoryController.prototype.export = function () {
-    this.showBox('export');
-    this.exportArea = localStorage.inventory;
-    return false;
-};
-
-InventoryController.prototype.reset = function () {
-    if (confirm('Are you sure?')) {
-        localStorage.clear();
-        this.inventory = [];
-        this.suggested = [];
-    }
-    return false;
 };
 
 InventoryController.prototype.addItem = function (item) {
@@ -301,32 +202,6 @@ InventoryController.prototype.isOrder = function (field, asc) {
     return (order) ? (order.asc == asc) : false;
 };
 
-InventoryController.prototype.changeLang = function (lang) {
-
-    this.lang = lang;
-    this.$translate.use(lang);
-    this.completed = 1;
-    this.afterRefreshLocales =
-        function () {
-            // change suggests names
-            for (var i in this.suggested) {
-                var suggest = this.suggested[i];
-                suggest.name.refreshTranslated();
-            }
-
-            // change inventory names
-            for (var j in this.inventory) {
-                var item = this.inventory[j];
-                item.name.refreshTranslated();
-            }
-        };
-    this.refreshLocales();
-    this.saveLang();
-
-    return false;
-
-};
-
 InventoryController.prototype.loadInventory = function (data) {
 
     data = data ? data : localStorage.inventory;
@@ -341,7 +216,7 @@ InventoryController.prototype.loadInventory = function (data) {
     for (var i in items) {
         var item = items[i];
         var n = item.n;
-        var translatedName = this.locales[n] ? this.locales[n] : n;
+        var translatedName = this.main.getTranslatedName('items', n);
         var name = new Name(this, n, translatedName);
         var final = new Item(this, name);
         final.level = item.l;
@@ -361,17 +236,4 @@ InventoryController.prototype.saveInventory = function () {
     }
 
     localStorage.inventory = JSON.stringify(items);
-};
-
-InventoryController.prototype.loadLang = function () {
-    if (localStorage.lang) {
-        this.lang = localStorage.lang;
-    } else {
-        this.lang = this.$translate.preferredLanguage();
-    }
-    this.$translate.use(this.lang);
-};
-
-InventoryController.prototype.saveLang = function () {
-    localStorage.lang = this.lang;
 };

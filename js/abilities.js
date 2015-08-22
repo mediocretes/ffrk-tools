@@ -1,59 +1,55 @@
 /**
  *
+ * @param main
  * @param $http
  * @param $scope
  * @constructor
  */
-function AbilitiesController($http, $scope) {
+function AbilitiesController(main, $scope) {
 
-    var self = this;
+    this.main = main;
+    this.$scope = $scope;
 
-    // input
-    self.input = '';
-
-    // load abilities & characters json files
-    self.$http = $http;
-    self.$scope = $scope;
-
-    self.data = {
-        "abilities" : [],
-        "characters": []
-    };
-
-    $http.get('/data/abilities.json').
-        then(function (r) {
-            self.data.abilities = r.data;
-            self.autocomplete(r.data);
-        });
-
-    $http.get('/data/characters.json').
-        then(function (r) {
-            self.data.characters = r.data;
-        });
+    // ability input
+    this.input = '';
 
     // selected abilities from input
-    self.abilities = [];
+    this.abilities = [];
 
     // selected characters by abilities
-    self.characters = [];
+    this.characters = [];
+
+    // ... and here we go
+    this.load();
 
 }
 
-AbilitiesController.prototype.autocomplete = function (data) {
+AbilitiesController.prototype.load = function () {
     var self = this;
 
-    UIkit.autocomplete($('#abilityForm'), {
-        source  : function (release) {
+    self.main.AbilitiesController = this;
+    self.main.load(function() {
+        self.autocomplete();
+    });
+};
 
-            var regex  = new RegExp(self.input, 'i'),
-                result = data.filter(function (e) {
-                    return regex.test(e.name);
-                });
+AbilitiesController.prototype.autocomplete = function () {
+    var self = this;
 
-            release(result); // release the data back to the autocompleter
+    UIkit.ready(function () {
 
-        },
-        template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
+        UIkit.autocomplete($('#abilityForm'), {
+            source  : function (release) {
+
+                var regex  = new RegExp(self.input, 'i'),
+                    result = self.main.abilities.filter(function (e) {
+                        return regex.test(e.name);
+                    });
+
+                release(result); // release the data back to the autocompleter
+
+            },
+            template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
                         {{~items}}\
                             <li data-value="{{ $item.name }}">\
                                 <a>\
@@ -62,17 +58,18 @@ AbilitiesController.prototype.autocomplete = function (data) {
                             </li>\
                         {{/items}}\
                     </ul>'
-    });
+        });
 
-    UIkit.$('#abilityForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
-        self.addAbility(data.value);
-        self.$scope.$apply();
-        ac.input.val('');
-        data.value = null;
+        UIkit.$('#abilityForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
+            self.addAbility(data.value);
+            self.$scope.$apply();
+            ac.input.val('');
+            data.value = null;
+        });
+
     });
 
 };
-
 
 AbilitiesController.prototype.addAbility = function (value) {
 
@@ -81,14 +78,14 @@ AbilitiesController.prototype.addAbility = function (value) {
     if (b) throw new Error('Ability already added!');
 
     // search ability data
-    var a = _.find(this.data.abilities, {name: value});
+    var a = _.find(this.main.abilities, {name: value});
     if (!a) throw new Error('Ability not found!');
 
     var ability = new Ability(this, a);
     this.abilities.push(ability);
 
-    for (var i in this.data.characters) {
-        var c = this.data.characters[i];
+    for (var i in this.main.characters) {
+        var c = this.main.characters[i];
         if (c.abilities[a.type] && a.rarity <= c.abilities[a.type]) {
             var character = _.find(this.characters, {name: c.name});
 

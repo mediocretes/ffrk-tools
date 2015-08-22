@@ -13,5 +13,5 @@ Name.prototype.formatted = function () {
 };
 
 Name.prototype.refreshTranslated = function () {
-    this.translated = this.app.locales[this.original] ? this.app.locales[this.original] : this.original;
+    this.translated = this.app.main.getTranslatedName('items', this.original);
 };

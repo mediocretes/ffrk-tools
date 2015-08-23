@@ -1,6 +1,5 @@
-/*
- * Navbar
- */
+/* Modifier `uk-navbar`
+ ========================================================================== */
 .tm-navbar {
   background: #444;
 }
@@ -65,4 +64,13 @@
 .tm-navbar .uk-nav-navbar .uk-nav-divider {
   border-top: 1px solid #dddddd;
   background-color: #444;
+}
+/* Modifier `inventory table`
+ ========================================================================== */
+tr.bonusRealm {
+  background-color: #b6d1e4;
+  color: #fff;
+}
+tr.toRemove td:first-child {
+  text-decoration: line-through;
 }

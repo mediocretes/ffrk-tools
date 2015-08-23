@@ -4,7 +4,7 @@
   background: #444;
 }
 .tm-navbar .uk-navbar-nav > li > a {
-  color: #ccc;
+  color: #eee;
 }
 .tm-navbar .uk-navbar-nav > li {
   margin-left: 20px;
@@ -19,7 +19,7 @@
 /* Active */
 .tm-navbar .uk-navbar-nav > li.uk-active > a {
   text-decoration: underline;
-  color: #eee;
+  color: #ccc;
   background: transparent;
 }
 /* OnClick */
@@ -73,4 +73,16 @@ tr.bonusRealm {
 }
 tr.toRemove td:first-child {
   text-decoration: line-through;
+}
+/* Nav modifier `uk-nav-autocomplete`
+ ========================================================================== */
+.uk-dropdown {
+  background-color: #ebf7fd;
+  border: 1px solid #0077DD;
+}
+/*
+ * Items
+ */
+.uk-nav-autocomplete > li > a {
+  color: #0077DD;
 }

@@ -43,25 +43,28 @@ Main.prototype.loadData = function (callback) {
 
     this.setComplete(4);
 
-    this.$http.get('/data/en.csv').
+    var date = new Date();
+    var d = date.getMonth() + '-' + date.getFullYear();
+
+    this.$http.get('/data/en.csv?d=' + d).
         then(function (r) {
             self.items = _.union(self.items, r.data.split("\n"));
             self.complete(callback);
         });
 
-    this.$http.get('/data/extra.csv').
+    this.$http.get('/data/extra.csv?d=' + d).
         then(function (r) {
             self.items = _.union(self.items, r.data.split("\n"));
             self.complete(callback);
         });
 
-    this.$http.get('/data/abilities.json').
+    this.$http.get('/data/abilities.json?d=' + d).
         then(function (r) {
             self.abilities = r.data;
             self.complete(callback);
         });
 
-    this.$http.get('/data/characters.json').
+    this.$http.get('/data/characters.json?d=' + d).
         then(function (r) {
             self.characters = r.data;
             self.complete(callback);
@@ -144,13 +147,16 @@ Main.prototype.loadLocales = function (callback) {
 
     this.setComplete(2);
 
-    this.$http.get('/locale/items-' + this.lang + '.json').
+    var date = new Date();
+    var d = date.getMonth() + '-' + date.getFullYear();
+
+    this.$http.get('/locale/items-' + this.lang + '.json?d=' + d).
         success(function (data) {
             self.locales[self.lang]['items'] = data;
             self.complete(callback);
         });
 
-    this.$http.get('/locale/abilities-' + this.lang + '.json').
+    this.$http.get('/locale/abilities-' + this.lang + '.json?d=' + d).
         success(function (data) {
             self.locales[self.lang]['abilities'] = data;
             self.refreshAbilitiesNames();

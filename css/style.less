@@ -1,3 +1,74 @@
-body {
+/*
+ * Navbar
+ */
 
+.tm-navbar {
+  background: #444;
+}
+
+.tm-navbar .uk-navbar-nav > li > a {
+  color: #eee;
+}
+
+.tm-navbar .uk-navbar-nav > li { margin-left: 20px; }
+
+/* Hover */
+.tm-navbar .uk-navbar-nav > li:hover > a,
+.tm-navbar .uk-navbar-nav > li > a:focus,
+.tm-navbar .uk-navbar-nav > li.uk-open > a {
+  background: #00a8e6;
+  color: #ffffff;
+}
+
+/* Active */
+.tm-navbar .uk-navbar-nav > li.uk-active > a {
+  text-decoration: underline;
+  color: #ccc;
+  background: transparent;
+}
+
+/* OnClick */
+.tm-navbar .uk-navbar-nav > li > a:active { background-color: transparent; }
+
+/* Brand */
+
+.tm-navbar .uk-navbar-brand {
+  color: #aaa;
+}
+
+.tm-navbar .uk-dropdown-navbar {
+  background-color: #444;
+}
+
+/* Modifier `uk-nav-navbar`
+ ========================================================================== */
+/*
+ * Items
+ */
+.tm-navbar .uk-nav-navbar > li > a {
+  color: #eee;
+  background-color: #444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.tm-navbar .uk-nav-navbar > li > a:hover,
+.tm-navbar .uk-nav-navbar > li > a:focus {
+  background: #00a8e6;
+  color: #ffffff;
+}
+/* Active */
+.tm-navbar .uk-nav-navbar > li.uk-active > a {
+  text-decoration: underline;
+  color: #ccc;
+  background: transparent;
+}
+/*
+ * Sub-object: `uk-nav-divider`
+ */
+.tm-navbar .uk-nav-navbar .uk-nav-divider {
+  border-top: 1px solid #dddddd;
+  background-color: #444;
 }

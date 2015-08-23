@@ -9,24 +9,32 @@
 
 <body>
 
-<nav class="uk-navbar" ng-controller="MenuController as app">
+<nav class="tm-navbar uk-navbar" ng-controller="MenuController as app">
     <div class="uk-navbar-brand">FFRK tools</div>
     <ul class="uk-navbar-nav">
-        <li><a href="#/inventory">{{'Inventory (menu)'|translate}}</a></li>
-        <li><a href="#/abilities">{{'Abilities (menu)'|translate}}</a></li>
+        <li ng-class="{'uk-active': app.isActive('/inventory')}">
+            <a href="#/inventory">{{'Inventory (menu)'|translate}}</a>
+        </li>
+        <li ng-class="{'uk-active': app.isActive('/abilities')}">
+            <a href="#/abilities">{{'Abilities (menu)'|translate}}</a>
+        </li>
     </ul>
     <div class="uk-navbar-flip">
         <ul class="uk-navbar-nav">
             <li class="uk-parent" data-uk-dropdown>
-                <a href="">{{'Languages'|translate}}</a>
+                <a href="">
+                    {{'Languages'|translate}}
+                    <i class="uk-icon-caret-down"></i>
+                </a>
 
                 <div class="uk-dropdown uk-dropdown-navbar">
                     <ul class="uk-nav uk-nav-navbar">
-                        <li ng-class="{'uk-active': app.lang == 'en'}" ng-click="app.changeLang('en')">
-                            {{'English'|translate}}
+                        <li ng-class="{'uk-active': app.main.lang == 'en'}" ng-click="app.changeLang('en')">
+                            <a href="">{{'English'|translate}}</a>
                         </li>
-                        <li ng-class="{'uk-active': app.lang == 'fr'}" ng-click="app.changeLang('fr')">
-                            {{'French'|translate}}
+                        <li class="uk-nav-divider"></li>
+                        <li ng-class="{'uk-active': app.main.lang == 'fr'}" ng-click="app.changeLang('fr')">
+                            <a href="">{{'French'|translate}}</a>
                         </li>
                     </ul>
                 </div>

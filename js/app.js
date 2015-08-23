@@ -23,7 +23,7 @@ app.config(function ($translateProvider, $routeProvider) {
 });
 
 app.service('Main', ['$http', '$translate', Main]);
-app.controller('MenuController', ['Main', MenuController]);
+app.controller('MenuController', ['Main', '$location', MenuController]);
 app.controller('InventoryController', ['Main', '$scope', '$sce', InventoryController]);
 app.controller('AbilitiesController', ['Main', '$scope', AbilitiesController]);
 

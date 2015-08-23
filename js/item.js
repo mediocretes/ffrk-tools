@@ -16,43 +16,53 @@ function Item(app, name) {
     this.index = _.uniqueId();
     this.name = name;
     this.origin = origins ? origins[1] : '';
-    this.rarity = d[2];
-    this.url = d[3];
+    this.type = d[1];
+    this.rarity = parseInt(d[2]);
+
     this.levelMax1 = (this.rarity > 1) ? (this.rarity - 1) * 5 : 3;
     this.levelMax2 = (this.rarity > 1) ? this.levelMax1 + 5 : this.levelMax1 + 2;
     this.levelMax3 = this.levelMax2 + 5;
+
     this.level = this.levelMax1;
-    this.type = d[1];
+
     this.toRemove = false;
+
     this.base = {
-        atk: d[4],
-        mag: d[5],
-        acc: d[6],
-        def: d[7],
-        res: d[8],
-        eva: d[9],
-        mnd: d[10]
+        atk: parseInt(d[3]) || 0,
+        mag: parseInt(d[4]) || 0,
+        acc: parseInt(d[5]) || 0,
+        def: parseInt(d[6]) || 0,
+        res: parseInt(d[7]) || 0,
+        eva: parseInt(d[8]) || 0,
+        mnd: parseInt(d[9]) || 0
     };
     this.max = {
-        atk: d[11],
-        mag: d[12],
-        acc: d[13],
-        def: d[14],
-        res: d[15],
-        eva: d[16],
-        mnd: d[17]
+        atk: parseInt(d[10]) || 0,
+        mag: parseInt(d[11]) || 0,
+        acc: parseInt(d[12]) || 0,
+        def: parseInt(d[13]) || 0,
+        res: parseInt(d[14]) || 0,
+        eva: parseInt(d[15]) || 0,
+        mnd: parseInt(d[16]) || 0
     };
     this.synergy = {
-        atk: d[18],
-        mag: d[19],
-        acc: d[20],
-        def: d[21],
-        res: d[22],
-        eva: d[23],
-        mnd: d[24]
+        atk: this.getSynergy('atk'),
+        mag: this.getSynergy('mag'),
+        acc: this.getSynergy('acc'),
+        def: this.getSynergy('def'),
+        res: this.getSynergy('res'),
+        eva: this.getSynergy('eva'),
+        mnd: this.getSynergy('mnd')
     };
 
 }
+
+Item.prototype.getSynergy = function(stat) {
+    var start = this.base[stat];
+    var end = this.max[stat];
+    var rarity = this.rarity;
+    return Math.ceil(((end - start) / ((5 * (rarity + 1)) - 1)) * (((5 * (rarity + 1)) + (10 * (rarity + 2))) - 1) + start);
+};
 
 Item.prototype.betterThan = function (other) {
     var diff = 0;

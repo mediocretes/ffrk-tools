@@ -41,11 +41,17 @@ Main.prototype.load = function (callback) {
 Main.prototype.loadData = function (callback) {
     var self = this;
 
-    this.setComplete(3);
+    this.setComplete(4);
 
     this.$http.get('/data/en.csv').
         then(function (r) {
-            self.items = r.data.split("\n");
+            self.items = _.union(self.items, r.data.split("\n"));
+            self.complete(callback);
+        });
+
+    this.$http.get('/data/extra.csv').
+        then(function (r) {
+            self.items = _.union(self.items, r.data.split("\n"));
             self.complete(callback);
         });
 

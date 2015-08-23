@@ -48,7 +48,6 @@ Item.prototype.addStat = function (name, start, end) {
 
     this.base[ref] = start;
     this.max[ref] = end;
-    this.synergy[ref] = Math.ceil(((end - start) / ((5 * (rarity + 1)) - 1)) * (((5 * (rarity + 1)) + (10 * (rarity + 2))) - 1) + start);
 };
 
 /**
@@ -61,9 +60,8 @@ Item.prototype.export = function () {
     tab.push(this.name);
     tab.push(this.type);
     tab.push(this.rarity);
-    tab.push(this.url);
 
-    var refs = ['base', 'max', 'synergy'];
+    var refs = ['base', 'max'];
     var stats = ['atk', 'mag', 'acc', 'def', 'res', 'eva', 'mnd'];
 
     for (var i in refs) {

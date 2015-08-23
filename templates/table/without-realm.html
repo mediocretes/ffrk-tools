@@ -5,8 +5,8 @@
         <th></th>
         <th></th>
         <th></th>
-        <th colspan="7" class="stat_base">{{'Current'|translate}}</th>
-        <th colspan="7" class="stat_synergy">{{'Synergy'|translate}}</th>
+        <th colspan="7" class="new-part stat_base">{{'Current'|translate}}</th>
+        <th colspan="7" class="new-part stat_synergy">{{'Synergy'|translate}}</th>
     </tr>
     <tr>
         <th><a href="" ng-click="app.changeOrder('name')">{{'name'|translate}}</a></th>
@@ -15,7 +15,7 @@
         <th><a href="" ng-click="app.changeOrder('type')">{{'type'|translate}}</a></th>
         <th><a href="" ng-click="app.changeOrder('level')">{{'level'|translate}}</a></th>
 
-        <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:atk')">{{'atk'|translate}}</a></th>
+        <th class="new-part stat_base"><a href="" ng-click="app.changeOrder('curr:atk')">{{'atk'|translate}}</a></th>
         <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:mag')">{{'mag'|translate}}</a></th>
         <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:acc')">{{'acc'|translate}}</a></th>
         <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:def')">{{'def'|translate}}</a></th>
@@ -23,7 +23,7 @@
         <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:eva')">{{'eva'|translate}}</a></th>
         <th class="stat_base"><a href="" ng-click="app.changeOrder('curr:mnd')">{{'mnd'|translate}}</a></th>
 
-        <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:atk')">{{'atk'|translate}}</a></th>
+        <th class="new-part stat_synergy"><a href="" ng-click="app.changeOrder('syn:atk')">{{'atk'|translate}}</a></th>
         <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:mag')">{{'mag'|translate}}</a></th>
         <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:acc')">{{'acc'|translate}}</a></th>
         <th class="stat_synergy"><a href="" ng-click="app.changeOrder('syn:def')">{{'def'|translate}}</a></th>
@@ -53,7 +53,7 @@
             <span class="uk-icon-sort-up" ng-show="app.isOrder('level', false)"></span>
         </th>
 
-        <th>
+        <th class="new-part">
             <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:atk', true)"></span>
             <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:atk', false)"></span>
         </th>
@@ -82,7 +82,7 @@
             <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:mnd', false)"></span>
         </th>
 
-        <th>
+        <th class="new-part">
             <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:atk', true)"></span>
             <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:atk', false)"></span>
         </th>
@@ -119,9 +119,13 @@
         <td>{{item.origin}}</td>
         <td>「{{item.rarity}}」</td>
         <td>{{item.type}}</td>
-        <td class="level"><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
+        <td class="level">
+            <form class="tm-form uk-form">
+                <input type="text" class="uk-form-width-mini" ng-keyup="app.saveInventory()" ng-model="item.level"/>
+            </form>
+        </td>
 
-        <td class="stat_base">{{item.curr('atk')}}</td>
+        <td class="new-part stat_base">{{item.curr('atk')}}</td>
         <td class="stat_base">{{item.curr('mag')}}</td>
         <td class="stat_base">{{item.curr('acc')}}</td>
         <td class="stat_base">{{item.curr('def')}}</td>
@@ -129,7 +133,7 @@
         <td class="stat_base">{{item.curr('eva')}}</td>
         <td class="stat_base">{{item.curr('mnd')}}</td>
 
-        <td class="stat_synergy">{{item.syn('atk')}}</td>
+        <td class="new-part stat_synergy">{{item.syn('atk')}}</td>
         <td class="stat_synergy">{{item.syn('mag')}}</td>
         <td class="stat_synergy">{{item.syn('acc')}}</td>
         <td class="stat_synergy">{{item.syn('def')}}</td>

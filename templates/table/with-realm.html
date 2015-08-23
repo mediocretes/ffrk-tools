@@ -5,7 +5,7 @@
         <th></th>
         <th></th>
         <th></th>
-        <th colspan="7" class="stat_realm">{{'Realm'|translate}} {{app.realm}}</th>
+        <th colspan="7" class="new-part stat_realm">{{'Realm'|translate}} {{app.realm}}</th>
     </tr>
     <tr>
         <th><a href="" ng-click="app.changeOrder('name')">{{'name'|translate}}</a></th>
@@ -14,7 +14,7 @@
         <th><a href="" ng-click="app.changeOrder('type')">{{'type'|translate}}</a></th>
         <th><a href="" ng-click="app.changeOrder('level')">{{'level'|translate}}</a></th>
 
-        <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:atk')">{{'atk'|translate}}</a></th>
+        <th class="new-part stat_realm"><a href="" ng-click="app.changeOrder('realm:atk')">{{'atk'|translate}}</a></th>
         <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:mag')">{{'mag'|translate}}</a></th>
         <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:acc')">{{'acc'|translate}}</a></th>
         <th class="stat_realm"><a href="" ng-click="app.changeOrder('realm:def')">{{'def'|translate}}</a></th>
@@ -44,7 +44,7 @@
             <span class="uk-icon-sort-up" ng-show="app.isOrder('level', false)"></span>
         </th>
 
-        <th>
+        <th class="new-part">
             <span class="uk-icon-sort-down" ng-show="app.isOrder('realm:atk', true)"></span>
             <span class="uk-icon-sort-up" ng-show="app.isOrder('realm:atk', false)"></span>
         </th>
@@ -83,9 +83,13 @@
         <td>{{item.origin}}</td>
         <td>「{{item.rarity}}」</td>
         <td>{{item.type}}</td>
-        <td class="level"><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
+        <td class="level">
+            <form class="tm-form uk-form">
+                <input type="text" class="uk-form-width-mini" ng-keyup="app.saveInventory()" ng-model="item.level"/>
+            </form>
+        </td>
 
-        <td class="stat_realm">{{item.realm('atk')}}</td>
+        <td class="new-part stat_realm">{{item.realm('atk')}}</td>
         <td class="stat_realm">{{item.realm('mag')}}</td>
         <td class="stat_realm">{{item.realm('acc')}}</td>
         <td class="stat_realm">{{item.realm('def')}}</td>

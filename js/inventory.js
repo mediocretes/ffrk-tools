@@ -20,6 +20,10 @@ function InventoryController(main, $scope, $sce) {
     // specific orders to sort the inventory
     this.orders = [];
 
+    // export & import
+    this.importArea = '';
+    this.exportArea = '';
+
     // ... and here we go
     this.load();
 
@@ -236,4 +240,33 @@ InventoryController.prototype.saveInventory = function () {
     }
 
     localStorage.inventory = JSON.stringify(items);
+};
+
+/**
+ *
+ * @returns {boolean}
+ */
+InventoryController.prototype.import = function () {
+    this.loadInventory(this.importArea);
+    this.saveInventory();
+    this.importArea = '';
+};
+
+/**
+ *
+ * @returns {boolean}
+ */
+InventoryController.prototype.export = function () {
+    this.exportArea = localStorage.inventory;
+};
+
+/**
+ *
+ * @returns {boolean}
+ */
+InventoryController.prototype.reset = function () {
+    if (confirm('Are you sure?')) {
+        localStorage.clear();
+        this.inventory = [];
+    }
 };

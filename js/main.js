@@ -224,61 +224,6 @@ Main.prototype.changeLang = function (lang) {
 
 /**
  *
- * @param name
- * @returns {boolean}
- */
-Main.prototype.showBox = function (name) {
-    this.box = name;
-    if (name == 'import') {
-        this.importArea = '';
-    }
-    return false;
-};
-
-/**
- *
- * @returns {boolean}
- */
-Main.prototype.closeBox = function () {
-    this.box = null;
-    return false;
-};
-
-/**
- *
- * @returns {boolean}
- */
-Main.prototype.import = function () {
-    this.loadInventory(this.importArea);
-    this.saveInventory();
-    this.closeBox();
-    return false;
-};
-
-/**
- *
- * @returns {boolean}
- */
-Main.prototype.export = function () {
-    this.showBox('export');
-    this.exportArea = localStorage.inventory;
-    return false;
-};
-
-/**
- *
- * @returns {boolean}
- */
-Main.prototype.reset = function () {
-    if (confirm('Are you sure?')) {
-        localStorage.clear();
-        this.inventory = [];
-    }
-    return false;
-};
-
-/**
- *
  */
 Main.prototype.loadLang = function () {
     if (localStorage.lang) {

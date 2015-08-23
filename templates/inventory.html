@@ -1,6 +1,6 @@
 <div class="uk-grid uk-grid-medium uk-grid-margin">
 
-    <div class="uk-width-medium-1-3">
+    <div class="uk-width-medium-1-4">
         <div class="uk-panel uk-panel-box uk-panel-box-primary">
 
             <div class="uk-autocomplete uk-form" id="itemForm">
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="uk-width-medium-1-3">
+    <div class="uk-width-medium-1-4">
         <div class="uk-panel uk-panel-box uk-panel-header">
             <h3 class="uk-panel-title">{{'Realm'|translate}}</h3>
 
@@ -33,12 +33,32 @@
         </div>
     </div>
 
-    <div class="uk-width-medium-1-3">
+    <div class="uk-width-medium-1-4">
         <div class="uk-panel uk-panel-box uk-panel-header">
             <h3 class="uk-panel-title">{{'Optimize'|translate}}</h3>
 
             <p>{{'optimize notice'|translate}}</p>
             <button class="uk-button uk-button-primary" ng-click="app.optimize()">{{'Optimize'|translate}}</button>
+        </div>
+    </div>
+
+    <div class="uk-width-medium-1-4">
+        <div class="uk-panel uk-panel-box uk-panel-header">
+            <h3 class="uk-panel-title">{{'Options'|translate}}</h3>
+
+            <p>
+            <ul class="uk-subnav uk-subnav-line uk-subnav-pill">
+                <li>
+                    <a href="#modal-import" data-uk-modal>{{'Import'|translate}}</a>
+                </li>
+                <li>
+                    <a href="#modal-export" data-uk-modal ng-click="app.export()">{{'Export'|translate}}</a>
+                </li>
+                <li>
+                    <a href="" data-uk-modal ng-click="app.reset()">{{'Reset'|translate}}</a>
+                </li>
+            </ul>
+            </p>
         </div>
     </div>
 
@@ -53,17 +73,32 @@
     </div>
 </div>
 
-<div class="wrapper" ng-show="app.box != null" ng-cloak>
-    <div class="box" ng-show="app.box == 'import'">
-        Import: <br/>
-        <textarea ng-model="app.importArea"></textarea><br/>
-        <button ng-click="app.import()">Import</button>
-        <div class="close" ng-click="app.closeBox()">X</div>
-    </div>
-    <div class="box" ng-show="app.box == 'export'">
-        Export: <br/>
-        <textarea>{{app.exportArea}}</textarea>
+<div id="modal-import" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-modal-header">
+            <h3>Import</h3>
+        </div>
 
-        <div class="close" ng-click="app.closeBox()">X</div>
+        <form class="uk-form">
+            <textarea class="uk-width-1-1" style="height: 300px;" ng-model="app.importArea"></textarea>
+        </form>
+
+        <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-primary uk-modal-close" ng-click="app.import()">Import</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-export" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-modal-header">
+            <h3>Export</h3>
+        </div>
+
+        <form class="uk-form">
+            <textarea class="uk-width-1-1" style="height: 300px;" ng-model="app.exportArea"></textarea>
+        </form>
     </div>
 </div>

@@ -22,9 +22,14 @@
 
 /* Active */
 .tm-navbar .uk-navbar-nav > li.uk-active > a {
-  text-decoration: underline;
   color: #ccc;
   background: transparent;
+}
+.tm-navbar .uk-navbar-nav > li.uk-active > a::before {
+  content: "\3010 "
+}
+.tm-navbar .uk-navbar-nav > li.uk-active > a::after {
+  content: "\3011 "
 }
 
 /* OnClick */
@@ -61,9 +66,14 @@
 }
 /* Active */
 .tm-navbar .uk-nav-navbar > li.uk-active > a {
-  text-decoration: underline;
   color: #ccc;
   background: transparent;
+}
+.tm-navbar .uk-nav-navbar > li.uk-active > a::before {
+  content: "\3010 "
+}
+.tm-navbar .uk-nav-navbar > li.uk-active > a::after {
+  content: "\3011 "
 }
 /*
  * Sub-object: `uk-nav-divider`
@@ -77,12 +87,18 @@
 /* Modifier `inventory table`
  ========================================================================== */
 
-tr.bonusRealm {
-  background-color: #b6d1e4;
-  color: #fff;
+tr.bonusRealm .stat_realm {
+  font-weight: bold;
+}
+tr.bonusRealm .stat_realm:not(:empty)::after {
+  content: "*";
 }
 
-tr.toRemove td:first-child {
+tr.toRemove, tr.toRemove a {
+  color: #999;
+}
+tr.toRemove td:first-child a,
+tr.toRemove td:first-child a.active {
   text-decoration: line-through;
 }
 

@@ -1,6 +1,7 @@
 <html ng-app="ffrk-io">
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>FF Record Keeper - Inventory Optimiser</title>
     <link rel=stylesheet type="text/css" href="bower_components/uikit/css/uikit.css"/>
     <link rel=stylesheet type="text/css" href="bower_components/uikit/css/components/autocomplete.css"/>
@@ -39,11 +40,48 @@
                     </ul>
                 </div>
             </li>
+            <li ng-class="{'uk-active': app.isActive('/export')}">
+                <a href="#/export">{{'Export'|translate}}</a>
+            </li>
+            <li ng-class="{'uk-active': app.isActive('/import')}">
+                <a href="" data-uk-modal="{target:'#modal-import'}">{{'Import'|translate}}</a>
+            </li>
+            <li>
+                <div class="uk-button uk-button-danger" data-uk-modal="{target:'#modal-reset'}">{{'Reset'|translate}}</div>
+            </li>
         </ul>
     </div>
 </nav>
 
 <div ng-view></div>
+
+<div id="modal-import" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <button type="button" class="uk-modal-close uk-close"></button>
+        <div class="uk-modal-header">
+            <h2>{{'Import'|translate}}</h2>
+        </div>
+        <p><textarea></textarea></p>
+        <div class="uk-modal-footer uk-text-right">
+            <button type="button" class="uk-button uk-modal-close">{{'Cancel'|translate}}</button>
+            <button type="button" class="uk-button uk-button-primary" ng-click="app.reset()">{{'Import'|translate}}</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-reset" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <button type="button" class="uk-modal-close uk-close"></button>
+        <div class="uk-modal-header">
+            <h2>{{'Reset'|translate}}</h2>
+        </div>
+        <p>{{'reset notice'|translate}}</p>
+        <div class="uk-modal-footer uk-text-right">
+            <button type="button" class="uk-button uk-modal-close">{{'Cancel'|translate}}</button>
+            <button type="button" class="uk-button uk-button-danger" ng-click="app.reset()">{{'Reset'|translate}}</button>
+        </div>
+    </div>
+</div>
 
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/bower_components/angular/angular.js"></script>

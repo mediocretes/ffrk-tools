@@ -10,7 +10,7 @@
             </div>
 
             <p>
-                <i class="uk-icon uk-icon-exclamation-circle"></i>
+                <i class="uk-icon-exclamation-circle"></i>
                 {{'type ability notice'|translate}}
             </p>
 
@@ -23,8 +23,8 @@
 
             <ul class="uk-list uk-list-line">
                 <li class="ability" ng-repeat="ability in app.abilities track by $index">
-                    <a href="" class="uk-icon-remove uk-icon-hover" ng-click="app.removeAbility(ability)"></a>
-                    {{ability.name.translated}}, {{ability.data.type|translate}}, {{ability.data.rarity}}*
+                    <a href="" class="uk-icon-button uk-icon-remove uk-icon-hover" ng-click="app.removeAbility(ability)"></a>
+                    {{ability.name.translated}} 「{{ability.data.rarity}}」
                 </li>
             </ul>
 
@@ -37,14 +37,14 @@
 
             <div class="character" ng-repeat="character in app.characters track by $index">
                 {{character.name}} ({{character.data.origin}})
-                <ul>
+                <ul class="uk-list uk-list-line">
                     <li ng-repeat="ability in character.selected">
-                        <a href="" class="uk-icon-check-square-o uk-icon-hover" ng-click="ability.unselect()"></a>
-                        {{ability.name.translated}}, {{ability.data.type|translate}}, {{ability.data.rarity}}*
+                        <a href="" class="uk-icon-button uk-icon-check-square-o uk-icon-hover" ng-click="ability.unselect()"></a>
+                        {{ability.name.translated}}「{{ability.data.rarity}}」
                     </li>
                     <li ng-repeat="ability in character.abilities" ng-if="character.selected.length < 2">
-                        <a href="" class="uk-icon-square-o uk-icon-hover" ng-click="ability.select()"></a>
-                        {{ability.name.translated}}, {{ability.data.type|translate}}, {{ability.data.rarity}}*
+                        <a href="" class="uk-icon-button uk-icon-square-o uk-icon-hover" ng-click="ability.select()"></a>
+                        {{ability.name.translated}} 「{{ability.data.rarity}}」
                     </li>
                 </ul>
             </div>

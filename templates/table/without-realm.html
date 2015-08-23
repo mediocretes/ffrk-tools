@@ -1,13 +1,12 @@
 <table class="uk-table uk-table-hover">
-    <thead>
     <tr>
         <th></th>
         <th></th>
         <th></th>
         <th></th>
         <th></th>
-        <th colspan="7" class="stat_base">{{'current'|translate}}</th>
-        <th colspan="7" class="stat_synergy">{{'synergy'|translate}}</th>
+        <th colspan="7" class="stat_base">{{'Current'|translate}}</th>
+        <th colspan="7" class="stat_synergy">{{'Synergy'|translate}}</th>
     </tr>
     <tr>
         <th><a href="" ng-click="app.changeOrder('name')">{{'name'|translate}}</a></th>
@@ -34,93 +33,91 @@
     </tr>
     <tr>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('name', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('name', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('name', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('name', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('origin', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('origin', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('origin', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('origin', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('rarity', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('rarity', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('rarity', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('rarity', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('type', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('type', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('type', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('type', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('level', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('level', false)"></span>
-        </th>
-
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:atk', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:atk', false)"></span>
-        </th>
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:mag', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:mag', false)"></span>
-        </th>
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:acc', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:acc', false)"></span>
-        </th>
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:def', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:def', false)"></span>
-        </th>
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:res', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:res', false)"></span>
-        </th>
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:eva', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:eva', false)"></span>
-        </th>
-        <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('curr:mnd', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('curr:mnd', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('level', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('level', false)"></span>
         </th>
 
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:atk', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:atk', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:atk', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:atk', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:mag', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:mag', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:mag', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:mag', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:acc', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:acc', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:acc', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:acc', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:def', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:def', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:def', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:def', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:res', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:res', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:res', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:res', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:eva', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:eva', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:eva', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:eva', false)"></span>
         </th>
         <th>
-            <span class="uk-icon uk-icon-sort-down" ng-show="app.isOrder('syn:mnd', true)"></span>
-            <span class="uk-icon uk-icon-sort-up" ng-show="app.isOrder('syn:mnd', false)"></span>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('curr:mnd', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('curr:mnd', false)"></span>
+        </th>
+
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:atk', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:atk', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:mag', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:mag', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:acc', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:acc', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:def', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:def', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:res', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:res', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:eva', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:eva', false)"></span>
+        </th>
+        <th>
+            <span class="uk-icon-sort-down" ng-show="app.isOrder('syn:mnd', true)"></span>
+            <span class="uk-icon-sort-up" ng-show="app.isOrder('syn:mnd', false)"></span>
         </th>
     </tr>
-    </thead>
-    <tbody>
     <tr ng-repeat="item in app.inventory track by $index" ng-class="{toRemove: item.toRemove}">
         <td><a href="{{item.url}}" target="_blank">
             {{item.name.translated}}
             <span ng-if="item.level>item.levelMax1">+</span><span ng-if="item.level>item.levelMax2">+</span>
         </a></td>
         <td>{{item.origin}}</td>
-        <td>{{item.rarity}}</td>
+        <td>「{{item.rarity}}」</td>
         <td>{{item.type}}</td>
         <td class="level"><input type="text" ng-keyup="app.saveInventory()" ng-model="item.level"/></td>
 
@@ -140,7 +137,6 @@
         <td class="stat_synergy">{{item.syn('eva')}}</td>
         <td class="stat_synergy">{{item.syn('mnd')}}</td>
 
-        <td class="remove"><a href="" ng-click="app.removeItem(item)"><i class="uk-icon uk-icon-remove"></i></a></td>
+        <td class="remove"><a href="" ng-click="app.removeItem(item)"><i class="uk-icon-remove"></i></a></td>
     </tr>
-    </tbody>
 </table>

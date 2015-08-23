@@ -17,6 +17,10 @@ app.config(function ($translateProvider, $routeProvider) {
             templateUrl: 'templates/abilities.html',
             controller : 'AbilitiesController as app'
         }).
+        when('/export', {
+            templateUrl: 'templates/export.html',
+            controller : 'MenuController as app'
+        }).
         otherwise({
             redirectTo: '/abilities'
         });

@@ -2,11 +2,14 @@
 	"Inventory (menu)": "Inventaire",
 	"Abilities (menu)": "Capacités",
 	"Languages": "Langues",
+	"Export": "Exporter",
+	"Import": "Importer",
+	"Reset": "Réinitialiser",
 	"English": "Anglais",
 	"French": "Français",
 
-    "current": "Actuel",
-	"synergy": "Synergie",
+    "Current": "Actuel",
+	"Synergy": "Synergie",
 
     "name": "nom",
 	"origin": "monde",
@@ -29,6 +32,8 @@
 	"current realm": "Monde actuel : ",
 	"optimize notice": "Met en évidence les objets qui peuvent être supprimés selon leurs caractéristiques (un seul objet est gardé par type et monde). Utilisez cette fonctionnalité avec attention.",
     "Optimize": "Optimiser",
+
+    "reset notice": "Attention, vous allez effacer tout les données (objets, capacités). Êtes-vous sûr ?",
 
     "Type ability..": "Rechercher..",
     "Abilities": "Capacités",

@@ -1,6 +1,6 @@
 [
     {
-        "name": "warrior-of-light",
+        "name": "Warrior of Light",
         "origin": "I",
         "abilities": {
             "Combat": 5,
@@ -9,7 +9,7 @@
         }
     },
     {
-        "name": "maria",
+        "name": "Maria",
         "origin": "II",
         "abilities": {
             "Black Magic": 5,
@@ -17,7 +17,7 @@
         }
     },
     {
-        "name": "gordon",
+        "name": "Gordon",
         "origin": "II",
         "abilities": {
             "Black Magic": 3,
@@ -26,7 +26,7 @@
         }
     },
     {
-        "name": "ricard",
+        "name": "Ricard",
         "origin": "II",
         "abilities": {
             "Black Magic": 2,
@@ -35,7 +35,7 @@
         }
     },
     {
-        "name": "joseph",
+        "name": "Joseph",
         "origin": "II",
         "abilities": {
             "Combat": 5,
@@ -43,7 +43,7 @@
         }
     },
     {
-        "name": "luneth",
+        "name": "Luneth",
         "origin": "III",
         "abilities": {
             "Combat": 5,
@@ -52,7 +52,7 @@
         }
     },
     {
-        "name": "arc",
+        "name": "Arc",
         "origin": "III",
         "abilities": {
             "Black Magic": 2,
@@ -60,7 +60,7 @@
         }
     },
     {
-        "name": "refia",
+        "name": "Refia",
         "origin": "III",
         "abilities": {
             "Combat": 5,
@@ -69,14 +69,14 @@
         }
     },
     {
-        "name": "cecil-dark-Knight",
+        "name": "Cecil (Dark Knight)",
         "origin": "IV",
         "abilities": {
             "Combat": 5
         }
     },
     {
-        "name": "cecil-paladin",
+        "name": "Cecil (Paladin)",
         "origin": "IV",
         "abilities": {
             "Knight": 5,
@@ -85,7 +85,7 @@
         }
     },
     {
-        "name": "kain",
+        "name": "Kain",
         "origin": "IV",
         "abilities": {
             "Combat": 5,
@@ -93,7 +93,7 @@
         }
     },
     {
-        "name": "rydia",
+        "name": "Rydia",
         "origin": "IV",
         "abilities": {
             "Summoning": 5,
@@ -102,7 +102,7 @@
         }
     },
     {
-        "name": "lenna",
+        "name": "Lenna",
         "origin": "V",
         "abilities": {
             "Black Magic": 2,
@@ -110,7 +110,7 @@
         }
     },
     {
-        "name": "terra",
+        "name": "Terra",
         "origin": "VI",
         "abilities": {
             "Black Magic": 5,
@@ -119,7 +119,7 @@
         }
     },
     {
-        "name": "locke",
+        "name": "Locke",
         "origin": "VI",
         "abilities": {
             "Combat": 4,
@@ -129,7 +129,7 @@
         }
     },
     {
-        "name": "celes",
+        "name": "Celes",
         "origin": "VI",
         "abilities": {
             "Black Magic": 2,
@@ -138,7 +138,7 @@
         }
     },
     {
-        "name": "edgar",
+        "name": "Edgar",
         "origin": "VI",
         "abilities": {
             "Combat": 5,
@@ -147,7 +147,7 @@
         }
     },
     {
-        "name": "sabin",
+        "name": "Sabin",
         "origin": "VI",
         "abilities": {
             "Combat": 5,
@@ -155,7 +155,7 @@
         }
     },
     {
-        "name": "cyan",
+        "name": "Cyan",
         "origin": "VI",
         "abilities": {
             "Combat": 5,
@@ -163,7 +163,7 @@
         }
     },
     {
-        "name": "cloud",
+        "name": "Cloud",
         "origin": "VII",
         "abilities": {
             "Combat": 5,
@@ -173,7 +173,7 @@
         }
     },
     {
-        "name": "tifa",
+        "name": "Tifa",
         "origin": "VII",
         "abilities": {
             "Monk": 5,
@@ -182,7 +182,7 @@
         }
     },
     {
-        "name": "aerith",
+        "name": "Aerith",
         "origin": "VII",
         "abilities": {
             "Summoning": 2,
@@ -192,7 +192,7 @@
         }
     },
     {
-        "name": "red-xiii",
+        "name": "Red XIII",
         "origin": "VII",
         "abilities": {
             "Black Magic": 4,
@@ -202,7 +202,7 @@
         }
     },
     {
-        "name": "sephiroth",
+        "name": "Sephiroth",
         "origin": "VII",
         "abilities": {
             "Black Magic": 3,
@@ -211,7 +211,7 @@
         }
     },
     {
-        "name": "squall",
+        "name": "Squall",
         "origin": "VIII",
         "abilities": {
             "Black Magic": 2,
@@ -221,7 +221,7 @@
         }
     },
     {
-        "name": "rinoa",
+        "name": "Rinoa",
         "origin": "VIII",
         "abilities": {
             "Black Magic": 5,
@@ -231,7 +231,7 @@
         }
     },
     {
-        "name": "quistis",
+        "name": "Quistis",
         "origin": "VIII",
         "abilities": {
             "Black Magic": 4,
@@ -240,7 +240,7 @@
         }
     },
     {
-        "name": "selphie",
+        "name": "Selphie",
         "origin": "VIII",
         "abilities": {
             "Black Magic": 3,
@@ -249,7 +249,7 @@
         }
     },
     {
-        "name": "irvine",
+        "name": "Irvine",
         "origin": "VIII",
         "abilities": {
             "Black Magic": 1,
@@ -259,7 +259,7 @@
         }
     },
     {
-        "name": "garnet",
+        "name": "Garnet",
         "origin": "IX",
         "abilities": {
             "White Magic": 4,
@@ -268,14 +268,14 @@
         }
     },
     {
-        "name": "vivi",
+        "name": "Vivi",
         "origin": "IX",
         "abilities": {
             "Black Magic": 4
         }
     },
     {
-        "name": "steiner",
+        "name": "Steiner",
         "origin": "IX",
         "abilities": {
             "Spellblade": 3,
@@ -284,7 +284,7 @@
         }
     },
     {
-        "name": "tidus",
+        "name": "Tidus",
         "origin": "X",
         "abilities": {
             "Celerity": 5,
@@ -293,7 +293,7 @@
         }
     },
     {
-        "name": "yuna",
+        "name": "Yuna",
         "origin": "X",
         "abilities": {
             "White Magic": 5,
@@ -302,7 +302,7 @@
         }
     },
     {
-        "name": "wakka",
+        "name": "Wakka",
         "origin": "X",
         "abilities": {
             "Celerity": 3,
@@ -311,7 +311,7 @@
         }
     },
     {
-        "name": "kimahri",
+        "name": "Kimahri",
         "origin": "X",
         "abilities": {
             "Black Magic": 3,
@@ -320,7 +320,7 @@
         }
     },
     {
-        "name": "balthier",
+        "name": "Balthier",
         "origin": "XII",
         "abilities": {
             "Combat": 5,
@@ -330,7 +330,7 @@
         }
     },
     {
-        "name": "fran",
+        "name": "Fran",
         "origin": "XII",
         "abilities": {
             "Black Magic": 3,
@@ -339,7 +339,7 @@
         }
     },
     {
-        "name": "lightning",
+        "name": "Lightning",
         "origin": "XIII",
         "abilities": {
             "Black Magic": 3,
@@ -349,7 +349,7 @@
         }
     },
     {
-        "name": "snow",
+        "name": "Snow",
         "origin": "XIII",
         "abilities": {
             "Combat": 5,
@@ -358,7 +358,7 @@
         }
     },
     {
-        "name": "vanille",
+        "name": "Vanille",
         "origin": "XIII",
         "abilities": {
             "Black Magic": 4,
@@ -367,7 +367,7 @@
         }
     },
     {
-        "name": "sahz",
+        "name": "Sahz",
         "origin": "XIII",
         "abilities": {
             "Black Magic": 3,

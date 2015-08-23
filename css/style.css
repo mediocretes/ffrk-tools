@@ -4,7 +4,7 @@
   background: #444;
 }
 .tm-navbar .uk-navbar-nav > li > a {
-  color: #eee;
+  color: #ccc;
 }
 .tm-navbar .uk-navbar-nav > li {
   margin-left: 20px;
@@ -19,7 +19,7 @@
 /* Active */
 .tm-navbar .uk-navbar-nav > li.uk-active > a {
   text-decoration: underline;
-  color: #ccc;
+  color: #eee;
   background: transparent;
 }
 /* OnClick */

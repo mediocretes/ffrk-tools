@@ -22,6 +22,8 @@
     "mnd": "esp",
 
 	"Type item..": "Rechercher..",
+	"type item notice": "Vous devez utiliser l'auto-complétion pour ajouter un objet.",
+	"type ability notice": "Vous devez utiliser l'auto-complétion pour ajouter une capacité.",
 	"Realm": "Monde",
 	"realm notice": "Uitlisez ce paramètre pour pouvoir comparer plus facilement les objets à l'intérieur d'un monde.",
 	"current realm": "Monde actuel : ",

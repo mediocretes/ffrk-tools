@@ -8,6 +8,8 @@
     "current": "Current",
     "synergy": "Synergy",
 
+    "type item notice": "You must use autocomplete to add an item.",
+    "type ability notice": "You must use autocomplete to add an ability.",
     "realm notice": "Use this parameter to compare easily the items through a realm.",
     "current realm": "Current realm : ",
     "optimize notice": "Highlight deletable items based on stats (one item by type and realm). Please use this feature carefully."

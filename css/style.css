@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Chewy);
 /* Modifier `uk-navbar`
  ========================================================================== */
 .tm-navbar {
@@ -34,6 +35,8 @@
 /* Brand */
 .tm-navbar .uk-navbar-brand {
   color: #aaa;
+  font-family: 'Chewy', cursive;
+  font-size: 30px;
 }
 .tm-navbar .uk-dropdown-navbar {
   background-color: #444;

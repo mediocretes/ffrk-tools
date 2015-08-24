@@ -11,7 +11,10 @@
 <body>
 
 <nav class="tm-navbar uk-navbar" ng-controller="MenuController as app">
-    <div class="uk-navbar-brand">FFRK tools</div>
+    <div class="uk-navbar-brand">
+        <img src="img/ffrk.png" />
+        FFRK tools
+    </div>
     <ul class="uk-navbar-nav">
         <li ng-class="{'uk-active': app.isActive('/inventory')}">
             <a href="#/inventory">{{'Inventory (menu)'|translate}}</a>

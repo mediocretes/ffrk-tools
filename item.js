@@ -55,6 +55,13 @@ Item.prototype.addStat = function (name, start, end) {
  * @returns {string}
  */
 Item.prototype.export = function () {
+    
+    // exclude this item
+    // todo handle better?
+    if (this.name == 'Defense Veil (X)') {
+        return '';
+    }
+
     var tab = [];
 
     tab.push(this.name);

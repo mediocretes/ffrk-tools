@@ -76,10 +76,10 @@
     <tr
             ng-repeat="item in app.inventory track by $index"
             ng-class="{'toRemove': item.toRemove, 'bonusRealm': item.origin == app.realm}">
-        <td><a href="{{item.url}}" target="_blank">
+        <td>
             {{item.name.translated}}
             <span ng-if="item.level>item.levelMax1">+</span><span ng-if="item.level>item.levelMax2">+</span>
-        </a></td>
+        </td>
         <td>{{item.origin}}</td>
         <td>「{{item.rarity}}」</td>
         <td>{{item.type}}</td>

@@ -222,9 +222,13 @@ InventoryController.prototype.loadInventory = function (data) {
         var n = item.n;
         var translatedName = this.main.getTranslatedName('items', n);
         var name = new Name(this, n, translatedName);
-        var final = new Item(this, name);
-        final.level = item.l;
-        this.inventory.push(final);
+        try {
+            var final = new Item(this, name);
+            final.level = item.l;
+            this.inventory.push(final);
+        } catch(e) {
+            console.error(e);
+        }
     }
     this.loadRealm();
     this.refreshRealms();

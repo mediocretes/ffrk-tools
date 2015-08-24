@@ -41,7 +41,7 @@ Main.prototype.load = function (callback) {
 Main.prototype.loadData = function (callback) {
     var self = this;
 
-    this.setComplete(3);
+    this.setComplete(4);
 
     var date = new Date();
     var d = date.getMonth() + '-' + date.getFullYear();

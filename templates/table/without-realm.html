@@ -120,7 +120,7 @@
         <td>「{{item.rarity}}」</td>
         <td>{{item.type|translate}}</td>
         <td class="level">
-            <form class="tm-form uk-form">
+            <form class="tm-form uk-form" ng-if="item.type != 'Accessory'">
                 <input type="text" class="uk-form-width-mini" ng-keyup="app.saveInventory()" ng-model="item.level"/>
             </form>
         </td>

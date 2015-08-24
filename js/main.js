@@ -41,21 +41,23 @@ Main.prototype.load = function (callback) {
 Main.prototype.loadData = function (callback) {
     var self = this;
 
-    this.setComplete(4);
+    this.setComplete(3);
 
     var date = new Date();
     var d = date.getMonth() + '-' + date.getFullYear();
 
     this.$http.get('/data/en.csv?d=' + d).
         then(function (r) {
-            self.items = _.union(self.items, r.data.split("\n"));
-            self.complete(callback);
-        });
+            self.items = r.data.split("\n");
 
-    this.$http.get('/data/extra.csv?d=' + d).
-        then(function (r) {
-            self.items = _.union(self.items, r.data.split("\n"));
-            self.complete(callback);
+            self.$http.get('/data/extra.csv?d=' + d).
+                then(function (r) {
+                    var items = r.data.split("\n");
+                    for (var i in items) {
+                        self.items.unshift(items[i]);
+                    }
+                    self.complete(callback);
+                });
         });
 
     this.$http.get('/data/abilities.json?d=' + d).

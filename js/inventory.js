@@ -33,7 +33,7 @@ InventoryController.prototype.load = function () {
     var self = this;
 
     self.main.InventoryController = this;
-    self.main.load(function() {
+    self.main.load(function () {
         self.loadInventory();
         self.autocomplete();
     });
@@ -222,13 +222,9 @@ InventoryController.prototype.loadInventory = function (data) {
         var n = item.n;
         var translatedName = this.main.getTranslatedName('items', n);
         var name = new Name(this, n, translatedName);
-        try {
-            var final = new Item(this, name);
-            final.level = item.l;
-            this.inventory.push(final);
-        } catch(e) {
-            console.error(e);
-        }
+        var final = new Item(this, name);
+        final.level = item.l;
+        this.inventory.push(final);
     }
     this.loadRealm();
     this.refreshRealms();

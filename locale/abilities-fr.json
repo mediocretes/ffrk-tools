@@ -55,6 +55,7 @@
     "Guard": "Protéger",
     "Retaliate": "Vengeance",
     "Shuriken": "Shuriken",
+    "Requiem": "Requiem",
 
     "Firaga": "Brasier X",
     "Blizzaga": "Glacier X",
@@ -93,6 +94,8 @@
     "Quickness": "Promptitude",
     "Leg Shot": "Tir Handicapant",
     "Chakra": "Chakra",
+    "Draw Fire": "Provoquer",
+    "Rallying Etude": "Menuet vaillant",
     "Drain": "Saignée",
     "Reflect": "Miroir",
 
@@ -127,6 +130,7 @@
     "Armor Breakdown": "Atrophie Défensive",
     "Shadowbind": "Entrave d'Ombre",
     "Pressure Point": "Point de Pression",
+    "Minus Strike": "Soustraction",
 
     "Flare": "Atomnium",
     "Holy": "Lumière",

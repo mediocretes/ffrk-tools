@@ -275,6 +275,11 @@
         "rarity": 2
     },
     {
+        "name": "Requiem",
+        "type": "Bard",
+        "rarity": 2
+    },
+    {
         "name": "Firaga",
         "type": "Black Magic",
         "rarity": 3
@@ -460,6 +465,16 @@
         "rarity": 3
     },
     {
+        "name": "Draw Fire",
+        "type": "Knight",
+        "rarity": 3
+    },
+    {
+        "name": "Rallying Etude",
+        "type": "Bard",
+        "rarity": 3
+    },
+    {
         "name": "Drain",
         "type": "Black Magic",
         "rarity": 3
@@ -622,6 +637,11 @@
     {
         "name": "Pressure Point",
         "type": "Monk",
+        "rarity": 4
+    },
+    {
+        "name": "Minus Strike",
+        "type": "Knight",
         "rarity": 4
     },
     {

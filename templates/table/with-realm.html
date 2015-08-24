@@ -82,7 +82,7 @@
         </td>
         <td>{{item.origin}}</td>
         <td>「{{item.rarity}}」</td>
-        <td>{{item.type}}</td>
+        <td>{{item.type|translate}}</td>
         <td class="level">
             <form class="tm-form uk-form">
                 <input type="text" class="uk-form-width-mini" ng-keyup="app.saveInventory()" ng-model="item.level"/>

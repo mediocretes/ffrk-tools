@@ -284,6 +284,15 @@
         }
     },
     {
+        "name": "Eiko",
+        "origin": "IX",
+        "abilities": {
+            "White Magic": 5,
+            "Summoning": 5,
+            "Bard": 4
+        }
+    },
+    {
         "name": "Tidus",
         "origin": "X",
         "abilities": {

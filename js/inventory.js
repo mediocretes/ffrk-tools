@@ -43,6 +43,23 @@ InventoryController.prototype.autocomplete = function () {
     var self = this;
 
     UIkit.ready(function () {
+
+        $('#itemForm').keydown(function(event) {
+            if(event.which != 13) { // not enter key
+              return true;
+            }
+
+            // mostly a duplicate of autocomplete code below - ripe for a refactorin'
+            var data = $('.uk-autocomplete-results').children().first().data();
+            var newItem = new Item(self, new Name(self, data.original, data.translated));
+            newItem.level = data.level;
+            self.addItem(newItem);
+            self.$scope.$apply();
+            $('#itemForm>input').val('');
+            $("#itemForm>.uk-dropdown").remove();
+            return false;
+        });
+
         UIkit.autocomplete($('#itemForm'), {
             source  : function (release) {
 

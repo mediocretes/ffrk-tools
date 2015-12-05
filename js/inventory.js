@@ -43,7 +43,6 @@ InventoryController.prototype.autocomplete = function () {
     var self = this;
 
     UIkit.ready(function () {
-
         UIkit.autocomplete($('#itemForm'), {
             source  : function (release) {
 
@@ -66,7 +65,6 @@ InventoryController.prototype.autocomplete = function () {
                 leveledResult = result.map(function(name) {
                     var item = new Item(self, name);
                     item.level = item[levelVariable];
-                    console.log(item);
                     return item;
                 });
 

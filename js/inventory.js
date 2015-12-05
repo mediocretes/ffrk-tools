@@ -46,7 +46,12 @@ InventoryController.prototype.autocomplete = function () {
 
         $('#itemForm').keydown(function(event) {
             if(event.which != 13) { // not enter key
-              return true;
+                return true;
+            }
+
+            // are there even any items popped up?
+            if($("#itemForm>.uk-dropdown").children().length == 0) {
+                return false;
             }
 
             // mostly a duplicate of autocomplete code below - ripe for a refactorin'
@@ -56,7 +61,7 @@ InventoryController.prototype.autocomplete = function () {
             self.addItem(newItem);
             self.$scope.$apply();
             $('#itemForm>input').val('');
-            $("#itemForm>.uk-dropdown").remove();
+            $("#itemForm>.uk-dropdown").children().remove();
             return false;
         });
 

@@ -244,8 +244,6 @@ InventoryController.prototype.saveRealm = function () {
 
 InventoryController.prototype.isOrder = function (field, asc) {
     var order = _.find(this.orders, {field: field});
-console.log(order);
-console.log(field);
     return (order) ? (order.asc == asc) : false;
 };
 

@@ -114,3 +114,13 @@ Item.prototype.syn = function (stat) {
 Item.prototype.realm = function(stat) {
     return (this.app.realm == this.origin) ? this.syn(stat): this.curr(stat);
 };
+
+Item.prototype.formatted = function() {
+    var name = this.name.translated;
+    if(this.level == this.levelMax2) {
+        name = name + ' +';
+    } else if(this.level == this.levelMax3) {
+        name = name + ' ++';
+    }
+    return name;
+};

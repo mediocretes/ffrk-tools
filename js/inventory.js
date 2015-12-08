@@ -44,23 +44,63 @@ InventoryController.prototype.autocomplete = function () {
 
     UIkit.ready(function () {
 
+        $('#itemForm').keydown(function(event) {
+            if(event.which != 13) { // not enter key
+                return true;
+            }
+
+            // are there even any items popped up?
+            if($("#itemForm>.uk-dropdown").children().length == 0) {
+                return false;
+            }
+
+            // mostly a duplicate of autocomplete code below - ripe for a refactorin'
+            var data = $('.uk-autocomplete-results').children().first().data();
+            var newItem = new Item(self, new Name(self, data.original, data.translated));
+            newItem.level = data.level;
+            self.addItem(newItem);
+            self.$scope.$apply();
+            $('#itemForm>input').val('');
+            UIkit.autocomplete($('#itemForm')).hide()
+
+            return true;
+        });
+
         UIkit.autocomplete($('#itemForm'), {
             source  : function (release) {
 
-                var regex  = new RegExp(self.input, 'i'),
+                var input = self.input
+                var levelVariable = "levelMax1";
+
+                if(input.search(/\s?\+\+/i) > 0) {
+                    input = input.replace(/\s?\+\+/i, '')
+                    var levelVariable = "levelMax3";
+                } else if(input.search(/\s?\+/i) > 0) {
+                    input = input.replace(/\s?\+/i, '')
+                    var levelVariable = "levelMax2";
+                }
+
+                var regex  = new RegExp(input, 'i'),
                     result = self.main.names.items.filter(function (e) {
                         return regex.test(e.translated);
                     });
 
-                release(result); // release the data back to the autocompleter
+                leveledResult = result.map(function(name) {
+                    var item = new Item(self, name);
+                    item.level = item[levelVariable];
+                    return item;
+                });
+
+                release(leveledResult); // release the data back to the autocompleter
 
             },
             template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">\
                         {{~items}}\
-                            <li data-original="{{ $item.original }}" \
-                                data-translated="{{ $item.translated }}">\
+                            <li data-original="{{ $item.name.original }}" \
+                                data-translated="{{ $item.name.translated }}" \
+                                data-level="{{ $item.level }}">\
                                 <a>\
-                                    {{ $item.translated }}\
+                                    {{ $item.formatted() }}\
                                 </a>\
                             </li>\
                         {{/items}}\
@@ -68,7 +108,9 @@ InventoryController.prototype.autocomplete = function () {
         });
 
         UIkit.$('#itemForm').on('selectitem.uk.autocomplete', function (e, data, ac) {
-            self.addItem(new Item(self, new Name(self, data.original, data.translated)));
+            var newItem = new Item(self, new Name(self, data.original, data.translated));
+            newItem.level = data.level;
+            self.addItem(newItem);
             self.$scope.$apply();
             ac.input.val('');
             data.value = null;

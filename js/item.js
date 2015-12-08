@@ -87,6 +87,14 @@ Item.prototype.curr = function (stat) {
 
 Item.prototype.syn = function (stat) {
     var start = (this.base[stat] == '') ? 0 : parseInt(this.base[stat]);
+
+    if(this.type == "Accessory") {
+        // This was correct for every accessory I tested - about a dozen in all, of all rarities
+        return Math.round(start * 1.5);
+    }
+
+
+
     var max = (this.max[stat] == '') ? 0 : parseInt(this.max[stat]);
     var level = parseInt(this.level);
     var maxLevel = (parseInt(this.rarity) + 1) * 5;

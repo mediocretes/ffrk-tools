@@ -16,6 +16,7 @@ function InventoryController(main, $scope, $sce) {
     // realm
     this.realm = null;
     this.realms = ['II'];
+    this.orderedRealms = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV']
 
     // specific orders to sort the inventory
     this.orders = [];
@@ -124,7 +125,8 @@ InventoryController.prototype.removeItem = function (item) {
 };
 
 InventoryController.prototype.refreshRealms = function () {
-    this.realms = _.uniq(_.pluck(this.inventory, 'origin'));
+    var inventoryRealms = _.uniq(_.pluck(this.inventory, 'origin'));
+    this.realms = this.orderedRealms.filter(function(x){ return inventoryRealms.includes(x);})
     this.realms.push(null);
     if ($.inArray(this.realm, this.realms) == -1) {
         this.realm = null;

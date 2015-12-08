@@ -61,8 +61,9 @@ InventoryController.prototype.autocomplete = function () {
             self.addItem(newItem);
             self.$scope.$apply();
             $('#itemForm>input').val('');
-            $("#itemForm>.uk-dropdown").children().remove();
-            return false;
+            UIkit.autocomplete($('#itemForm')).hide()
+
+            return true;
         });
 
         UIkit.autocomplete($('#itemForm'), {

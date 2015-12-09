@@ -168,7 +168,7 @@ InventoryController.prototype.removeItem = function (item) {
 
 InventoryController.prototype.refreshRealms = function () {
     var inventoryRealms = _.uniq(_.pluck(this.inventory, 'origin'));
-    this.realms = this.orderedRealms.filter(function(x){ return inventoryRealms.includes(x);})
+    this.realms = this.orderedRealms.filter(function(x){ return (inventoryRealms.indexOf(x) >= 0);})
     this.realms.push(null);
     if ($.inArray(this.realm, this.realms) == -1) {
         this.realm = null;

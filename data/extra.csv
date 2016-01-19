@@ -32,8 +32,155 @@ Fury Ring (VII),Accessory,4,15,,,10,,,,15,,,10,,,
 Maverick (VIII),Fist,5,85,,95,,,,,134,,95,,,,
 Ice Staff (IX),Staff,5,25,74,95,,,,44,39,121,95,,,,69
 Runeblade (XII),Sword,5,56,78,95,,,,,96,129,95,,,,
-Rune Rod (X),Rod,5,30,70,95,,,,51,60,120,95,,,,76
-Cypress Pile (IX),Rod,5,30,80,95,,,,44,60,131,95,,,,95
 Rune Blade (VI),Sword,5,80,,95,,,,,132,,95,,,,
+Main Gauche (II),Dagger,3,19,,89,,,,,46,,89,,,,
+Spark Dagger (III),Dagger,3,19,,89,,,,,46,,89,,,,
+Assassin's Dagger (VI),Dagger,5,68,,95,,,,,112,,95,,,,
+Air Knife (V),Dagger,5,75,,95,,,,,122,,95,,,,
+Zwill Crossblade (XII),Dagger,5,75,,95,,,,,122,,95,,,,
+Flitting Dagger (VI),Dagger,5,68,,95,,,,,111,,95,,,,
+Thief Blade (X),Dagger,5,68,,95,,,,,111,,95,,,,
+Assassin's Dagger (IV),Dagger,5,71,,95,,,,,115,,95,,,,
+Treeblade (VII),Dagger,5,52,,95,,,,,95,,95,,,,
+Shadowblade (IV),Sword,5,83,,95,,,,,136,,95,,,,
+Lohengrin (XII),Sword,5,81,,95,,,,,130,,95,,,,
+Butterfly Sword (IX),Sword,5,83,,95,,,,,135,,95,,,,
+Brave Blade (V),Sword,5,83,,95,,,,,136,,95,,,,
+Icebrand (V),Sword,5,79,,95,,,,,128,,95,,,,
+Coral Sword (IX),Sword,5,78,,95,,,,,127,,95,,,,
+Variable Steel (X),Sword,5,79,,95,,,,,128,,95,,,,
+Organics (VII),Sword,5,80,,95,,,,,132,,95,,,,
+Rune Blade (VII),Sword,5,68,,95,,,,,117,,95,,,,
+SOLDIER Sword (VII),Sword,5,75,,95,,,,,124,,95,,,,
+Buster Sword (VII-CC),Sword,5,80,,95,,,,,132,,95,,,,
+Axis Blade (XIII),Sword,5,71,,95,,,,,120,,95,,,,
+Force Sabre (X),Sword,5,83,,95,,,,,135,,95,,,,
+Cutting Trigger (VIII),Sword,5,83,,95,,,,,135,,95,,,,
+Hyperion (VIII),Sword,5,83,,95,,,,,135,,95,,,,
+Organyx (VI),Sword,5,72,,95,,,,,121,,95,,,,
+Lustrous Sword (IV),Sword,5,83,,95,,,,,135,,95,,,,
+Kotetsu (V),Katana,5,82,,95,,,,,135,,95,,,,
+Sasuke's Katana (V),Katana,5,70,,95,,,,,116,,95,,,,
+Murasame (IV),Katana,5,83,53,95,,,,,132,80,95,,,,
 Shimmering Blade (X),Katana,5,81,,95,,,,,134,,95,,,,
-Candle Rod (VII),Rod,5,32,67,95,,,,83,32,67,95,,,,83
+Kotetsu (VI),Katana,5,80,,95,,,,,133,,95,,,,
+Yoshiyuki (VII),Katana,5,83,,95,,,,,136,,95,,,,
+Shiranui (X),Katana,5,83,,95,,,,,136,,95,,,,
+Sasuke (VI),Katana,5,81,10,95,,,,,134,10,95,,,,
+Thor Hammer (V),Hammer,5,82,,95,,,,,135,,95,,,,
+Demon Spear (II),Spear,5,75,42,95,,,,,124,80,95,,,,
+Heavy Lance (V),Spear,5,68,,95,,,,,119,,95,,,,
+Gungnir (IV),Spear,5,83,,95,,,,,136,,95,,,,
+Trident (VII),Spear,5,81,,95,,,,,134,,95,,,,
+Bladed Lance (XIII),Spear,5,80,,95,,,,,129,,95,,,,
+Glaive (XIII),Spear,5,84,,95,,,,,137,,95,,,,
+Dusk Lance (X),Spear,5,78,42,95,,,,,127,80,95,,,,
+Gungnir (XII),Spear,5,74,,95,,,,,124,,95,,,,
+Holy Lance (VI),Spear,5,60,,95,,,,70,110,,95,,,,120
+Kaiser Knuckles (V),Fist,5,82,,95,,,,,131,,95,,,,
+Tiger Fang (VII),Fist,5,70,,95,,,,,114,,-,,,,
+Dragon Claw (VII),Fist,5,71,,95,,,,,120,,95,,,,
+Burning Fist (VI),Fist,5,76,,95,,,,,125,,95,,,,
+Metal Knuckles (VIII),Fist,5,79,,95,,,,,128,,95,,,,
+Buster Claw (X),Fist,5,82,,95,,,,,135,,95,,,,
+Scissor Fangs (IX),Fist,5,85,,95,,,,,135,,95,,,,
+Motor Drive (VII),Fist,5,73,52,95,,,,,123,92,95,,,,
+Paladin (XIII),Fist,5,79,,95,,,,,128,,95,,,,
+Thorned Rod,Rod,5,28,68,95,,,,49,57,114,95,,,,79
+Fire Rod,Rod,5,25,54,95,,,,43,49,104,95,,,,68
+Lilith Rod (V),Rod,5,25,74,95,,,,44,39,121,95,,,,69
+Magus Rod (V),Rod,5,30,82,95,,,,44,60,133,95,,,,69
+Holy Rod (VI),Rod,5,23,54,95,,,,73,39,104,95,,,,123
+Rune Rod (X),Rod,5,30,70,95,,,,51,60,120,95,,,,76
+Magus Rod (VI),Rod,5,25,74,95,,,,44,39,120,95,,,,69
+Wyrmfang (XIII),Rod,5,30,69,95,,,,77,60,119,95,,,,128
+Tigerclaw (XIII),Rod,5,30,72,95,,,,51,60,122,95,,,,70
+Cypress Pile (IX),Rod,5,30,80,95,,,,44,60,131,95,,,,69
+Chain Flail (VI),Rod,5,23,54,95,,,,73,39,104,95,,,,123
+Telescopic Baton (VII),Rod,5,57,78,95,,,,,97,128,95,,,,
+Musk Stick (XII),Staff,5,23,55,95,,,,73,39,105,95,,,,123
+Rune Staff,Staff,5,23,51,95,,,,54,38,76,95,,,,104
+Sage's Staff (V),Staff,5,35,67,95,,,,82,65,117,95,,,,133
+Mage's Staff (X),Staff,5,44,55,95,,,,74,60,105,95,,,,124
+Healing Staff (IV),Staff,5,44,55,95,,,,74,60,105,95,,,,124
+Yoichi Bow (III),Bow,5,62,15,92,,,,15,109,30,92,,,,30
+Paramina Crossbow (XII),Bow,5,60,14,95,,,,14,106,29,95,,,,29
+Aevis Killer (V),Bow,5,72,16,95,,,,16,121,31,95,,,,31
+Elven Bow (IV),Bow,5,54,15,95,,,,82,90,30,95,,,,132
+Bard's Bow (IV),Bow,5,60,14,95,,,,14,107,28,95,,,,28
+Golem's Flute (IX),Instrument,5,49,67,95,,,,81,85,117,95,,,,132
+Dragon Whisker (IV),Whip,5,54,81,95,,,,,90,132,95,,,,
+Ochu Tentacle (VIII),Whip,5,63,48,95,,,,,113,88,95,,,,
+Sniper (VI),Thrown,5,68,,95,,,,,112,,95,,,,
+Skycutter (XIII),Thrown,5,48,76,95,,,,46,84,128,95,,,,71
+Wing Edge (VI),Thrown,5,71,,95,,,,45,120,,95,,,,80
+Cardinal (VIII),Thrown,5,53,80,95,,,,,89,131,95,,,,
+Airwing (XIII),Thrown,5,53,80,95,,,,46,89,131,95,,,,71
+Stormlance Grimoire,Book,5,71,79,95,,,,57,104,112,95,,,,91
+Last Judgment Grimoire,Book,5,80,79,95,,,,57,130,129,95,,,,108
+Running Fire (VIII),Gun,5,62,,95,,,,,109,,95,,,,
+Deneb Duellers (XIII),Gun,5,72,,95,,,,,121,,95,,,,
+Peacemaker (XIII),Gun,5,73,,95,,,,,122,,95,,,,
+All-Rounder (X),Blitzball,5,72,,95,,,,,119,,95,,,,
+Gatling Gun (VII),Gun-Arm,5,70,,95,,,,,117,,95,,,,
+Darts (VI),Gambling Gear,5,70,,95,,,,,117,,95,,,,
+Magical Mog (X),Doll,5,30,80,95,,,,44,60,131,95,,,,69
+Gold Barrette (VII),Hairpin,5,78,61,95,,,,,128,96,95,,,,
+Aegis Shield (V),Shield,5,,,,70,47,105,,,,,112,74,105,
+Flame Shield (VI),Shield,5,,,,68,47,110,,,,,108,72,110,
+Guardian Targe (X),Shield,5,,,,86,56,112,,,,,126,83,112,
+Oath Veil (VI),Hat,5,,22,,45,80,105,17,,32,,70,130,105,27
+Priest's Miter (VI),Hat,5,,21,,49,79,105,17,,31,,74,129,105,27
+Estharian Helmet (VIII),Hat,5,,22,,42,80,105,17,,33,,67,130,105,28
+Blitz Helm (VIII),Hat,5,,20,,47,76,105,17,,30,,72,126,105,27
+Lulu's Hairpin (X),Hat,5,,21,,56,79,105,20,,31,,81,129,105,30
+Crystal Helm (V),Helm,5,8,,,69,62,105,,13,,,114,102,105,
+Genji Helm (VI),Helm,5,8,,,68,61,105,,13,,,113,101,105,
+Feral Pride (XIII),Light Armor,5,70,70,100,,,,,116,116,100,,,,
+Power Sash (IX),Light Armor,5,10,,,69,64,100,,10,,,115,110,100,
+Corps Field Uniform (XIII),Light Armor,5,10,,,75,75,100,,20,,,121,121,100,
+Turks Suit (VII),Light Armor,5,74,74,105,,,,,117,117,105,,,,
+Al Bhed Jumper (X),Light Armor,5,70,70,105,,,,,116,116,105,,,,
+Diamond Armor (V),Heavy Armor,5,93,45,105,,,,,147,76,105,,,,
+Gaia Gear (V),Robe,5,,,,57,95,105,,,,,92,95,105,
+Minerva Bustier (VI),Robe,5,,20,,55,93,105,,,20,,90,138,105,
+Chanter's Djellaba (XII),Robe,5,,,,55,91,105,,,,,90,136,105,
+Purge Robe (XIII),Robe,5,,,,53,88,105,,,,,88,138,105,
+Luminous Robe (IV),Robe,5,,,,57,95,105,,,,,92,140,105,
+Esthar Bracers (VIII),Bracer,5,15,11,,60,56,105,12,24,21,,86,92,105,21
+Tungsten Bangle (XIII),Bracer,5,15,11,,62,56,105,12,24,21,,88,92,105,21
+Bard's Bracelet (IV),Bracer,5,14,12,,56,55,105,13,23,22,,82,91,105,22
+Warrior's Bracer (X),Bracer,5,15,11,,60,56,105,12,24,21,,86,92,105,21
+Red Armlet (X),Bracer,5,16,16,,68,56,105,16,26,26,,94,92,105,26
+Precious Watch (VII),Bracer,5,15,11,,56,54,105,12,24,21,,82,90,105,21
+Dark Gloves (IV),Bracer,5,18,11,,69,57,105,13,28,21,,95,93,105,22
+Holiday Mittens (VII),Bracer,5,9,9,,40,39,105,9,18,16,,68,75,105,16
+Dog Tags (VII),Accessory,3,,15,,,,,,,15,,,,,
+Power Armlet (V),Accessory,3,15,,,,,,,15,,,,,,
+Sand Pearl (IV),Accessory,4,,,,,,,20,,,,,,,20
+Muscle Belt (X),Accessory,4,20,,,,,,,20,,,,,,
+Wolf Earring (VII),Accessory,4,20,,,,,,,20,,,,,,
+Black Belt (VI),Accessory,4,20,,,,,,,20,,,,,,
+Mirage Vest (VI),Light Armor,5,67,70,105,,,,,113,116,105,,,,
+Sheepskin Coat (VIII),Light Armor,5,71,69,100,,,,,117,115,100,,,,
+Diamond Plate (V),Light Armor,5,71,69,100,,,,,117,115,100,,,,
+Brigandine,Light Armor,5,65,68,,,,,,49,47,,,,,
+Ninja Suit (V),Light Armor,5,72,72,100,,,,,118,118,100,,,,
+Aurochs Uniform (X),Light Armor,5,71,69,100,,,,,117,115,105,,,,
+SOLDIER Breastplate (VII),Light Armor,5,87,87,100,,,,,132,132,100,,,,
+Nutkin Suit (VI),Light Armor,5,74,74,100,,,,,120,120,100,,,,
+Black Belt Gi (IV),Light Armor,5,71,69,100,,,,,117,115,100,,,,
+Crystal Mail (VI),Heavy Armor,5,83,40,102,,,,,128,65,102,,,,
+Ebon Armor (IV),Heavy Armor,5,95,59,105,10,,,,140,84,105,20,,,
+Soulfont Talisman (XIII),Accessory,5,,,,,15,,,,,,,15,,
+Fabled Score (IV),Accessory,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Cursed Ring (V),Accessory,5,,20,,15,,,,,20,,15,,,
+Adept's Bangle (X),Accessory,5,,20,,,15,,,,20,,,15,,
+Omega Badge (V),Accessory,5,20,,,,15,,,20,,,,15,,
+Flame Cloak (IV),Accessory,5,,15,,,,,,,15,,,,,
+Bolt Ring (VII),Accessory,4,,,,,,,,,,,,,,
+Star Pendant (X),Accessory,4,,,,,,,,,,,,,,
+Protect Ring (V),Accessory,4,,,,,,,,,,,,,,
+Goddess's Tribute (XIII),Gun,5,52,,95,,,,,52,,95,,,,
+Crystal Orb (VI),Accessory,5,15,20,,,,,,15,20,,,,,
+Circlet (VII),Hat,5,,20,,39,76,105,18,,30,,64,126,105,28
